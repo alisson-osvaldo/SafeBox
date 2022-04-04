@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "SafeBox\UI.csproj", "{7951033F-9D3B-47CF-AEA7-C93647BBF81B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "ControllerUser\Controller.csproj", "{B51EEDD3-A34F-4AC1-BE06-78544EB323B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "DataBase\DataBase.csproj", "{AF5A85CF-B163-4A25-872D-FEAB64D10A82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7951033F-9D3B-47CF-AEA7-C93647BBF81B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7951033F-9D3B-47CF-AEA7-C93647BBF81B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7951033F-9D3B-47CF-AEA7-C93647BBF81B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7951033F-9D3B-47CF-AEA7-C93647BBF81B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B51EEDD3-A34F-4AC1-BE06-78544EB323B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B51EEDD3-A34F-4AC1-BE06-78544EB323B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B51EEDD3-A34F-4AC1-BE06-78544EB323B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B51EEDD3-A34F-4AC1-BE06-78544EB323B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF5A85CF-B163-4A25-872D-FEAB64D10A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF5A85CF-B163-4A25-872D-FEAB64D10A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF5A85CF-B163-4A25-872D-FEAB64D10A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF5A85CF-B163-4A25-872D-FEAB64D10A82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30F53CF5-E1D8-438D-8D29-25D286E50C5A}
+	EndGlobalSection
+EndGlobal
