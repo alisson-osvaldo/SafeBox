@@ -19,7 +19,7 @@ namespace Database
             connectionstring = ConfigurationManager.AppSettings["SqlConnection"];
         }
 
-        //Ok
+        
         public void Gravar(string username, string password)
         {
             try
@@ -40,7 +40,6 @@ namespace Database
             }
         }
 
-        // não funcional
         public bool Login(string username,string password)
         {
             using (SqlConnection connection = new SqlConnection(connectionstring))
@@ -65,7 +64,7 @@ namespace Database
             }
         }
 
-        //Ok
+
         public DataTable Todos()
         {
             using (SqlConnection connection = new SqlConnection(connectionstring))

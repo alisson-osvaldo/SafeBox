@@ -8,13 +8,17 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controller;
 using FontAwesome.Sharp;
 using SafeBox.Forms;
+using SafeBox.Forms.AddItems;
 
 namespace SafeBox
 {
     public partial class FrmMain : Form
     {
+
+        //Variaveis interação Layout
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm; 
@@ -31,6 +35,7 @@ namespace SafeBox
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea; //Vai deixar uma margen sobrando quando estiver full maximizado
+
         }
 
         //Structs
@@ -237,6 +242,36 @@ namespace SafeBox
         private void flowLayoutPanelMain_Paint(object sender, PaintEventArgs e)
         {
             
+        }
+
+        private void panelDesktop_SizeChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panelList_SizeChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelDesktop_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSaveItem_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void panelBottomDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
