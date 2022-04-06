@@ -18,7 +18,7 @@ namespace Database
             connectionstring = ConfigurationManager.AppSettings["SqlConnection"];
         }
 
-        public void Gravar(int id, string name, string username, string password, string url, string note)
+        public void Gravar(int id, string name, string username, string password, string url, string note, string type)
         {
             try
             {
@@ -39,3 +39,8 @@ namespace Database
 
     }
 }
+/*
+ - Relacionar (Item) com o id do Usuario (register) !!Id do User está salvo em uma variavel no login!!
+ - Adicionar o valor do ComboBox no type, tipodanota salva.
+
+*/

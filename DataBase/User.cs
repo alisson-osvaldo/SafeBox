@@ -40,6 +40,7 @@ namespace Database
             }
         }
 
+        //Validação Login
         public bool Login(string username,string password)
         {
             using (SqlConnection connection = new SqlConnection(connectionstring))
@@ -49,6 +50,11 @@ namespace Database
                 SqlDataAdapter adapter = new SqlDataAdapter(queryString, connection);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
+
+                foreach (DataRow tb in table.Rows)
+                {
+                    string idUser = tb["id"].ToString();
+                }
 
                 if (table.Rows.Count == 1)
                 {
@@ -60,9 +66,30 @@ namespace Database
                 }
 
                 //var result = command.ExecuteScalar(); //verifica apenas 1 coluna
-               
+
             }
         }
+
+        //
+        /*public int ReturnIdUser(string username, string password)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                string queryString = "SELECT * FROM registers WHERE username = '" + username + "' AND password = '" + password + "' ";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(queryString, connection);
+                DataTable table = new DataTable();
+                adapter.Fill(table);           
+
+                foreach (DataRow tb in table.Rows)
+                {
+                    string id = tb["id"].ToString();
+                    int idUser = int.Parse(id);
+                    return idUser; //esse return não pode ficar aqui ()erro
+                }
+
+            }   
+        }*/
 
 
         public DataTable Todos()

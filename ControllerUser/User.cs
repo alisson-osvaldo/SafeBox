@@ -10,6 +10,7 @@ namespace Controller
 {
     public class User
     {
+        public string Id { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
 
@@ -29,8 +30,7 @@ namespace Controller
             bool log = new Database.User().Login(this.UserName, this.Password);
             return log;
         }
-
-
+            
         //Lista de todos
         public static List<User> Todos()
         {
@@ -42,7 +42,8 @@ namespace Controller
                 {
                     list.Add(new User()
                     {
-                        UserName = row["username"].ToString(),  
+                        UserName = row["username"].ToString(),
+                        Id = row["id"].ToString(),
                     });
                 }   
             }

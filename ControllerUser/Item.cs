@@ -15,10 +15,11 @@ namespace Controller
         public string Password { get; set; }
         public string URL { get; set; }
         public string Note { get; set; }
+        public string Type { get; set; }
 
         public void Gravar()
         {
-            new Database.Item().Gravar(this.Id, this.Name, this.UserName, this.Password, this.URL, this.Note);
+            new Database.Item().Gravar(this.Id, this.Name, this.UserName, this.Password, this.URL, this.Note, this.Type);
         }
 
         //Lista de todos

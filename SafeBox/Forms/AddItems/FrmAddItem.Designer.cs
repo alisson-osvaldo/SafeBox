@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panelAddItem = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBoxItems = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelAddType = new System.Windows.Forms.Panel();
             this.flowLayoutPanelAddItem = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelAddType = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxItems = new System.Windows.Forms.ComboBox();
             this.panelAddItem.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.flowLayoutPanelAddItem.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAddItem
@@ -51,6 +51,17 @@
             this.panelAddItem.TabIndex = 0;
             this.panelAddItem.SizeChanged += new System.EventHandler(this.panelAddItem_SizeChanged);
             // 
+            // flowLayoutPanelAddItem
+            // 
+            this.flowLayoutPanelAddItem.AutoScroll = true;
+            this.flowLayoutPanelAddItem.Controls.Add(this.panel1);
+            this.flowLayoutPanelAddItem.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelAddItem.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelAddItem.Name = "flowLayoutPanelAddItem";
+            this.flowLayoutPanelAddItem.Size = new System.Drawing.Size(408, 570);
+            this.flowLayoutPanelAddItem.TabIndex = 0;
+            this.flowLayoutPanelAddItem.WrapContents = false;
+            // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -62,17 +73,14 @@
             this.panel1.Size = new System.Drawing.Size(348, 982);
             this.panel1.TabIndex = 2;
             // 
-            // comboBoxItems
+            // panelAddType
             // 
-            this.comboBoxItems.FormattingEnabled = true;
-            this.comboBoxItems.Items.AddRange(new object[] {
-            "Login",
-            "Note"});
-            this.comboBoxItems.Location = new System.Drawing.Point(59, 40);
-            this.comboBoxItems.Name = "comboBoxItems";
-            this.comboBoxItems.Size = new System.Drawing.Size(264, 21);
-            this.comboBoxItems.TabIndex = 1;
-            this.comboBoxItems.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.panelAddType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.panelAddType.Location = new System.Drawing.Point(3, 67);
+            this.panelAddType.Name = "panelAddType";
+            this.panelAddType.Size = new System.Drawing.Size(377, 661);
+            this.panelAddType.TabIndex = 2;
+            this.panelAddType.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAddType_Paint);
             // 
             // label1
             // 
@@ -85,25 +93,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Add Item";
             // 
-            // panelAddType
+            // comboBoxItems
             // 
-            this.panelAddType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.panelAddType.Location = new System.Drawing.Point(3, 67);
-            this.panelAddType.Name = "panelAddType";
-            this.panelAddType.Size = new System.Drawing.Size(377, 661);
-            this.panelAddType.TabIndex = 2;
-            this.panelAddType.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAddType_Paint);
-            // 
-            // flowLayoutPanelAddItem
-            // 
-            this.flowLayoutPanelAddItem.AutoScroll = true;
-            this.flowLayoutPanelAddItem.Controls.Add(this.panel1);
-            this.flowLayoutPanelAddItem.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelAddItem.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelAddItem.Name = "flowLayoutPanelAddItem";
-            this.flowLayoutPanelAddItem.Size = new System.Drawing.Size(408, 570);
-            this.flowLayoutPanelAddItem.TabIndex = 0;
-            this.flowLayoutPanelAddItem.WrapContents = false;
+            this.comboBoxItems.FormattingEnabled = true;
+            this.comboBoxItems.Items.AddRange(new object[] {
+            "Login",
+            "Secure Note"});
+            this.comboBoxItems.Location = new System.Drawing.Point(59, 40);
+            this.comboBoxItems.Name = "comboBoxItems";
+            this.comboBoxItems.Size = new System.Drawing.Size(264, 21);
+            this.comboBoxItems.TabIndex = 1;
+            this.comboBoxItems.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // FrmAddItem
             // 
@@ -116,9 +116,9 @@
             this.Text = "FrmAddItem";
             this.SizeChanged += new System.EventHandler(this.FrmAddItem_SizeChanged);
             this.panelAddItem.ResumeLayout(false);
+            this.flowLayoutPanelAddItem.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.flowLayoutPanelAddItem.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

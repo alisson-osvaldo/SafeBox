@@ -78,7 +78,7 @@ namespace SafeBox.Forms
                 OpenChildFormPanelAddItem(new FrmAddItemLogin());
             } else if (selectedIndex == 1)
             {
-                
+                OpenChildFormPanelAddItem(new FrmItemNote());
             }
 
             

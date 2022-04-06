@@ -24,6 +24,7 @@ namespace SafeBox
         private void btnUnlock_Click(object sender, EventArgs e)
         {
             var login = new User();
+
             login.UserName = comboBoxLoginUserName.Text;
             login.Password = txtPasswordLogin.Text;
             bool log = login.ValidacaoLogin();
@@ -34,8 +35,12 @@ namespace SafeBox
                 t1 = new Thread(abrirMain);
                 t1.SetApartmentState(ApartmentState.STA); //STA thread unica(para 1 janela) caso mais de uma MTA 
                 t1.Start();
+           
+                //getting id and username
+                var usuario = (User)comboBoxLoginUserName.SelectedValue;
+                var id = usuario.Id;
+                var LoggedUser = login.UserName;
 
-                //new FrmMain().Show();
             } else
             {
                 MessageBox.Show("Senha incorreta! tente novamente.");
