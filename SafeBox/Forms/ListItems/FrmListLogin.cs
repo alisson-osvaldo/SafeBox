@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SafeBox.Forms
+namespace SafeBox.Forms.ListItems
 {
-    public partial class FormNota : Form
+    public partial class FrmListLogin : Form
     {
-        public FormNota()
+        public FrmListLogin()
         {
             InitializeComponent();
         }

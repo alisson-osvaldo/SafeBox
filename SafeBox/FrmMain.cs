@@ -12,6 +12,7 @@ using Controller;
 using FontAwesome.Sharp;
 using SafeBox.Forms;
 using SafeBox.Forms.AddItems;
+using SafeBox.Forms.ListItems;
 
 namespace SafeBox
 {
@@ -21,7 +22,7 @@ namespace SafeBox
         //Variaveis interação Layout
         private IconButton currentBtn;
         private Panel leftBorderBtn;
-        private Form currentChildForm; 
+        private Form currentChildForm;
 
         public FrmMain()
         {
@@ -145,7 +146,7 @@ namespace SafeBox
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-
+            lblUserName.Text = "Bem vindo " + Form1.User_Name;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -161,13 +162,13 @@ namespace SafeBox
         private void iconNota_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildFormPanelList(new FormNota()); 
+            OpenChildFormPanelList(new FrmListNota()); 
         }
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildFormPanelList(new FormLogin());
+            OpenChildFormPanelList(new FrmListLogin());
         }
 
         private void btnHome_Click(object sender, EventArgs e)

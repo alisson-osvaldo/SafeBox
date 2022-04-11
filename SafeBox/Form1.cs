@@ -9,17 +9,23 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controller;
+using SafeBox.Forms.AddItems;
 
 namespace SafeBox
 {
     public partial class Form1 : Form
     {
-        Thread t1;
+        //Global
+        public static int User_ID { get; set; }
+        public static string User_Name { get; set; }
 
+        Thread t1;
+        
         public Form1()
         {
             InitializeComponent();
         }
+
 
         private void btnUnlock_Click(object sender, EventArgs e)
         {
@@ -29,18 +35,18 @@ namespace SafeBox
             login.Password = txtPasswordLogin.Text;
             bool log = login.ValidacaoLogin();
 
+            //getting id and username
+            
+            var usuario = (User)comboBoxLoginUserName.SelectedValue;
+            User_ID = int.Parse(usuario.Id);
+            User_Name = login.UserName;
+
             if (log == true)
             {
                 this.Close();
                 t1 = new Thread(abrirMain);
                 t1.SetApartmentState(ApartmentState.STA); //STA thread unica(para 1 janela) caso mais de uma MTA 
-                t1.Start();
-           
-                //getting id and username
-                var usuario = (User)comboBoxLoginUserName.SelectedValue;
-                var id = usuario.Id;
-                var LoggedUser = login.UserName;
-
+                t1.Start();        
             } else
             {
                 MessageBox.Show("Senha incorreta! tente novamente.");

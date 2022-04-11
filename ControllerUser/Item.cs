@@ -9,7 +9,7 @@ namespace Controller
 {
     public class Item
     {
-        public int Id { get; set; }
+        public int IdUser { get; set; }
         public string Name { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
@@ -19,7 +19,7 @@ namespace Controller
 
         public void Gravar()
         {
-            new Database.Item().Gravar(this.Id, this.Name, this.UserName, this.Password, this.URL, this.Note, this.Type);
+            new Database.Item().Gravar(this.IdUser, this.Name, this.UserName, this.Password, this.URL, this.Note, this.Type);
         }
 
         //Lista de todos

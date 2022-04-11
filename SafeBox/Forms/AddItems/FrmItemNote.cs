@@ -21,7 +21,7 @@ namespace SafeBox.Forms.AddItems
         private void btnSaveItem_Click(object sender, EventArgs e)
         {
             var item = new Item();
-            item.Id = 0; //teste para salvar no bd
+            item.IdUser = 0; //teste para salvar no bd
             item.Name = txbName.Text;
             item.URL = txbItemURL.Text;
             item.Note = txbNote.Text;

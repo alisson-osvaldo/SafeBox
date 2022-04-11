@@ -31,6 +31,8 @@
             this.panelAddLogin = new System.Windows.Forms.Panel();
             this.flowLayoutPanelAddItemLogin = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSaveItem = new FontAwesome.Sharp.IconButton();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txbItemNote = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,8 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txbItemNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSaveItem = new FontAwesome.Sharp.IconButton();
             this.panelAddLogin.SuspendLayout();
             this.flowLayoutPanelAddItemLogin.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -88,6 +88,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(393, 838);
             this.panel1.TabIndex = 2;
+            // 
+            // btnSaveItem
+            // 
+            this.btnSaveItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnSaveItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSaveItem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.btnSaveItem.FlatAppearance.BorderSize = 0;
+            this.btnSaveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveItem.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnSaveItem.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(194)))), ((int)(((byte)(122)))));
+            this.btnSaveItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSaveItem.IconSize = 30;
+            this.btnSaveItem.Location = new System.Drawing.Point(33, 590);
+            this.btnSaveItem.Name = "btnSaveItem";
+            this.btnSaveItem.Size = new System.Drawing.Size(57, 36);
+            this.btnSaveItem.TabIndex = 1;
+            this.btnSaveItem.UseVisualStyleBackColor = false;
+            this.btnSaveItem.Click += new System.EventHandler(this.btnSaveItem_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(105, 596);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(101, 23);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -215,36 +245,6 @@
             this.label2.Text = "Name";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(105, 596);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(101, 23);
-            this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnSaveItem
-            // 
-            this.btnSaveItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnSaveItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSaveItem.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnSaveItem.FlatAppearance.BorderSize = 0;
-            this.btnSaveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveItem.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnSaveItem.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(194)))), ((int)(((byte)(122)))));
-            this.btnSaveItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSaveItem.IconSize = 30;
-            this.btnSaveItem.Location = new System.Drawing.Point(33, 590);
-            this.btnSaveItem.Name = "btnSaveItem";
-            this.btnSaveItem.Size = new System.Drawing.Size(57, 36);
-            this.btnSaveItem.TabIndex = 1;
-            this.btnSaveItem.UseVisualStyleBackColor = false;
-            this.btnSaveItem.Click += new System.EventHandler(this.btnSaveItem_Click);
-            // 
             // FrmAddItemLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,6 +253,7 @@
             this.Controls.Add(this.panelAddLogin);
             this.Name = "FrmAddItemLogin";
             this.Text = "FrmAddItemLogin";
+            this.Load += new System.EventHandler(this.FrmAddItemLogin_Load);
             this.panelAddLogin.ResumeLayout(false);
             this.flowLayoutPanelAddItemLogin.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

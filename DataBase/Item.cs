@@ -18,13 +18,13 @@ namespace Database
             connectionstring = ConfigurationManager.AppSettings["SqlConnection"];
         }
 
-        public void Gravar(int id, string name, string username, string password, string url, string note, string type)
+        public void Gravar(int idUser, string name, string username, string password, string url, string note, string type)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionstring))
                 {
-                    string queryString = "INSERT INTO items(id, name, username, password, url, note) VALUES('" + id + "', '" + name + "', '" + username + "', '" + password + "', '" + url + "', '" + note + "')";
+                    string queryString = "INSERT INTO items(iduser, name, username, password, url, note, type) VALUES('" + idUser + "', '" + name + "', '" + username + "', '" + password + "', '" + url + "', '" + note + "', '" + type + "')";
                     SqlCommand command = new SqlCommand(queryString, connection);
                     command.Connection.Open();
                     command.ExecuteNonQuery();
@@ -40,7 +40,5 @@ namespace Database
     }
 }
 /*
- - Relacionar (Item) com o id do Usuario (register) !!Id do User está salvo em uma variavel no login!!
- - Adicionar o valor do ComboBox no type, tipodanota salva.
 
 */

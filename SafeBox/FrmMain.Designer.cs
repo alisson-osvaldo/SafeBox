@@ -51,6 +51,7 @@
             this.panelBottomDesktop = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSaveItem = new FontAwesome.Sharp.IconButton();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -183,6 +184,7 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(64)))));
+            this.panelTitleBar.Controls.Add(this.lblUserName);
             this.panelTitleBar.Controls.Add(this.iconWindowsExit);
             this.panelTitleBar.Controls.Add(this.iconWindowsMaximized);
             this.panelTitleBar.Controls.Add(this.iconWindowsMinimize);
@@ -374,6 +376,16 @@
             this.btnSaveItem.UseVisualStyleBackColor = false;
             this.btnSaveItem.Click += new System.EventHandler(this.btnSaveItem_Click);
             // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblUserName.Location = new System.Drawing.Point(7, 1);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(0, 18);
+            this.lblUserName.TabIndex = 5;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -437,5 +449,6 @@
         private System.Windows.Forms.Panel panelBottomDesktop;
         private System.Windows.Forms.Button btnCancel;
         private FontAwesome.Sharp.IconButton btnSaveItem;
+        private System.Windows.Forms.Label lblUserName;
     }
 }
