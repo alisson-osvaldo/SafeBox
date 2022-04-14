@@ -36,7 +36,6 @@ namespace SafeBox
             bool log = login.ValidacaoLogin();
 
             //getting id and username
-            
             var usuario = (User)comboBoxLoginUserName.SelectedValue;
             User_ID = int.Parse(usuario.Id);
             User_Name = login.UserName;

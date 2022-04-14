@@ -191,6 +191,12 @@
     <Compile Include="Forms\ListItems\FrmListNota.Designer.cs">
       <DependentUpon>FrmListNota.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SelectedItems\FrmItemLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectedItems\FrmItemLogin.Designer.cs">
+      <DependentUpon>FrmItemLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddItems\FrmAddItem.resx">
       <DependentUpon>FrmAddItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListItems\FrmListLogin.resx">
+      <DependentUpon>FrmListLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectedItems\FrmItemLogin.resx">
+      <DependentUpon>FrmItemLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
@@ -260,6 +272,10 @@
     <ProjectReference Include="..\ControllerUser\Controller.csproj">
       <Project>{b51eedd3-a34f-4ac1-be06-78544eb323b3}</Project>
       <Name>Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataBase\DataBase.csproj">
+      <Project>{af5a85cf-b163-4a25-872d-feab64d10a82}</Project>
+      <Name>DataBase</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

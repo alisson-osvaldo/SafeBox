@@ -38,6 +38,7 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.iconWindowsExit = new FontAwesome.Sharp.IconPictureBox();
             this.iconWindowsMaximized = new FontAwesome.Sharp.IconPictureBox();
             this.iconWindowsMinimize = new FontAwesome.Sharp.IconPictureBox();
@@ -47,11 +48,10 @@
             this.panelList = new System.Windows.Forms.Panel();
             this.panelButtonAdd = new System.Windows.Forms.Panel();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
-            this.panelDesktop = new System.Windows.Forms.Panel();
+            panelDesktop = new System.Windows.Forms.Panel();
             this.panelBottomDesktop = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSaveItem = new FontAwesome.Sharp.IconButton();
-            this.lblUserName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -197,6 +197,16 @@
             this.panelTitleBar.TabIndex = 3;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblUserName.Location = new System.Drawing.Point(7, 1);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(0, 18);
+            this.lblUserName.TabIndex = 5;
+            // 
             // iconWindowsExit
             // 
             this.iconWindowsExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(64)))));
@@ -324,14 +334,14 @@
             // 
             // panelDesktop
             // 
-            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(475, 109);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(490, 475);
-            this.panelDesktop.TabIndex = 6;
-            this.panelDesktop.SizeChanged += new System.EventHandler(this.panelDesktop_SizeChanged);
-            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint_1);
+            panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelDesktop.Location = new System.Drawing.Point(475, 109);
+            panelDesktop.Name = "panelDesktop";
+            panelDesktop.Size = new System.Drawing.Size(490, 475);
+            panelDesktop.TabIndex = 6;
+            panelDesktop.SizeChanged += new System.EventHandler(this.panelDesktop_SizeChanged);
+            panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(panelDesktop_Paint_1);
             // 
             // panelBottomDesktop
             // 
@@ -376,16 +386,6 @@
             this.btnSaveItem.UseVisualStyleBackColor = false;
             this.btnSaveItem.Click += new System.EventHandler(this.btnSaveItem_Click);
             // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblUserName.Location = new System.Drawing.Point(7, 1);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(0, 18);
-            this.lblUserName.TabIndex = 5;
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -393,7 +393,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(965, 584);
             this.Controls.Add(this.panelBottomDesktop);
-            this.Controls.Add(this.panelDesktop);
+            this.Controls.Add(panelDesktop);
             this.Controls.Add(this.panelList);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTitleBar);
@@ -440,7 +440,7 @@
         private FontAwesome.Sharp.IconPictureBox iconWindowsMinimize;
         private FontAwesome.Sharp.IconPictureBox iconWindowsMaximized;
         private FontAwesome.Sharp.IconPictureBox iconWindowsExit;
-        private System.Windows.Forms.Panel panelDesktop;
+        public static System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Panel panelButtonAdd;
         private FontAwesome.Sharp.IconButton btnAdd;
         private FontAwesome.Sharp.IconButton btnNota;

@@ -28,12 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.listBoxLogin = new System.Windows.Forms.ListBox();
+            this.SuspendLayout();
+            // 
+            // listBoxLogin
+            // 
+            this.listBoxLogin.FormattingEnabled = true;
+            this.listBoxLogin.IntegralHeight = false;
+            this.listBoxLogin.Location = new System.Drawing.Point(12, 12);
+            this.listBoxLogin.Name = "listBoxLogin";
+            this.listBoxLogin.Size = new System.Drawing.Size(249, 342);
+            this.listBoxLogin.TabIndex = 0;
+            this.listBoxLogin.SelectedIndexChanged += new System.EventHandler(this.listBoxLogin_SelectedIndexChanged);
+            // 
+            // FrmListLogin
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(270, 450);
+            this.Controls.Add(this.listBoxLogin);
+            this.Name = "FrmListLogin";
             this.Text = "FrmListLogin";
+            this.Load += new System.EventHandler(this.FrmListLogin_Load_1);
+            this.DoubleClick += new System.EventHandler(this.listBoxLogin_SelectedIndexChanged);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox listBoxLogin;
     }
 }

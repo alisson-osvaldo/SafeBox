@@ -255,7 +255,7 @@ namespace SafeBox
 
         }
 
-        private void panelDesktop_Paint_1(object sender, PaintEventArgs e)
+        public static void panelDesktop_Paint_1(object sender, PaintEventArgs e)
         {
 
         }
