@@ -75,7 +75,7 @@ namespace Database
                 return table;
             }
         }
-
+        /*
         public static DataTable Teste(int id)
         {
             using (SqlConnection connection = new SqlConnection(connectionstringTeste))
@@ -93,6 +93,7 @@ namespace Database
                 return table;
             }
         }
+        */
 
     }
 }

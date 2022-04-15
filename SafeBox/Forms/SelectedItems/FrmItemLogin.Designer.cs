@@ -37,6 +37,10 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblURL = new System.Windows.Forms.Label();
+            this.txtURL = new System.Windows.Forms.TextBox();
+            this.lblNote = new System.Windows.Forms.Label();
+            this.txtNote = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +59,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.panel2.Controls.Add(this.txtNote);
+            this.panel2.Controls.Add(this.lblNote);
+            this.panel2.Controls.Add(this.txtURL);
+            this.panel2.Controls.Add(this.lblURL);
             this.panel2.Controls.Add(this.txtPassword);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtUserName);
@@ -131,6 +139,43 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Informações sobre o item";
             // 
+            // lblURL
+            // 
+            this.lblURL.AutoSize = true;
+            this.lblURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblURL.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblURL.Location = new System.Drawing.Point(4, 186);
+            this.lblURL.Name = "lblURL";
+            this.lblURL.Size = new System.Drawing.Size(34, 16);
+            this.lblURL.TabIndex = 6;
+            this.lblURL.Text = "URL";
+            // 
+            // txtURL
+            // 
+            this.txtURL.Location = new System.Drawing.Point(4, 205);
+            this.txtURL.Name = "txtURL";
+            this.txtURL.Size = new System.Drawing.Size(390, 20);
+            this.txtURL.TabIndex = 7;
+            // 
+            // lblNote
+            // 
+            this.lblNote.AutoSize = true;
+            this.lblNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNote.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblNote.Location = new System.Drawing.Point(4, 249);
+            this.lblNote.Name = "lblNote";
+            this.lblNote.Size = new System.Drawing.Size(36, 16);
+            this.lblNote.TabIndex = 8;
+            this.lblNote.Text = "Note";
+            // 
+            // txtNote
+            // 
+            this.txtNote.Location = new System.Drawing.Point(4, 268);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(390, 77);
+            this.txtNote.TabIndex = 9;
+            // 
             // FrmItemLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,5 +204,9 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNote;
+        private System.Windows.Forms.Label lblNote;
+        private System.Windows.Forms.TextBox txtURL;
+        private System.Windows.Forms.Label lblURL;
     }
 }

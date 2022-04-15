@@ -56,17 +56,18 @@ namespace SafeBox.Forms.ListItems
 
         private void FrmListLogin_Load_1(object sender, EventArgs e)
         {
+            //Obs só passa uma vez quando carrega a pg
             listBoxLogin.DataSource = Item.Todos();
-            //listBoxLogin.DisplayMember = "name";
-            //listBoxLogin.ValueMember = "id";
-            teste = (Item)listBoxLogin.SelectedValue;
-
+            listBoxLogin.DisplayMember = "name";
+            listBoxLogin.ValueMember = "id";
         }
 
         private void listBoxLogin_SelectedIndexChanged(object sender, EventArgs e)
         {
             var item = listBoxLogin.SelectedValue;
-          
+
+            //var teste = (Item)listBoxLogin.SelectedValue;
+           // string password = teste.Password;
 
             //selectItemList();
 

@@ -63,9 +63,12 @@ namespace Controller
                 {
                     list.Add(new Item()
                     {
-                        Name = row["name"].ToString(),
+                        Id       = int.Parse(row["Id"].ToString()),
+                        Name     = row["name"].ToString(),
                         UserName = row["username"].ToString(),
-                        Password = row["password"].ToString(),                    
+                        Password = row["password"].ToString(),   
+                        URL      = row["url"].ToString(),
+                        Note     = row["note"].ToString()
                     });
                 }
             }
