@@ -40,6 +40,7 @@
             this.listBoxLogin.Size = new System.Drawing.Size(249, 342);
             this.listBoxLogin.TabIndex = 0;
             this.listBoxLogin.SelectedIndexChanged += new System.EventHandler(this.listBoxLogin_SelectedIndexChanged);
+            this.listBoxLogin.DoubleClick += new System.EventHandler(this.listBoxLogin_SelectedIndexChanged);
             // 
             // FrmListLogin
             // 

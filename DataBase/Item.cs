@@ -13,12 +13,12 @@ namespace Database
     public class Item
     {
         private string connectionstring;
-        private static string connectionstringTeste;
+        private static string connectionstringStatic;
 
         public Item()
         {
             connectionstring = ConfigurationManager.AppSettings["SqlConnection"];
-            connectionstringTeste = ConfigurationManager.AppSettings["SqlConnection"];
+            connectionstringStatic = ConfigurationManager.AppSettings["SqlConnection"];
         }
 
         public void Gravar(int idUser, string name, string username, string password, string url, string note, string type)
@@ -78,7 +78,7 @@ namespace Database
         /*
         public static DataTable Teste(int id)
         {
-            using (SqlConnection connection = new SqlConnection(connectionstringTeste))
+            using (SqlConnection connection = new SqlConnection(connectionstringStatic))
             {
                 string queryString = "SELECT * FROM items WHERE id ='" + id + "' ";
                 SqlCommand command = new SqlCommand(queryString, connection);
@@ -94,6 +94,52 @@ namespace Database
             }
         }
         */
+
+        public static void UpdateItem(int Id, string Name, string UserName, string Password, string URL, string Note)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionstringStatic))
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "UPDATE items SET name = @name, username = @username, password = @password, url = @url, note = @note WHERE id = @id";
+
+                    command.Parameters.AddWithValue("@name", Name);
+                    command.Parameters.AddWithValue("@username", UserName);
+                    command.Parameters.AddWithValue("@password", Password);
+                    command.Parameters.AddWithValue("@url", URL);
+                    command.Parameters.AddWithValue("@note", Note);
+                    command.Parameters.AddWithValue("@id", Id);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+
+                    MessageBox.Show("Item Alterado com sucesso");
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        public static void DeleteItem(int Id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstringStatic))
+            using (SqlCommand command = connection.CreateCommand())
+            {
+                command.CommandText = "DELETE FROM items WHERE id = @id";
+
+                command.Parameters.AddWithValue("@id", Id);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+
+                MessageBox.Show("Item Deletado com sucesso");
+            }
+        }
+
 
     }
 }

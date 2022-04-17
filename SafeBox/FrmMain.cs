@@ -23,6 +23,7 @@ namespace SafeBox
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        private static Form currentChildFormPanelList;
 
         public FrmMain()
         {
@@ -91,12 +92,12 @@ namespace SafeBox
         //PanelLIst
         private void OpenChildFormPanelList(Form childForm)
         {
-            if (currentChildForm != null)
+            if (currentChildFormPanelList != null)
             {
                 //open only form
-                currentChildForm.Close();
+                currentChildFormPanelList.Close();
             }
-            currentChildForm = childForm;
+            currentChildFormPanelList = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
@@ -175,6 +176,11 @@ namespace SafeBox
         {
             currentChildForm.Close();
             Reset();
+        }
+
+        public static void Reflesh()
+        {
+            currentChildFormPanelList.Close();
         }
 
         private void Reset()

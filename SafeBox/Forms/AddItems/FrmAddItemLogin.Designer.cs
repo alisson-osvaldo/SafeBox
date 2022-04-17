@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.panelAddLogin = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSaveItem = new FontAwesome.Sharp.IconButton();
             this.flowLayoutPanelAddItemLogin = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSaveItem = new FontAwesome.Sharp.IconButton();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txbItemNote = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.txbItemNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panelAddLogin.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.flowLayoutPanelAddItemLogin.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -62,32 +64,28 @@
             this.panelAddLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAddLogin.Location = new System.Drawing.Point(0, 0);
             this.panelAddLogin.Name = "panelAddLogin";
-            this.panelAddLogin.Size = new System.Drawing.Size(800, 388);
+            this.panelAddLogin.Size = new System.Drawing.Size(800, 573);
             this.panelAddLogin.TabIndex = 1;
             // 
-            // flowLayoutPanelAddItemLogin
+            // panel4
             // 
-            this.flowLayoutPanelAddItemLogin.AutoScroll = true;
-            this.flowLayoutPanelAddItemLogin.Controls.Add(this.panel1);
-            this.flowLayoutPanelAddItemLogin.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelAddItemLogin.Location = new System.Drawing.Point(3, 0);
-            this.flowLayoutPanelAddItemLogin.Name = "flowLayoutPanelAddItemLogin";
-            this.flowLayoutPanelAddItemLogin.Size = new System.Drawing.Size(417, 540);
-            this.flowLayoutPanelAddItemLogin.TabIndex = 0;
-            this.flowLayoutPanelAddItemLogin.WrapContents = false;
+            this.panel4.BackColor = System.Drawing.Color.DimGray;
+            this.panel4.Controls.Add(this.btnCancel);
+            this.panel4.Controls.Add(this.btnSaveItem);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 570);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(391, 50);
+            this.panel4.TabIndex = 1;
             // 
-            // panel1
+            // btnCancel
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.btnSaveItem);
-            this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panelAddTypeLogin);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(393, 838);
-            this.panel1.TabIndex = 2;
+            this.btnCancel.Location = new System.Drawing.Point(126, 15);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(101, 23);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnSaveItem
             // 
@@ -103,21 +101,35 @@
             this.btnSaveItem.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(194)))), ((int)(((byte)(122)))));
             this.btnSaveItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSaveItem.IconSize = 30;
-            this.btnSaveItem.Location = new System.Drawing.Point(33, 590);
+            this.btnSaveItem.Location = new System.Drawing.Point(63, 10);
             this.btnSaveItem.Name = "btnSaveItem";
-            this.btnSaveItem.Size = new System.Drawing.Size(57, 36);
+            this.btnSaveItem.Size = new System.Drawing.Size(57, 32);
             this.btnSaveItem.TabIndex = 1;
             this.btnSaveItem.UseVisualStyleBackColor = false;
             this.btnSaveItem.Click += new System.EventHandler(this.btnSaveItem_Click);
             // 
-            // btnCancel
+            // flowLayoutPanelAddItemLogin
             // 
-            this.btnCancel.Location = new System.Drawing.Point(105, 596);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(101, 23);
-            this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.flowLayoutPanelAddItemLogin.AutoScroll = true;
+            this.flowLayoutPanelAddItemLogin.Controls.Add(this.panel1);
+            this.flowLayoutPanelAddItemLogin.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelAddItemLogin.Location = new System.Drawing.Point(3, 0);
+            this.flowLayoutPanelAddItemLogin.Name = "flowLayoutPanelAddItemLogin";
+            this.flowLayoutPanelAddItemLogin.Size = new System.Drawing.Size(417, 517);
+            this.flowLayoutPanelAddItemLogin.TabIndex = 0;
+            this.flowLayoutPanelAddItemLogin.WrapContents = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panelAddTypeLogin);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(391, 620);
+            this.panel1.TabIndex = 2;
             // 
             // panel3
             // 
@@ -249,12 +261,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 388);
+            this.ClientSize = new System.Drawing.Size(800, 573);
             this.Controls.Add(this.panelAddLogin);
             this.Name = "FrmAddItemLogin";
             this.Text = "FrmAddItemLogin";
             this.Load += new System.EventHandler(this.FrmAddItemLogin_Load);
             this.panelAddLogin.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.flowLayoutPanelAddItemLogin.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -288,5 +301,6 @@
         private System.Windows.Forms.TextBox txbItemUserName;
         private FontAwesome.Sharp.IconButton btnSaveItem;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Panel panel4;
     }
 }

@@ -49,9 +49,6 @@
             this.panelButtonAdd = new System.Windows.Forms.Panel();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
             panelDesktop = new System.Windows.Forms.Panel();
-            this.panelBottomDesktop = new System.Windows.Forms.Panel();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSaveItem = new FontAwesome.Sharp.IconButton();
             this.menuStrip1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -63,7 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             this.panelList.SuspendLayout();
             this.panelButtonAdd.SuspendLayout();
-            this.panelBottomDesktop.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -343,56 +339,12 @@
             panelDesktop.SizeChanged += new System.EventHandler(this.panelDesktop_SizeChanged);
             panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(panelDesktop_Paint_1);
             // 
-            // panelBottomDesktop
-            // 
-            this.panelBottomDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.panelBottomDesktop.Controls.Add(this.btnCancel);
-            this.panelBottomDesktop.Controls.Add(this.btnSaveItem);
-            this.panelBottomDesktop.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottomDesktop.Location = new System.Drawing.Point(475, 534);
-            this.panelBottomDesktop.Name = "panelBottomDesktop";
-            this.panelBottomDesktop.Size = new System.Drawing.Size(490, 50);
-            this.panelBottomDesktop.TabIndex = 0;
-            this.panelBottomDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBottomDesktop_Paint);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(127, 14);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(101, 23);
-            this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnSaveItem
-            // 
-            this.btnSaveItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnSaveItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSaveItem.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnSaveItem.FlatAppearance.BorderSize = 0;
-            this.btnSaveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveItem.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnSaveItem.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(194)))), ((int)(((byte)(122)))));
-            this.btnSaveItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSaveItem.IconSize = 30;
-            this.btnSaveItem.Location = new System.Drawing.Point(45, 7);
-            this.btnSaveItem.Name = "btnSaveItem";
-            this.btnSaveItem.Size = new System.Drawing.Size(55, 36);
-            this.btnSaveItem.TabIndex = 1;
-            this.btnSaveItem.UseVisualStyleBackColor = false;
-            this.btnSaveItem.Click += new System.EventHandler(this.btnSaveItem_Click);
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(965, 584);
-            this.Controls.Add(this.panelBottomDesktop);
             this.Controls.Add(panelDesktop);
             this.Controls.Add(this.panelList);
             this.Controls.Add(this.panelShadow);
@@ -418,7 +370,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
             this.panelList.ResumeLayout(false);
             this.panelButtonAdd.ResumeLayout(false);
-            this.panelBottomDesktop.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,9 +397,6 @@
         private FontAwesome.Sharp.IconButton btnNota;
         private FontAwesome.Sharp.IconButton btnLogin;
         private System.Windows.Forms.PictureBox btnHome;
-        private System.Windows.Forms.Panel panelBottomDesktop;
-        private System.Windows.Forms.Button btnCancel;
-        private FontAwesome.Sharp.IconButton btnSaveItem;
         private System.Windows.Forms.Label lblUserName;
     }
 }
