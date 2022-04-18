@@ -15,9 +15,11 @@ namespace SafeBox.Forms.SelectedItems
     public partial class FrmItemLogin : Form
     {
         public int Id { get; set; }
+        public string windows = "SelectItemLogin";
 
         public FrmItemLogin(object idItem)
         {
+            FrmMain.LogicPanelButtons(windows);
             InitializeComponent();
             
             //GetItem SqlServer

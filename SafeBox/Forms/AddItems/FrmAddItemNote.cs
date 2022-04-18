@@ -14,10 +14,12 @@ namespace SafeBox.Forms.AddItems
     public partial class FrmAddItemNote : Form
     {
         public string type = "Note";
+        public string windows = "AddItemNote";
 
         public FrmAddItemNote()
         {
-            InitializeComponent();
+            FrmMain.LogicPanelButtons(windows);
+            InitializeComponent();           
         }
 
         private void btnSaveItem_Click(object sender, EventArgs e)

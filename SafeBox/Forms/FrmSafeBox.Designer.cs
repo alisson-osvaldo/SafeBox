@@ -63,6 +63,7 @@
             this.Controls.Add(this.panelSafeBox);
             this.Name = "FrmSafeBox";
             this.Text = "FrmSafeBox";
+            this.Load += new System.EventHandler(this.FrmSafeBox_Load);
             this.panelSafeBox.ResumeLayout(false);
             this.panelSafeBox.PerformLayout();
             this.ResumeLayout(false);

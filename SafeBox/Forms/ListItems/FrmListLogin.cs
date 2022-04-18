@@ -16,6 +16,7 @@ namespace SafeBox.Forms.ListItems
     public partial class FrmListLogin : Form
     {
         public string type = "Login";
+        public string windows = "ListLogin";
 
         //Variaveis interação Layout
         private Form currentChildForm;
@@ -26,6 +27,7 @@ namespace SafeBox.Forms.ListItems
 
         public FrmListLogin()
         {
+            FrmMain.LogicPanelButtons(windows);
             InitializeComponent();
             loadAll();
         }

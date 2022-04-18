@@ -49,6 +49,11 @@
             this.panelButtonAdd = new System.Windows.Forms.Panel();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
             panelDesktop = new System.Windows.Forms.Panel();
+            this.panelButtons = new System.Windows.Forms.Panel();
+           btnDelete = new FontAwesome.Sharp.IconButton();
+            btnCancel = new System.Windows.Forms.Button();
+            btnEdit = new FontAwesome.Sharp.IconButton();
+            btnSave = new FontAwesome.Sharp.IconButton();
             this.menuStrip1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -60,6 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             panelList.SuspendLayout();
             this.panelButtonAdd.SuspendLayout();
+            this.panelButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -294,17 +300,17 @@
             panelList.Name = "panelList";
             panelList.Size = new System.Drawing.Size(263, 475);
             panelList.TabIndex = 5;
-            panelList.SizeChanged += new System.EventHandler(this.panelList_SizeChanged);
-            panelList.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
+            panelList.SizeChanged += new System.EventHandler(panelList_SizeChanged);
+            panelList.Paint += new System.Windows.Forms.PaintEventHandler(panelDesktop_Paint);
             // 
             // panelButtonAdd
             // 
-            this.panelButtonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.panelButtonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.panelButtonAdd.Controls.Add(this.btnAdd);
             this.panelButtonAdd.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtonAdd.Location = new System.Drawing.Point(0, 425);
+            this.panelButtonAdd.Location = new System.Drawing.Point(0, 418);
             this.panelButtonAdd.Name = "panelButtonAdd";
-            this.panelButtonAdd.Size = new System.Drawing.Size(263, 50);
+            this.panelButtonAdd.Size = new System.Drawing.Size(263, 57);
             this.panelButtonAdd.TabIndex = 0;
             // 
             // btnAdd
@@ -312,18 +318,18 @@
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.btnAdd.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(194)))), ((int)(((byte)(122)))));
             this.btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAdd.IconSize = 30;
-            this.btnAdd.Location = new System.Drawing.Point(7, 3);
+            this.btnAdd.Location = new System.Drawing.Point(7, 7);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(250, 44);
+            this.btnAdd.Size = new System.Drawing.Size(247, 42);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -336,8 +342,101 @@
             panelDesktop.Name = "panelDesktop";
             panelDesktop.Size = new System.Drawing.Size(490, 475);
             panelDesktop.TabIndex = 6;
-            panelDesktop.SizeChanged += new System.EventHandler(this.panelDesktop_SizeChanged);
+            panelDesktop.SizeChanged += new System.EventHandler(panelDesktop_SizeChanged);
             panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(panelDesktop_Paint_1);
+            // 
+            // panelButtons
+            // 
+            this.panelButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.panelButtons.Controls.Add(btnDelete);
+            this.panelButtons.Controls.Add(btnCancel);
+            this.panelButtons.Controls.Add(btnEdit);
+            this.panelButtons.Controls.Add(btnSave);
+            this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelButtons.Location = new System.Drawing.Point(475, 527);
+            this.panelButtons.Name = "panelButtons";
+            this.panelButtons.Size = new System.Drawing.Size(490, 57);
+            this.panelButtons.TabIndex = 0;
+            this.panelButtons.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            // 
+            // btnDelete
+            // 
+           btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+           btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+           btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+           btnDelete.Cursor = System.Windows.Forms.Cursors.IBeam;
+           btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+           btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+           btnDelete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+           btnDelete.IconColor = System.Drawing.Color.Red;
+           btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+           btnDelete.IconSize = 30;
+           btnDelete.Location = new System.Drawing.Point(424, 9);
+           btnDelete.Name = "btnDelete";
+           btnDelete.Size = new System.Drawing.Size(54, 42);
+           btnDelete.TabIndex = 6;
+           btnDelete.UseVisualStyleBackColor = false;
+           btnDelete.Visible = false;
+           btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnCancel
+            // 
+            btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            btnCancel.FlatAppearance.BorderSize = 0;
+            btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnCancel.ForeColor = System.Drawing.Color.Gainsboro;
+            btnCancel.Location = new System.Drawing.Point(93, 7);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new System.Drawing.Size(75, 42);
+            btnCancel.TabIndex = 5;
+            btnCancel.Text = "Cancelar";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Visible = false;
+            // 
+            // btnEdit
+            // 
+            btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            btnEdit.Cursor = System.Windows.Forms.Cursors.IBeam;
+            btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnEdit.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            btnEdit.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(194)))), ((int)(((byte)(122)))));
+            btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEdit.IconSize = 30;
+            btnEdit.Location = new System.Drawing.Point(19, 7);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new System.Drawing.Size(54, 42);
+            btnEdit.TabIndex = 4;
+            btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Visible = false;
+            // 
+            // btnSave
+            // 
+            btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            btnSave.Cursor = System.Windows.Forms.Cursors.IBeam;
+            btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSave.IconChar = FontAwesome.Sharp.IconChar.Save;
+            btnSave.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(194)))), ((int)(((byte)(122)))));
+            btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSave.IconSize = 30;
+            btnSave.Location = new System.Drawing.Point(19, 7);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new System.Drawing.Size(54, 42);
+            btnSave.TabIndex = 3;
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Visible = false;
+            btnSave.Click += new System.EventHandler(btnSaveItem_Click);
             // 
             // FrmMain
             // 
@@ -345,6 +444,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(965, 584);
+            this.Controls.Add(this.panelButtons);
             this.Controls.Add(panelDesktop);
             this.Controls.Add(panelList);
             this.Controls.Add(this.panelShadow);
@@ -370,6 +470,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
             panelList.ResumeLayout(false);
             this.panelButtonAdd.ResumeLayout(false);
+            this.panelButtons.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,18 +486,23 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelTitleBar;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
-        public static System.Windows.Forms.Label lblTitleChildForm;
         private System.Windows.Forms.Panel panelShadow;
-        public static System.Windows.Forms.Panel panelList;
         private FontAwesome.Sharp.IconPictureBox iconWindowsMinimize;
         private FontAwesome.Sharp.IconPictureBox iconWindowsMaximized;
         private FontAwesome.Sharp.IconPictureBox iconWindowsExit;
-        public static System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Panel panelButtonAdd;
         private FontAwesome.Sharp.IconButton btnAdd;
         private FontAwesome.Sharp.IconButton btnNota;
         private FontAwesome.Sharp.IconButton btnLogin;
         private System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Panel panelButtons;
+        private static FontAwesome.Sharp.IconButton btnSave;
+        private static FontAwesome.Sharp.IconButton btnEdit;
+        private static FontAwesome.Sharp.IconButton btnDelete;
+        private static System.Windows.Forms.Button btnCancel;
+        public static System.Windows.Forms.Label lblTitleChildForm;
+        public static System.Windows.Forms.Panel panelList;
+        public static System.Windows.Forms.Panel panelDesktop;
     }
 }

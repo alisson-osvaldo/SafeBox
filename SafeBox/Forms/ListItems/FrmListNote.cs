@@ -15,6 +15,7 @@ namespace SafeBox.Forms.ListItems
     public partial class FrmListNote : Form
     {
         public string type = "Note";
+        public string windows = "ListNote";
 
         //Variaveis interação Layout
         private Form currentChildForm;
@@ -25,6 +26,7 @@ namespace SafeBox.Forms.ListItems
 
         public FrmListNote()
         {
+            FrmMain.LogicPanelButtons(windows);
             InitializeComponent();
             loadAll();
         }

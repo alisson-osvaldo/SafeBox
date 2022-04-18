@@ -13,12 +13,14 @@ namespace SafeBox.Forms
 {
     public partial class FrmAddItem : Form
     {
+        public string windows = "AddItem";
+
         //Variaveis interação Layout
         private Form currentChildForm;
 
-
         public FrmAddItem()
         {
+            FrmMain.LogicPanelButtons(windows);
             InitializeComponent();
         }
 
@@ -82,6 +84,11 @@ namespace SafeBox.Forms
             }
 
             
+        }
+
+        private void FrmAddItem_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

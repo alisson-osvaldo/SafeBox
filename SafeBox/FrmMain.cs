@@ -212,7 +212,10 @@ namespace SafeBox
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            currentChildForm.Close();
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }        
             CloseFormPanelList();
             OpenFormPanelDesktop();
             Reset();
@@ -309,11 +312,6 @@ namespace SafeBox
 
         }
 
-        private void btnSaveItem_Click(object sender, EventArgs e)
-        {
-          
-        }
-
         private void panelBottomDesktop_Paint(object sender, PaintEventArgs e)
         {
 
@@ -322,6 +320,60 @@ namespace SafeBox
         private void btnCancel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSaveItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        public static void LogicPanelButtons(string type)
+        {
+            if (type.Equals("AddItemLogin") || type.Equals("AddItemNote"))
+            {
+                btnSave.Visible = true;
+                btnCancel.Visible = true;
+                btnEdit.Visible = false;
+                btnDelete.Visible = false;
+            }
+            if (type.Equals("ListLogin") || type.Equals("ListNota") || type.Equals("AddItem") || type.Equals("SafeBox"))
+            {
+                btnSave.Visible = false;
+                btnCancel.Visible = false;
+                btnEdit.Visible = false;
+                btnDelete.Visible = false;
+            }
+            if (type.Equals("BtnEdit")) //quando eu clicar no brnEdit deixar ele false
+            {
+                btnSave.Visible = true;
+                btnCancel.Visible = true;
+                btnEdit.Visible = false;
+                btnDelete.Visible = true;
+            }
+            if (type.Equals("SelectItemLogin") || type.Equals("SelectItemNote"))
+            {
+                btnSave.Visible = false;
+                btnCancel.Visible = false;
+                btnEdit.Visible = true;
+                btnDelete.Visible = true;
+            }
+
+        }
+
+        public void btnDelete_Click(object sender, EventArgs e)
+        {
+            string windows = "BtnEdit";
+            LogicPanelButtons(windows);
         }
     }
 }

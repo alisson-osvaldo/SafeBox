@@ -14,9 +14,11 @@ namespace SafeBox.Forms.SelectedItems
     public partial class FrmItemNote : Form
     {
         public int Id { get; set; }
+        public string windows = "SelectItemNote";
 
         public FrmItemNote(object idItem)
         {
+            FrmMain.LogicPanelButtons(windows);
             InitializeComponent();
 
             //GetItem SqlServer
@@ -65,6 +67,11 @@ namespace SafeBox.Forms.SelectedItems
             Database.Item.DeleteItem(Id);
             FrmMain.CloseFormPanelList();
             FrmMain.OpenFormPanelList(type);
+        }
+
+        private void FrmItemNote_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

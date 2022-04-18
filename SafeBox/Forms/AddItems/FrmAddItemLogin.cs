@@ -14,10 +14,11 @@ namespace SafeBox.Forms.AddItems
     public partial class FrmAddItemLogin : Form
     {
         public string type = "Login";
-
+        public string windows = "AddItemLogin";
         public FrmAddItemLogin()
         {
-            InitializeComponent();
+            FrmMain.LogicPanelButtons(windows);
+            InitializeComponent();     
         }
 
         private void FrmAddItemLogin_Load(object sender, EventArgs e)
