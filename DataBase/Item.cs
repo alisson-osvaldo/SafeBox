@@ -39,12 +39,11 @@ namespace Database
             }
         }
 
-        public DataTable Todos()
+        public DataTable SearchItemType(string type)
         {
             using (SqlConnection connection = new SqlConnection(connectionstring))
             {
-                //string queryString = "SELECT * FROM items WHERE type ='" + type + "' ";
-                string queryString = "SELECT * FROM items ";
+                string queryString = "SELECT * FROM items WHERE type = '" + type + "' ";
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
 
@@ -75,26 +74,7 @@ namespace Database
                 return table;
             }
         }
-        /*
-        public static DataTable Teste(int id)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionstringStatic))
-            {
-                string queryString = "SELECT * FROM items WHERE id ='" + id + "' ";
-                SqlCommand command = new SqlCommand(queryString, connection);
-                command.Connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(); //Esse cara vai pegar nossa requisição(registro) no bd
-                adapter.SelectCommand = command;
-
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-
-                return table;
-            }
-        }
-        */
-
+       
         public static void UpdateItem(int Id, string Name, string UserName, string Password, string URL, string Note)
         {
             try

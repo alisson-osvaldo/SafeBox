@@ -183,7 +183,7 @@ namespace SafeBox
         private void iconNota_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildFormPanelList(new FrmListNota()); 
+            OpenChildFormPanelList(new FrmListNote()); 
         }
 
         private void btnLogin_Click_1(object sender, EventArgs e)
@@ -192,9 +192,17 @@ namespace SafeBox
             OpenChildFormPanelList(new FrmListLogin());
         }
 
-        public static void OpenFormPanelList()
+        public static void OpenFormPanelList(string type)
         {
-            OpenChildFormPanelList(new FrmListLogin());
+            if (type.Equals("Login"))
+            {
+                OpenChildFormPanelList(new FrmListLogin());
+            }
+            else if (type.Equals("Note"))
+            {
+                OpenChildFormPanelList(new FrmListNote());
+            }
+            
         }
 
         public static void OpenFormPanelDesktop()
@@ -206,6 +214,7 @@ namespace SafeBox
         {
             currentChildForm.Close();
             CloseFormPanelList();
+            OpenFormPanelDesktop();
             Reset();
         }
 

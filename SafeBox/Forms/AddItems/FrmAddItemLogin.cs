@@ -13,7 +13,7 @@ namespace SafeBox.Forms.AddItems
 {
     public partial class FrmAddItemLogin : Form
     {
-        string type = "Login";
+        public string type = "Login";
 
         public FrmAddItemLogin()
         {
@@ -24,12 +24,6 @@ namespace SafeBox.Forms.AddItems
         {
             
         }
-
-        /*public FrmAddItemLogin(int id)
-        {
-            InitializeComponent();
-            int idUsuario = id;
-        }*/
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -54,10 +48,10 @@ namespace SafeBox.Forms.AddItems
             {
                 item.Gravar();
                 Close();
-            }
 
-            FrmMain.CloseFormPanelList();
-            FrmMain.OpenFormPanelList();
+                FrmMain.CloseFormPanelList();
+                FrmMain.OpenFormPanelList(type);
+            }    
         }
 
         

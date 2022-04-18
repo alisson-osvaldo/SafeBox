@@ -28,7 +28,7 @@ namespace Controller
             new Database.Item().Gravar(this.IdUser, this.Name, this.UserName, this.Password, this.URL, this.Note, this.Type);
         }
 
-        //Lista de todos
+        /*
         public static List<Item> Todos()
         {
             var list = new List<Item>();
@@ -50,8 +50,49 @@ namespace Controller
                 }
             }
             return list;
+        }*/
+
+        public static List<Item> SearchItemLoginType(string type)
+        {
+            var list = new List<Item>();
+            var table = new Database.Item().SearchItemType(type);
+            if (table.Rows.Count > 0)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    list.Add(new Item()
+                    {
+                        Id = int.Parse(row["Id"].ToString()),
+                        Name = row["Name"].ToString(),
+                        UserName = row["username"].ToString(),
+                        Password = row["password"].ToString(),
+                        URL = row["url"].ToString(),
+                        Note = row["note"].ToString(),
+                    });
+                }
+            }
+            return list;
         }
 
+        public static List<Item> SearchItemNoteType(string type)
+        {
+            var list = new List<Item>();
+            var table = new Database.Item().SearchItemType(type);
+            if (table.Rows.Count > 0)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    list.Add(new Item()
+                    {
+                        Id = int.Parse(row["Id"].ToString()),
+                        Name = row["Name"].ToString(),
+                        URL = row["url"].ToString(),
+                        Note = row["note"].ToString(),
+                    });
+                }
+            }
+            return list;
+        }
 
         public static List<Item> SearchItemById(int id)
         {
@@ -74,6 +115,7 @@ namespace Controller
             }
             return list;
         }
+
 
     }
 }

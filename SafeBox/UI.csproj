@@ -167,11 +167,11 @@
     <Compile Include="Forms\AddItems\FrmAddItemLogin.Designer.cs">
       <DependentUpon>FrmAddItemLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddItems\FrmItemNote.cs">
+    <Compile Include="Forms\AddItems\FrmAddItemNote.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddItems\FrmItemNote.Designer.cs">
-      <DependentUpon>FrmItemNote.cs</DependentUpon>
+    <Compile Include="Forms\AddItems\FrmAddItemNote.Designer.cs">
+      <DependentUpon>FrmAddItemNote.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AddItems\FrmAddItem.cs">
       <SubType>Form</SubType>
@@ -191,17 +191,23 @@
     <Compile Include="Forms\ListItems\FrmListLogin.Designer.cs">
       <DependentUpon>FrmListLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ListItems\FrmListNota.cs">
+    <Compile Include="Forms\ListItems\FrmListNote.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ListItems\FrmListNota.Designer.cs">
-      <DependentUpon>FrmListNota.cs</DependentUpon>
+    <Compile Include="Forms\ListItems\FrmListNote.Designer.cs">
+      <DependentUpon>FrmListNote.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SelectedItems\FrmItemLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\SelectedItems\FrmItemLogin.Designer.cs">
       <DependentUpon>FrmItemLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelectedItems\FrmItemNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectedItems\FrmItemNote.Designer.cs">
+      <DependentUpon>FrmItemNote.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -223,8 +229,8 @@
     <EmbeddedResource Include="Forms\AddItems\FrmAddItemLogin.resx">
       <DependentUpon>FrmAddItemLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddItems\FrmItemNote.resx">
-      <DependentUpon>FrmItemNote.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddItems\FrmAddItemNote.resx">
+      <DependentUpon>FrmAddItemNote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddItems\FrmAddItem.resx">
       <DependentUpon>FrmAddItem.cs</DependentUpon>
@@ -235,8 +241,14 @@
     <EmbeddedResource Include="Forms\ListItems\FrmListLogin.resx">
       <DependentUpon>FrmListLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListItems\FrmListNote.resx">
+      <DependentUpon>FrmListNote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SelectedItems\FrmItemLogin.resx">
       <DependentUpon>FrmItemLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectedItems\FrmItemNote.resx">
+      <DependentUpon>FrmItemNote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>

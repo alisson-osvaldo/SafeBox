@@ -11,9 +11,11 @@ using Controller;
 
 namespace SafeBox.Forms.AddItems
 {
-    public partial class FrmItemNote : Form
+    public partial class FrmAddItemNote : Form
     {
-        public FrmItemNote()
+        public string type = "Note";
+
+        public FrmAddItemNote()
         {
             InitializeComponent();
         }
@@ -21,10 +23,9 @@ namespace SafeBox.Forms.AddItems
         private void btnSaveItem_Click(object sender, EventArgs e)
         {
             var item = new Item();
-            item.IdUser = 0; //teste para salvar no bd
             item.Name = txbName.Text;
-            item.URL = txbItemURL.Text;
             item.Note = txbNote.Text;
+            item.Type = type;
             if (txbName.Text.Length == 0 || txbNote.Text.Length == 0 )
             {
                 MessageBox.Show("Por favor preencha todos os campos (Name, Note)");
@@ -33,7 +34,15 @@ namespace SafeBox.Forms.AddItems
             {
                 item.Gravar();
                 Close();
-            }
+
+                FrmMain.CloseFormPanelList();
+                FrmMain.OpenFormPanelList(type);
+            }           
+        }
+
+        private void FrmAddItemNote_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -22,7 +22,7 @@ namespace SafeBox.Forms.SelectedItems
             
             //GetItem SqlServer
             Id = int.Parse(idItem.ToString());
-            var t = Item.SearchItemById(Id); //List<>
+            var t = Item.SearchItemById(Id); 
             
             Id = t[0].Id;
             string name = t[0].Name;
@@ -104,9 +104,10 @@ namespace SafeBox.Forms.SelectedItems
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
+            string type = "Login";
             Database.Item.DeleteItem(Id);
             FrmMain.CloseFormPanelList();
-            FrmMain.OpenFormPanelList();
+            FrmMain.OpenFormPanelList(type);
         }
     }
 }
