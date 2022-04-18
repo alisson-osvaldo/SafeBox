@@ -27,7 +27,6 @@ namespace SafeBox.Forms.ListItems
             InitializeComponent();
 
             loadAll();
-            //listBoxLogin_SelectedIndexChanged(object sender, EventArgs e);
         }
 
         private void OpenChildFormPanelDesktop(Form childForm)
@@ -48,42 +47,39 @@ namespace SafeBox.Forms.ListItems
          }
 
         public void loadAll()
-        {
-            
-            listBoxLogin.DataSource = Item.Todos();
-            listBoxLogin.DisplayMember = "name";
-            listBoxLogin.ValueMember = "id";
-            
+        {   
+            listBoxLogin.DataSource = Item.Todos();                 
         }
 
-        //não estou usando
-        /*public int selectItemList()
+        public void OpenFrmItemLogin()
         {
-        }*/
+            OpenChildFormPanelDesktop(new FrmItemLogin(ID));
+        }
+            
+        public void listBoxLogin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //listBoxLogin.;
+
+            var item = (Item)listBoxLogin.SelectedValue;
+            ID = item.Id;           
+
+            OpenFrmItemLogin();
+        }
 
         private void FrmListLogin_Load_1(object sender, EventArgs e)
         {
-            //Obs só passa uma vez quando carrega a pg
-            loadAll();
         }
-
-        public void listBoxLogin_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            //loadAll();
-            var item = listBoxLogin.SelectedValue;
-
-            if (item != listBoxLogin.SelectedItem)
-            {
-                OpenChildFormPanelDesktop(new FrmItemLogin(item));
-            }
-
-            //Passar id atualizado apos o delete
-            //dar reflesh no listbox; 
- 
-        }
-
 
 
     }
 }
+
+
+
+
+/*
+ //Passar id atualizado apos o delete
+ //dar reflesh no listbox; 
+
+
+*/

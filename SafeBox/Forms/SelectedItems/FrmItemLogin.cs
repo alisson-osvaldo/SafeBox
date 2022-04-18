@@ -118,8 +118,12 @@ namespace SafeBox.Forms.SelectedItems
             Database.Item.DeleteItem(Id);
             new FrmListLogin().Refresh();
 
-
-            //Precisamos atualizar = listBoxLogin_SelectedIndexChanged
         }
     }
 }
+
+/*
+ 1- precisamos que o listbox(form) atualize.
+ 2- Precisamos atualizar = listBoxLogin.SelectedValue, para que não fique com o ID do item deletado.
+
+*/
