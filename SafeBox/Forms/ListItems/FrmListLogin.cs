@@ -25,7 +25,6 @@ namespace SafeBox.Forms.ListItems
         public FrmListLogin()
         {
             InitializeComponent();
-
             loadAll();
         }
 
@@ -58,8 +57,6 @@ namespace SafeBox.Forms.ListItems
             
         public void listBoxLogin_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //listBoxLogin.;
-
             var item = (Item)listBoxLogin.SelectedValue;
             ID = item.Id;           
 

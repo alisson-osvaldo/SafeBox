@@ -25,6 +25,7 @@ namespace SafeBox
         private Form currentChildForm;
         private static Form currentChildFormPanelList;
 
+
         public FrmMain()
         {
             InitializeComponent();
@@ -90,7 +91,7 @@ namespace SafeBox
         }
 
         //PanelLIst
-        private void OpenChildFormPanelList(Form childForm)
+        private static void OpenChildFormPanelList(Form childForm)
         {
             if (currentChildFormPanelList != null)
             {
@@ -172,13 +173,18 @@ namespace SafeBox
             OpenChildFormPanelList(new FrmListLogin());
         }
 
+        public static void OpenFormPanelList()
+        {
+            OpenChildFormPanelList(new FrmListLogin());
+        }
+
         private void btnHome_Click(object sender, EventArgs e)
         {
             currentChildForm.Close();
             Reset();
         }
 
-        public static void Reflesh()
+        public static void CloseFormPanelList()
         {
             currentChildFormPanelList.Close();
         }

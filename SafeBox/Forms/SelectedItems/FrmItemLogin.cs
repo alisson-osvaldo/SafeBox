@@ -23,47 +23,36 @@ namespace SafeBox.Forms.SelectedItems
             //GetItem SqlServer
             Id = int.Parse(idItem.ToString());
             var t = Item.SearchItemById(Id); //List<>
-            if (t.Count.Equals(0))
+            
+            Id = t[0].Id;
+            string name = t[0].Name;
+            string username = t[0].UserName;
+            string password = t[0].Password;
+            string url = t[0].URL;
+            string note = t[0].Note;
+
+            txtName.Text = name;
+            txtUserName.Text = username;
+            txtPassword.Text = password;
+            if (url == "")
             {
-                MessageBox.Show("Lista Vazia" + t.Count);
+                lblURL.Visible = false;
+                txtURL.Visible = false;
+            }
+            if (note == "")
+            {
+                lblNote.Visible = false;
+                txtNote.Visible = false;
             }
             else
             {
-                Id = t[0].Id;
-                string name = t[0].Name;
-                string username = t[0].UserName;
-                string password = t[0].Password;
-                string url = t[0].URL;
-                string note = t[0].Note;
-
-                txtName.Text = name;
-                txtUserName.Text = username;
-                txtPassword.Text = password;
-                if (url == "")
-                {
-                    lblURL.Visible = false;
-                    txtURL.Visible = false;
-                }
-                if (note == "")
-                {
-                    lblNote.Visible = false;
-                    txtNote.Visible = false;
-                }
-                else
-                {
-                    txtURL.Text = url;
-                    txtNote.Text = note;
-                }
+                txtURL.Text = url;
+                txtNote.Text = note;
             }
-            
-            
-
-
         }
 
         private void FrmItemLogin_Load(object sender, EventArgs e)
-        {
-           
+        {    
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -116,14 +105,8 @@ namespace SafeBox.Forms.SelectedItems
         private void btnDeletar_Click(object sender, EventArgs e)
         {
             Database.Item.DeleteItem(Id);
-            new FrmListLogin().Refresh();
-
+            FrmMain.CloseFormPanelList();
+            FrmMain.OpenFormPanelList();
         }
     }
 }
-
-/*
- 1- precisamos que o listbox(form) atualize.
- 2- Precisamos atualizar = listBoxLogin.SelectedValue, para que não fique com o ID do item deletado.
-
-*/

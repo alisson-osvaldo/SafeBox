@@ -42,10 +42,10 @@
             this.iconWindowsExit = new FontAwesome.Sharp.IconPictureBox();
             this.iconWindowsMaximized = new FontAwesome.Sharp.IconPictureBox();
             this.iconWindowsMinimize = new FontAwesome.Sharp.IconPictureBox();
-            this.lblTitleChildForm = new System.Windows.Forms.Label();
+            lblTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
-            this.panelList = new System.Windows.Forms.Panel();
+            panelList = new System.Windows.Forms.Panel();
             this.panelButtonAdd = new System.Windows.Forms.Panel();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
             panelDesktop = new System.Windows.Forms.Panel();
@@ -58,7 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconWindowsMaximized)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconWindowsMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
-            this.panelList.SuspendLayout();
+            panelList.SuspendLayout();
             this.panelButtonAdd.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -184,7 +184,7 @@
             this.panelTitleBar.Controls.Add(this.iconWindowsExit);
             this.panelTitleBar.Controls.Add(this.iconWindowsMaximized);
             this.panelTitleBar.Controls.Add(this.iconWindowsMinimize);
-            this.panelTitleBar.Controls.Add(this.lblTitleChildForm);
+            this.panelTitleBar.Controls.Add(lblTitleChildForm);
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(212, 24);
@@ -254,14 +254,14 @@
             // 
             // lblTitleChildForm
             // 
-            this.lblTitleChildForm.AutoSize = true;
-            this.lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitleChildForm.Location = new System.Drawing.Point(45, 32);
-            this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(39, 13);
-            this.lblTitleChildForm.TabIndex = 1;
-            this.lblTitleChildForm.Text = "Home";
-            this.lblTitleChildForm.Click += new System.EventHandler(this.lblTitleChildForm_Click);
+            lblTitleChildForm.AutoSize = true;
+            lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
+            lblTitleChildForm.Location = new System.Drawing.Point(45, 32);
+            lblTitleChildForm.Name = "lblTitleChildForm";
+            lblTitleChildForm.Size = new System.Drawing.Size(39, 13);
+            lblTitleChildForm.TabIndex = 1;
+            lblTitleChildForm.Text = "Home";
+            lblTitleChildForm.Click += new System.EventHandler(lblTitleChildForm_Click);
             // 
             // iconCurrentChildForm
             // 
@@ -287,15 +287,15 @@
             // 
             // panelList
             // 
-            this.panelList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.panelList.Controls.Add(this.panelButtonAdd);
-            this.panelList.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelList.Location = new System.Drawing.Point(212, 109);
-            this.panelList.Name = "panelList";
-            this.panelList.Size = new System.Drawing.Size(263, 475);
-            this.panelList.TabIndex = 5;
-            this.panelList.SizeChanged += new System.EventHandler(this.panelList_SizeChanged);
-            this.panelList.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
+            panelList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
+            panelList.Controls.Add(this.panelButtonAdd);
+            panelList.Dock = System.Windows.Forms.DockStyle.Left;
+            panelList.Location = new System.Drawing.Point(212, 109);
+            panelList.Name = "panelList";
+            panelList.Size = new System.Drawing.Size(263, 475);
+            panelList.TabIndex = 5;
+            panelList.SizeChanged += new System.EventHandler(this.panelList_SizeChanged);
+            panelList.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
             // panelButtonAdd
             // 
@@ -346,7 +346,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(965, 584);
             this.Controls.Add(panelDesktop);
-            this.Controls.Add(this.panelList);
+            this.Controls.Add(panelList);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -368,7 +368,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconWindowsMaximized)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconWindowsMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
-            this.panelList.ResumeLayout(false);
+            panelList.ResumeLayout(false);
             this.panelButtonAdd.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -385,9 +385,9 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelTitleBar;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
-        private System.Windows.Forms.Label lblTitleChildForm;
+        public static System.Windows.Forms.Label lblTitleChildForm;
         private System.Windows.Forms.Panel panelShadow;
-        private System.Windows.Forms.Panel panelList;
+        public static System.Windows.Forms.Panel panelList;
         private FontAwesome.Sharp.IconPictureBox iconWindowsMinimize;
         private FontAwesome.Sharp.IconPictureBox iconWindowsMaximized;
         private FontAwesome.Sharp.IconPictureBox iconWindowsExit;

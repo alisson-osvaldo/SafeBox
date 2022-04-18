@@ -55,6 +55,9 @@ namespace SafeBox.Forms.AddItems
                 item.Gravar();
                 Close();
             }
+
+            FrmMain.CloseFormPanelList();
+            FrmMain.OpenFormPanelList();
         }
 
         
