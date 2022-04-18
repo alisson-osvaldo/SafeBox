@@ -20,7 +20,7 @@ namespace SafeBox.Forms.ListItems
 
         //Global
         public int ID { get; set; } 
-        public object teste { get; set; }
+        public bool Count { get; set; }
 
         public FrmListLogin()
         {
@@ -54,17 +54,26 @@ namespace SafeBox.Forms.ListItems
         {
             OpenChildFormPanelDesktop(new FrmItemLogin(ID));
         }
-            
-        public void listBoxLogin_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var item = (Item)listBoxLogin.SelectedValue;
-            ID = item.Id;           
-
-            OpenFrmItemLogin();
-        }
 
         private void FrmListLogin_Load_1(object sender, EventArgs e)
         {
+            Count = true;
+        }
+
+        public void listBoxLogin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var item = (Item)listBoxLogin.SelectedValue;
+            ID = item.Id;
+
+            if(Count == true)
+            {
+                OpenFrmItemLogin();
+            }
+            else
+            {
+                FrmMain.OpenFormPanelDesktop();
+            }
+                                                           
         }
 
 

@@ -22,7 +22,7 @@ namespace SafeBox
         //Variaveis interação Layout
         private IconButton currentBtn;
         private Panel leftBorderBtn;
-        private Form currentChildForm;
+        private static Form currentChildForm;
         private static Form currentChildFormPanelList;
 
 
@@ -110,7 +110,26 @@ namespace SafeBox
         }
 
         //PanelDesktop
-        private void OpenChildFormPanelDesktop(Form childForm)
+        private static void OpenChildFormPanelDesktop(Form childForm)
+        {
+            if (currentChildForm != null)
+            {
+                //open only form
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.None;
+            panelDesktop.Controls.Add(childForm);
+            panelDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lblTitleChildForm.Text = childForm.Text;
+        }
+
+        //PanelSafeBox
+        private static void OpenChildFormPanelSafebox(Form childForm)
         {
             if (currentChildForm != null)
             {
@@ -178,15 +197,24 @@ namespace SafeBox
             OpenChildFormPanelList(new FrmListLogin());
         }
 
+        public static void OpenFormPanelDesktop()
+        {
+            OpenChildFormPanelSafebox(new FrmSafeBox());
+        }
+
         private void btnHome_Click(object sender, EventArgs e)
         {
             currentChildForm.Close();
+            CloseFormPanelList();
             Reset();
         }
 
         public static void CloseFormPanelList()
         {
-            currentChildFormPanelList.Close();
+            if (currentChildFormPanelList != null)
+            {
+                currentChildFormPanelList.Close();
+            }   
         }
 
         private void Reset()
