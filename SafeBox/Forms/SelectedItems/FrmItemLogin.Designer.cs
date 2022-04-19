@@ -29,20 +29,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnDeletar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtNote = new System.Windows.Forms.TextBox();
-            this.lblNote = new System.Windows.Forms.Label();
-            this.txtURL = new System.Windows.Forms.TextBox();
-            this.lblURL = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            txtNote = new System.Windows.Forms.TextBox();
+            lblNote = new System.Windows.Forms.Label();
+            txtURL = new System.Windows.Forms.TextBox();
+            lblURL = new System.Windows.Forms.Label();
+            txtPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtUserName = new System.Windows.Forms.TextBox();
+            txtUserName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
+            txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -52,10 +48,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.btnDeletar);
-            this.panel1.Controls.Add(this.btnCancelar);
-            this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -64,57 +56,18 @@
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 0;
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(254, 404);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(45, 23);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "Salvar";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnDeletar
-            // 
-            this.btnDeletar.Location = new System.Drawing.Point(349, 404);
-            this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Size = new System.Drawing.Size(48, 23);
-            this.btnDeletar.TabIndex = 4;
-            this.btnDeletar.Text = "Deletar";
-            this.btnDeletar.UseVisualStyleBackColor = true;
-            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(111, 404);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 3;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(21, 404);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 2;
-            this.btnEdit.Text = "Editar";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.panel2.Controls.Add(this.txtNote);
-            this.panel2.Controls.Add(this.lblNote);
-            this.panel2.Controls.Add(this.txtURL);
-            this.panel2.Controls.Add(this.lblURL);
-            this.panel2.Controls.Add(this.txtPassword);
+            this.panel2.Controls.Add(txtNote);
+            this.panel2.Controls.Add(lblNote);
+            this.panel2.Controls.Add(txtURL);
+            this.panel2.Controls.Add(lblURL);
+            this.panel2.Controls.Add(txtPassword);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtUserName);
+            this.panel2.Controls.Add(txtUserName);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txtName);
+            this.panel2.Controls.Add(txtName);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(3, 33);
             this.panel2.Name = "panel2";
@@ -123,47 +76,50 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(4, 268);
-            this.txtNote.Multiline = true;
-            this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(390, 77);
-            this.txtNote.TabIndex = 9;
+            txtNote.Location = new System.Drawing.Point(4, 268);
+            txtNote.Multiline = true;
+            txtNote.Name = "txtNote";
+            txtNote.ReadOnly = true;
+            txtNote.Size = new System.Drawing.Size(390, 77);
+            txtNote.TabIndex = 9;
             // 
             // lblNote
             // 
-            this.lblNote.AutoSize = true;
-            this.lblNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNote.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblNote.Location = new System.Drawing.Point(4, 249);
-            this.lblNote.Name = "lblNote";
-            this.lblNote.Size = new System.Drawing.Size(36, 16);
-            this.lblNote.TabIndex = 8;
-            this.lblNote.Text = "Note";
+            lblNote.AutoSize = true;
+            lblNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblNote.ForeColor = System.Drawing.Color.Gainsboro;
+            lblNote.Location = new System.Drawing.Point(4, 249);
+            lblNote.Name = "lblNote";
+            lblNote.Size = new System.Drawing.Size(36, 16);
+            lblNote.TabIndex = 8;
+            lblNote.Text = "Note";
             // 
             // txtURL
             // 
-            this.txtURL.Location = new System.Drawing.Point(4, 205);
-            this.txtURL.Name = "txtURL";
-            this.txtURL.Size = new System.Drawing.Size(390, 20);
-            this.txtURL.TabIndex = 7;
+            txtURL.Location = new System.Drawing.Point(4, 205);
+            txtURL.Name = "txtURL";
+            txtURL.ReadOnly = true;
+            txtURL.Size = new System.Drawing.Size(390, 20);
+            txtURL.TabIndex = 7;
             // 
             // lblURL
             // 
-            this.lblURL.AutoSize = true;
-            this.lblURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblURL.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblURL.Location = new System.Drawing.Point(4, 186);
-            this.lblURL.Name = "lblURL";
-            this.lblURL.Size = new System.Drawing.Size(34, 16);
-            this.lblURL.TabIndex = 6;
-            this.lblURL.Text = "URL";
+            lblURL.AutoSize = true;
+            lblURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblURL.ForeColor = System.Drawing.Color.Gainsboro;
+            lblURL.Location = new System.Drawing.Point(4, 186);
+            lblURL.Name = "lblURL";
+            lblURL.Size = new System.Drawing.Size(34, 16);
+            lblURL.TabIndex = 6;
+            lblURL.Text = "URL";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(4, 150);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(390, 20);
-            this.txtPassword.TabIndex = 5;
+            txtPassword.Location = new System.Drawing.Point(4, 150);
+            txtPassword.Name = "txtPassword";
+            txtPassword.ReadOnly = true;
+            txtPassword.Size = new System.Drawing.Size(390, 20);
+            txtPassword.TabIndex = 5;
             // 
             // label4
             // 
@@ -178,10 +134,11 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(7, 93);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(390, 20);
-            this.txtUserName.TabIndex = 3;
+            txtUserName.Location = new System.Drawing.Point(7, 93);
+            txtUserName.Name = "txtUserName";
+            txtUserName.ReadOnly = true;
+            txtUserName.Size = new System.Drawing.Size(390, 20);
+            txtUserName.TabIndex = 3;
             // 
             // label3
             // 
@@ -196,10 +153,11 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(7, 38);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(390, 20);
-            this.txtName.TabIndex = 1;
+            txtName.Location = new System.Drawing.Point(7, 38);
+            txtName.Name = "txtName";
+            txtName.ReadOnly = true;
+            txtName.Size = new System.Drawing.Size(390, 20);
+            txtName.TabIndex = 1;
             // 
             // label2
             // 
@@ -244,20 +202,16 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNote;
-        private System.Windows.Forms.Label lblNote;
-        private System.Windows.Forms.TextBox txtURL;
-        private System.Windows.Forms.Label lblURL;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnDeletar;
-        private System.Windows.Forms.Button btnSave;
+        private static System.Windows.Forms.TextBox txtPassword;
+        private static System.Windows.Forms.TextBox txtUserName;
+        private static System.Windows.Forms.TextBox txtName;
+        private static System.Windows.Forms.TextBox txtNote;
+        private static System.Windows.Forms.Label lblNote;
+        private static System.Windows.Forms.TextBox txtURL;
+        private static System.Windows.Forms.Label lblURL;
     }
 }

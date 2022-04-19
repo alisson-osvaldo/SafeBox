@@ -14,14 +14,15 @@ namespace SafeBox.Forms.SelectedItems
 {
     public partial class FrmItemLogin : Form
     {
-        public int Id { get; set; }
+        public static int Id { get; set; }
         public string windows = "SelectItemLogin";
+        public static string type = "Login";
 
         public FrmItemLogin(object idItem)
         {
             FrmMain.LogicPanelButtons(windows);
             InitializeComponent();
-            
+
             //GetItem SqlServer
             Id = int.Parse(idItem.ToString());
             var t = Item.SearchItemById(Id); 
@@ -57,22 +58,34 @@ namespace SafeBox.Forms.SelectedItems
         {  
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        public static void BtnEdit()
         {
             lblURL.Visible = true;
             txtURL.Visible = true;
             lblNote.Visible = true;
             txtNote.Visible = true;
+
+            txtName.ReadOnly = false;
+            txtUserName.ReadOnly = false;
+            txtPassword.ReadOnly = false;
+            txtURL.ReadOnly = false;
+            txtNote.ReadOnly = false;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        public static void BtnCancel()
+        {
+            FrmMain.CloseFormPanelList();
+            FrmMain.OpenFormPanelList(type);
+        }
+
+
+        public static void BtnSave()
         {
             string Name = txtName.Text;
             string UserName = txtUserName.Text;
             string Password = txtPassword.Text;
             string URL = txtURL.Text;
             string Note = txtNote.Text;
-
 
             if (String.IsNullOrEmpty(Name))
             {
@@ -99,17 +112,19 @@ namespace SafeBox.Forms.SelectedItems
 
             if (!String.IsNullOrEmpty(Name) && !String.IsNullOrEmpty(UserName) && !String.IsNullOrEmpty(Password))
             {
-                Database.Item.UpdateItem(Id, Name, UserName, Password, URL, Note);             
+                Database.Item.UpdateItem(Id, Name, UserName, Password, URL, Note);
             }
-  
-        }
 
-        private void btnDeletar_Click(object sender, EventArgs e)
+            FrmMain.CloseFormPanelList();
+            FrmMain.OpenFormPanelList(type);           
+        }       
+
+        public static void BtnDelete()
         {
-            string type = "Login";
             Database.Item.DeleteItem(Id);
             FrmMain.CloseFormPanelList();
             FrmMain.OpenFormPanelList(type);
         }
+
     }
 }

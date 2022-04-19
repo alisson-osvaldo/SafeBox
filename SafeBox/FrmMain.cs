@@ -13,6 +13,7 @@ using FontAwesome.Sharp;
 using SafeBox.Forms;
 using SafeBox.Forms.AddItems;
 using SafeBox.Forms.ListItems;
+using SafeBox.Forms.SelectedItems;
 
 namespace SafeBox
 {
@@ -329,7 +330,7 @@ namespace SafeBox
 
         private void btnSaveItem_Click(object sender, EventArgs e)
         {
-
+            FrmItemLogin.BtnSave();
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
@@ -353,7 +354,7 @@ namespace SafeBox
                 btnEdit.Visible = false;
                 btnDelete.Visible = false;
             }
-            if (type.Equals("BtnEdit")) //quando eu clicar no brnEdit deixar ele false
+            if (type.Equals("BtnEdit"))
             {
                 btnSave.Visible = true;
                 btnCancel.Visible = true;
@@ -374,6 +375,21 @@ namespace SafeBox
         {
             string windows = "BtnEdit";
             LogicPanelButtons(windows);
+
+            FrmItemLogin.BtnDelete();
+        }
+
+        public static void btnEdit_Click(object sender, EventArgs e)
+        {
+            string windows = "BtnEdit";
+            LogicPanelButtons(windows);
+
+            FrmItemLogin.BtnEdit();           
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            FrmItemLogin.BtnCancel();
         }
     }
 }

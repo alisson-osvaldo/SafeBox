@@ -76,7 +76,8 @@ namespace SafeBox.Forms.ListItems
             else
             {
                 FrmMain.OpenFormPanelDesktop();
-            }                                                          
+            }   
+            //Futuramente adicionar abrir aqui a FrmItemLogin, após o BtnSave
         }
 
 

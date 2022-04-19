@@ -50,7 +50,7 @@
             this.btnAdd = new FontAwesome.Sharp.IconButton();
             panelDesktop = new System.Windows.Forms.Panel();
             this.panelButtons = new System.Windows.Forms.Panel();
-           btnDelete = new FontAwesome.Sharp.IconButton();
+            btnDelete = new FontAwesome.Sharp.IconButton();
             btnCancel = new System.Windows.Forms.Button();
             btnEdit = new FontAwesome.Sharp.IconButton();
             btnSave = new FontAwesome.Sharp.IconButton();
@@ -361,25 +361,25 @@
             // 
             // btnDelete
             // 
-           btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-           btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-           btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-           btnDelete.Cursor = System.Windows.Forms.Cursors.IBeam;
-           btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-           btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-           btnDelete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-           btnDelete.IconColor = System.Drawing.Color.Red;
-           btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
-           btnDelete.IconSize = 30;
-           btnDelete.Location = new System.Drawing.Point(424, 9);
-           btnDelete.Name = "btnDelete";
-           btnDelete.Size = new System.Drawing.Size(54, 42);
-           btnDelete.TabIndex = 6;
-           btnDelete.UseVisualStyleBackColor = false;
-           btnDelete.Visible = false;
-           btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            btnDelete.Cursor = System.Windows.Forms.Cursors.IBeam;
+            btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnDelete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            btnDelete.IconColor = System.Drawing.Color.Red;
+            btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDelete.IconSize = 30;
+            btnDelete.Location = new System.Drawing.Point(424, 9);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new System.Drawing.Size(54, 42);
+            btnDelete.TabIndex = 6;
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Visible = false;
+            btnDelete.Click += new System.EventHandler(btnDelete_Click);
             // 
             // btnCancel
             // 
@@ -395,6 +395,7 @@
             btnCancel.Text = "Cancelar";
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Visible = false;
+            btnCancel.Click += new System.EventHandler(btnCancel_Click_1);
             // 
             // btnEdit
             // 
@@ -409,12 +410,13 @@
             btnEdit.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(194)))), ((int)(((byte)(122)))));
             btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEdit.IconSize = 30;
-            btnEdit.Location = new System.Drawing.Point(19, 7);
+            btnEdit.Location = new System.Drawing.Point(191, 7);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new System.Drawing.Size(54, 42);
             btnEdit.TabIndex = 4;
             btnEdit.UseVisualStyleBackColor = false;
             btnEdit.Visible = false;
+            btnEdit.Click += new System.EventHandler(btnEdit_Click);
             // 
             // btnSave
             // 
