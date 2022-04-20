@@ -29,14 +29,10 @@
         private void InitializeComponent()
         {
             this.panelItemNote = new System.Windows.Forms.Panel();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnDeletar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtNote = new System.Windows.Forms.TextBox();
+            txtNote = new System.Windows.Forms.TextBox();
             this.lblNote = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
+            txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelItemNote.SuspendLayout();
@@ -46,10 +42,6 @@
             // panelItemNote
             // 
             this.panelItemNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.panelItemNote.Controls.Add(this.btnSave);
-            this.panelItemNote.Controls.Add(this.btnDeletar);
-            this.panelItemNote.Controls.Add(this.btnCancelar);
-            this.panelItemNote.Controls.Add(this.btnEdit);
             this.panelItemNote.Controls.Add(this.panel2);
             this.panelItemNote.Controls.Add(this.label1);
             this.panelItemNote.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -58,51 +50,12 @@
             this.panelItemNote.Size = new System.Drawing.Size(800, 450);
             this.panelItemNote.TabIndex = 0;
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(245, 363);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(45, 23);
-            this.btnSave.TabIndex = 9;
-            this.btnSave.Text = "Salvar";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnDeletar
-            // 
-            this.btnDeletar.Location = new System.Drawing.Point(340, 363);
-            this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Size = new System.Drawing.Size(48, 23);
-            this.btnDeletar.TabIndex = 8;
-            this.btnDeletar.Text = "Deletar";
-            this.btnDeletar.UseVisualStyleBackColor = true;
-            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(102, 363);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(12, 363);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 6;
-            this.btnEdit.Text = "Editar";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.panel2.Controls.Add(this.txtNote);
+            this.panel2.Controls.Add(txtNote);
             this.panel2.Controls.Add(this.lblNote);
-            this.panel2.Controls.Add(this.txtName);
+            this.panel2.Controls.Add(txtName);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(3, 37);
             this.panel2.Name = "panel2";
@@ -111,11 +64,12 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(4, 90);
-            this.txtNote.Multiline = true;
-            this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(390, 185);
-            this.txtNote.TabIndex = 9;
+            txtNote.Location = new System.Drawing.Point(4, 90);
+            txtNote.Multiline = true;
+            txtNote.Name = "txtNote";
+            txtNote.ReadOnly = true;
+            txtNote.Size = new System.Drawing.Size(390, 185);
+            txtNote.TabIndex = 9;
             // 
             // lblNote
             // 
@@ -130,10 +84,11 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(7, 38);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(390, 20);
-            this.txtName.TabIndex = 1;
+            txtName.Location = new System.Drawing.Point(7, 38);
+            txtName.Name = "txtName";
+            txtName.ReadOnly = true;
+            txtName.Size = new System.Drawing.Size(390, 20);
+            txtName.TabIndex = 1;
             // 
             // label2
             // 
@@ -179,13 +134,9 @@
         private System.Windows.Forms.Panel panelItemNote;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtNote;
+        private static System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.Label lblNote;
-        private System.Windows.Forms.TextBox txtName;
+        private static System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnDeletar;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnEdit;
     }
 }

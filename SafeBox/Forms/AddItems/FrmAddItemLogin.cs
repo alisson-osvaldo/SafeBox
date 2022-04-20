@@ -13,11 +13,13 @@ namespace SafeBox.Forms.AddItems
 {
     public partial class FrmAddItemLogin : Form
     {
-        public string type = "Login";
-        public string windows = "AddItemLogin";
+        public static string type = "Login";
+        public static string windows = "AddItemLogin";
+
         public FrmAddItemLogin()
         {
             FrmMain.LogicPanelButtons(windows);
+            FrmMain.ReturnType(windows);
             InitializeComponent();     
         }
 
@@ -26,20 +28,15 @@ namespace SafeBox.Forms.AddItems
             
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSaveItem_Click(object sender, EventArgs e)
+        public static void BtnSaveAddItemLogin()
         {
             var item = new Item();
-            item.IdUser = Form1.User_ID; 
+            item.IdUser = Form1.User_ID;
             item.Name = txbItemNome.Text;
             item.UserName = txbItemUserName.Text;
             item.Password = txbItemPassword.Text;
             item.URL = txbItemURL.Text;
-            item.Note = txbItemNote.Text;
+            item.Note = txtItemNote.Text;
             item.Type = type;
             if (txbItemNome.Text.Length == 0 || txbItemUserName.Text.Length == 0 || txbItemPassword.Text.Length == 0)
             {
@@ -48,11 +45,11 @@ namespace SafeBox.Forms.AddItems
             else
             {
                 item.Gravar();
-                Close();
 
                 FrmMain.CloseFormPanelList();
                 FrmMain.OpenFormPanelList(type);
-            }    
+            }
+            
         }
 
         

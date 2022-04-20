@@ -29,79 +29,44 @@
         private void InitializeComponent()
         {
             this.panelAddNote = new System.Windows.Forms.Panel();
-            this.flowLayoutPanelAddItemNote = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txbNote = new System.Windows.Forms.TextBox();
+            txbNote = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbName = new System.Windows.Forms.TextBox();
+            txbName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSaveItem = new FontAwesome.Sharp.IconButton();
             this.panelAddNote.SuspendLayout();
-            this.flowLayoutPanelAddItemNote.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAddNote
             // 
             this.panelAddNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.panelAddNote.Controls.Add(this.flowLayoutPanelAddItemNote);
+            this.panelAddNote.Controls.Add(this.panel2);
             this.panelAddNote.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAddNote.Location = new System.Drawing.Point(0, 0);
             this.panelAddNote.Name = "panelAddNote";
             this.panelAddNote.Size = new System.Drawing.Size(800, 450);
             this.panelAddNote.TabIndex = 0;
             // 
-            // flowLayoutPanelAddItemNote
-            // 
-            this.flowLayoutPanelAddItemNote.AutoScroll = true;
-            this.flowLayoutPanelAddItemNote.Controls.Add(this.panel1);
-            this.flowLayoutPanelAddItemNote.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanelAddItemNote.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelAddItemNote.Name = "flowLayoutPanelAddItemNote";
-            this.flowLayoutPanelAddItemNote.Size = new System.Drawing.Size(400, 450);
-            this.flowLayoutPanelAddItemNote.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnSaveItem);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(382, 531);
-            this.panel1.TabIndex = 0;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(134, 382);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(101, 23);
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.panel2.Controls.Add(this.txbNote);
+            this.panel2.Controls.Add(txbNote);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.txbName);
+            this.panel2.Controls.Add(txbName);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(9, 9);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(358, 337);
             this.panel2.TabIndex = 0;
             // 
             // txbNote
             // 
-            this.txbNote.Location = new System.Drawing.Point(6, 92);
-            this.txbNote.Multiline = true;
-            this.txbNote.Name = "txbNote";
-            this.txbNote.Size = new System.Drawing.Size(339, 229);
-            this.txbNote.TabIndex = 4;
+            txbNote.Location = new System.Drawing.Point(6, 92);
+            txbNote.Multiline = true;
+            txbNote.Name = "txbNote";
+            txbNote.Size = new System.Drawing.Size(339, 229);
+            txbNote.TabIndex = 4;
             // 
             // label1
             // 
@@ -116,10 +81,10 @@
             // 
             // txbName
             // 
-            this.txbName.Location = new System.Drawing.Point(6, 36);
-            this.txbName.Name = "txbName";
-            this.txbName.Size = new System.Drawing.Size(339, 20);
-            this.txbName.TabIndex = 2;
+            txbName.Location = new System.Drawing.Point(6, 36);
+            txbName.Name = "txbName";
+            txbName.Size = new System.Drawing.Size(339, 20);
+            txbName.TabIndex = 2;
             // 
             // label2
             // 
@@ -132,27 +97,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Name";
             // 
-            // btnSaveItem
-            // 
-            this.btnSaveItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnSaveItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSaveItem.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnSaveItem.FlatAppearance.BorderSize = 0;
-            this.btnSaveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveItem.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnSaveItem.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(194)))), ((int)(((byte)(122)))));
-            this.btnSaveItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSaveItem.IconSize = 30;
-            this.btnSaveItem.Location = new System.Drawing.Point(41, 371);
-            this.btnSaveItem.Name = "btnSaveItem";
-            this.btnSaveItem.Size = new System.Drawing.Size(57, 45);
-            this.btnSaveItem.TabIndex = 2;
-            this.btnSaveItem.UseVisualStyleBackColor = false;
-            this.btnSaveItem.Click += new System.EventHandler(this.btnSaveItem_Click);
-            // 
             // FrmAddItemNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,8 +107,6 @@
             this.Text = "FrmItemNote";
             this.Load += new System.EventHandler(this.FrmAddItemNote_Load);
             this.panelAddNote.ResumeLayout(false);
-            this.flowLayoutPanelAddItemNote.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -174,14 +116,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panelAddNote;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelAddItemNote;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txbNote;
+        private static System.Windows.Forms.TextBox txbNote;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txbName;
-        private FontAwesome.Sharp.IconButton btnSaveItem;
-        private System.Windows.Forms.Button btnCancel;
+        private static System.Windows.Forms.TextBox txbName;
     }
 }

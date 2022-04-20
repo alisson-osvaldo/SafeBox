@@ -29,26 +29,22 @@
         private void InitializeComponent()
         {
             this.panelAddLogin = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSaveItem = new FontAwesome.Sharp.IconButton();
             this.flowLayoutPanelAddItemLogin = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txbItemNote = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txbItemURL = new System.Windows.Forms.TextBox();
+            txbItemURL = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panelAddTypeLogin = new System.Windows.Forms.Panel();
-            this.txbItemPassword = new System.Windows.Forms.TextBox();
+            txbItemPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txbItemUserName = new System.Windows.Forms.TextBox();
+            txbItemUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbItemNome = new System.Windows.Forms.TextBox();
+            txbItemNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            txtItemNote = new System.Windows.Forms.TextBox();
             this.panelAddLogin.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.flowLayoutPanelAddItemLogin.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -67,47 +63,6 @@
             this.panelAddLogin.Size = new System.Drawing.Size(800, 573);
             this.panelAddLogin.TabIndex = 1;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.DimGray;
-            this.panel4.Controls.Add(this.btnCancel);
-            this.panel4.Controls.Add(this.btnSaveItem);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 570);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(391, 50);
-            this.panel4.TabIndex = 1;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(126, 15);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(101, 23);
-            this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnSaveItem
-            // 
-            this.btnSaveItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnSaveItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSaveItem.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnSaveItem.FlatAppearance.BorderSize = 0;
-            this.btnSaveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveItem.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnSaveItem.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(194)))), ((int)(((byte)(122)))));
-            this.btnSaveItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSaveItem.IconSize = 30;
-            this.btnSaveItem.Location = new System.Drawing.Point(63, 10);
-            this.btnSaveItem.Name = "btnSaveItem";
-            this.btnSaveItem.Size = new System.Drawing.Size(57, 32);
-            this.btnSaveItem.TabIndex = 1;
-            this.btnSaveItem.UseVisualStyleBackColor = false;
-            this.btnSaveItem.Click += new System.EventHandler(this.btnSaveItem_Click);
-            // 
             // flowLayoutPanelAddItemLogin
             // 
             this.flowLayoutPanelAddItemLogin.AutoScroll = true;
@@ -122,32 +77,23 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panelAddTypeLogin);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(391, 620);
+            this.panel1.Size = new System.Drawing.Size(391, 562);
             this.panel1.TabIndex = 2;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.panel3.Controls.Add(this.txbItemNote);
+            this.panel3.Controls.Add(txtItemNote);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Location = new System.Drawing.Point(6, 333);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(377, 220);
             this.panel3.TabIndex = 4;
-            // 
-            // txbItemNote
-            // 
-            this.txbItemNote.Location = new System.Drawing.Point(3, 32);
-            this.txbItemNote.Multiline = true;
-            this.txbItemNote.Name = "txbItemNote";
-            this.txbItemNote.Size = new System.Drawing.Size(368, 174);
-            this.txbItemNote.TabIndex = 3;
             // 
             // label5
             // 
@@ -163,7 +109,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.panel2.Controls.Add(this.txbItemURL);
+            this.panel2.Controls.Add(txbItemURL);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(6, 225);
             this.panel2.Name = "panel2";
@@ -172,10 +118,10 @@
             // 
             // txbItemURL
             // 
-            this.txbItemURL.Location = new System.Drawing.Point(3, 33);
-            this.txbItemURL.Name = "txbItemURL";
-            this.txbItemURL.Size = new System.Drawing.Size(368, 20);
-            this.txbItemURL.TabIndex = 2;
+            txbItemURL.Location = new System.Drawing.Point(3, 33);
+            txbItemURL.Name = "txbItemURL";
+            txbItemURL.Size = new System.Drawing.Size(368, 20);
+            txbItemURL.TabIndex = 2;
             // 
             // label4
             // 
@@ -191,11 +137,11 @@
             // panelAddTypeLogin
             // 
             this.panelAddTypeLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.panelAddTypeLogin.Controls.Add(this.txbItemPassword);
+            this.panelAddTypeLogin.Controls.Add(txbItemPassword);
             this.panelAddTypeLogin.Controls.Add(this.label3);
-            this.panelAddTypeLogin.Controls.Add(this.txbItemUserName);
+            this.panelAddTypeLogin.Controls.Add(txbItemUserName);
             this.panelAddTypeLogin.Controls.Add(this.label1);
-            this.panelAddTypeLogin.Controls.Add(this.txbItemNome);
+            this.panelAddTypeLogin.Controls.Add(txbItemNome);
             this.panelAddTypeLogin.Controls.Add(this.label2);
             this.panelAddTypeLogin.Location = new System.Drawing.Point(6, 9);
             this.panelAddTypeLogin.Name = "panelAddTypeLogin";
@@ -204,10 +150,10 @@
             // 
             // txbItemPassword
             // 
-            this.txbItemPassword.Location = new System.Drawing.Point(6, 140);
-            this.txbItemPassword.Name = "txbItemPassword";
-            this.txbItemPassword.Size = new System.Drawing.Size(368, 20);
-            this.txbItemPassword.TabIndex = 5;
+            txbItemPassword.Location = new System.Drawing.Point(6, 140);
+            txbItemPassword.Name = "txbItemPassword";
+            txbItemPassword.Size = new System.Drawing.Size(368, 20);
+            txbItemPassword.TabIndex = 5;
             // 
             // label3
             // 
@@ -222,10 +168,10 @@
             // 
             // txbItemUserName
             // 
-            this.txbItemUserName.Location = new System.Drawing.Point(6, 89);
-            this.txbItemUserName.Name = "txbItemUserName";
-            this.txbItemUserName.Size = new System.Drawing.Size(368, 20);
-            this.txbItemUserName.TabIndex = 3;
+            txbItemUserName.Location = new System.Drawing.Point(6, 89);
+            txbItemUserName.Name = "txbItemUserName";
+            txbItemUserName.Size = new System.Drawing.Size(368, 20);
+            txbItemUserName.TabIndex = 3;
             // 
             // label1
             // 
@@ -240,10 +186,10 @@
             // 
             // txbItemNome
             // 
-            this.txbItemNome.Location = new System.Drawing.Point(6, 34);
-            this.txbItemNome.Name = "txbItemNome";
-            this.txbItemNome.Size = new System.Drawing.Size(368, 20);
-            this.txbItemNome.TabIndex = 1;
+            txbItemNome.Location = new System.Drawing.Point(6, 34);
+            txbItemNome.Name = "txbItemNome";
+            txbItemNome.Size = new System.Drawing.Size(368, 20);
+            txbItemNome.TabIndex = 1;
             // 
             // label2
             // 
@@ -255,7 +201,14 @@
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Name";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // txtItemNote
+            // 
+            txtItemNote.Location = new System.Drawing.Point(3, 32);
+            txtItemNote.Multiline = true;
+            txtItemNote.Name = "txtItemNote";
+            txtItemNote.Size = new System.Drawing.Size(368, 176);
+            txtItemNote.TabIndex = 3;
             // 
             // FrmAddItemLogin
             // 
@@ -267,7 +220,6 @@
             this.Text = "FrmAddItemLogin";
             this.Load += new System.EventHandler(this.FrmAddItemLogin_Load);
             this.panelAddLogin.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.flowLayoutPanelAddItemLogin.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -287,20 +239,17 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelAddItemLogin;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelAddTypeLogin;
-        private System.Windows.Forms.TextBox txbItemNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txbItemNote;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txbItemURL;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txbItemPassword;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txbItemUserName;
-        private FontAwesome.Sharp.IconButton btnSaveItem;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Panel panel4;
+        private static System.Windows.Forms.TextBox txbItemNome;
+        private static System.Windows.Forms.TextBox txbItemURL;
+        private static System.Windows.Forms.TextBox txbItemPassword;
+        private static System.Windows.Forms.TextBox txbItemUserName;
+        private static System.Windows.Forms.TextBox txtItemNote;
     }
 }

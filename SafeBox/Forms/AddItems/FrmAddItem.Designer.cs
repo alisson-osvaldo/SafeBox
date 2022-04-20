@@ -103,6 +103,7 @@
             this.comboBoxItems.Name = "comboBoxItems";
             this.comboBoxItems.Size = new System.Drawing.Size(264, 21);
             this.comboBoxItems.TabIndex = 1;
+            this.comboBoxItems.Text = "Login";
             this.comboBoxItems.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // FrmAddItem

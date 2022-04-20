@@ -13,12 +13,14 @@ namespace SafeBox.Forms.SelectedItems
 {
     public partial class FrmItemNote : Form
     {
-        public int Id { get; set; }
+        public static int Id { get; set; }
         public string windows = "SelectItemNote";
+        public static string type = "Note";
 
         public FrmItemNote(object idItem)
         {
             FrmMain.LogicPanelButtons(windows);
+            FrmMain.ReturnType(type);
             InitializeComponent();
 
             //GetItem SqlServer
@@ -33,12 +35,19 @@ namespace SafeBox.Forms.SelectedItems
             txtNote.Text = note;
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        public static void BtnEdit()
         {
-          
+            txtName.ReadOnly = false;
+            txtNote.ReadOnly = false;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        public static void BtnCancel()
+        {
+            FrmMain.CloseFormPanelList();
+            FrmMain.OpenFormPanelList(type);
+        }
+
+        public static void BtnSave()
         {
             string Name = txtName.Text;
             string Note = txtNote.Text;
@@ -59,11 +68,13 @@ namespace SafeBox.Forms.SelectedItems
             {
                 Database.Item.UpdateItem(Id, Name, UserName, Password, URL, Note);
             }
+
+            FrmMain.CloseFormPanelList();
+            FrmMain.OpenFormPanelList(type);
         }
 
-        private void btnDeletar_Click(object sender, EventArgs e)
+        public static void BtnDelete()
         {
-            string type = "Note";
             Database.Item.DeleteItem(Id);
             FrmMain.CloseFormPanelList();
             FrmMain.OpenFormPanelList(type);

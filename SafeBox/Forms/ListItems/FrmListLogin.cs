@@ -76,20 +76,15 @@ namespace SafeBox.Forms.ListItems
             else
             {
                 FrmMain.OpenFormPanelDesktop();
-            }   
-            //Futuramente adicionar abrir aqui a FrmItemLogin, após o BtnSave
+            }
+            //Melhorar essa validação de telas aqui
+            /*
+             Criar uma Método com validação que:
+                -Se eu estiver selecionando um item da lista, abra FrmItemLogin()
+                -Se eu adicionar um item novo na AddItemLogin, Abrir a OpenFrmItemLogin() com o Id do item salvo 
+             */ 
         }
 
 
     }
 }
-
-
-
-
-/*
- //Passar id atualizado apos o delete
- //dar reflesh no listbox; 
-
-
-*/

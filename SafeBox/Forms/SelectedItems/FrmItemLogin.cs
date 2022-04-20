@@ -21,6 +21,7 @@ namespace SafeBox.Forms.SelectedItems
         public FrmItemLogin(object idItem)
         {
             FrmMain.LogicPanelButtons(windows);
+            FrmMain.ReturnType(type);
             InitializeComponent();
 
             //GetItem SqlServer

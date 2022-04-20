@@ -13,35 +13,35 @@ namespace SafeBox.Forms.AddItems
 {
     public partial class FrmAddItemNote : Form
     {
-        public string type = "Note";
-        public string windows = "AddItemNote";
+        public static string type = "Note";
+        public static string windows = "AddItemNote";
 
         public FrmAddItemNote()
         {
             FrmMain.LogicPanelButtons(windows);
+            FrmMain.ReturnType(windows);
             InitializeComponent();           
         }
 
-        private void btnSaveItem_Click(object sender, EventArgs e)
+        public static void BtnSaveAddItemLogin()
         {
             var item = new Item();
             item.Name = txbName.Text;
             item.Note = txbNote.Text;
             item.Type = type;
-            if (txbName.Text.Length == 0 || txbNote.Text.Length == 0 )
+            if (txbName.Text.Length == 0 || txbNote.Text.Length == 0)
             {
                 MessageBox.Show("Por favor preencha todos os campos (Name, Note)");
             }
             else
             {
                 item.Gravar();
-                Close();
 
                 FrmMain.CloseFormPanelList();
                 FrmMain.OpenFormPanelList(type);
-            }           
+            }         
         }
-
+      
         private void FrmAddItemNote_Load(object sender, EventArgs e)
         {
 

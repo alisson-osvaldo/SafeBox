@@ -19,6 +19,7 @@ namespace SafeBox
 {
     public partial class FrmMain : Form
     {
+        private static string typeForm { get; set; }
 
         //Variaveis interação Layout
         private IconButton currentBtn;
@@ -39,7 +40,6 @@ namespace SafeBox
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea; //Vai deixar uma margen sobrando quando estiver full maximizado
-
         }
 
         //Structs
@@ -52,7 +52,7 @@ namespace SafeBox
             public static Color color6 = Color.FromArgb(24, 161, 251);
         }
 
-        //my methods ---------------------------------------------------
+        //my methods -----------------------------------------------------------------------------------
         private void ActivateButton(Object senderbtn, Color color)
         {
             if (senderbtn != null)
@@ -91,7 +91,6 @@ namespace SafeBox
             }
         }
 
-        //PanelLIst
         private static void OpenChildFormPanelList(Form childForm)
         {
             if (currentChildFormPanelList != null)
@@ -110,7 +109,6 @@ namespace SafeBox
             lblTitleChildForm.Text = childForm.Text;
         }
 
-        //PanelDesktop
         private static void OpenChildFormPanelDesktop(Form childForm)
         {
             if (currentChildForm != null)
@@ -129,7 +127,6 @@ namespace SafeBox
             lblTitleChildForm.Text = childForm.Text;
         }
 
-        //PanelSafeBox
         private static void OpenChildFormPanelSafebox(Form childForm)
         {
             if (currentChildForm != null)
@@ -148,6 +145,83 @@ namespace SafeBox
             lblTitleChildForm.Text = childForm.Text;
         }
 
+        public static void ReturnType(string type)
+        {
+            typeForm = type;
+        }
+
+        public static void OpenFormPanelDesktop()
+        {
+            OpenChildFormPanelSafebox(new FrmSafeBox());
+        }
+
+        public static void OpenFormPanelList(string type)
+        {
+            if (type.Equals("Login"))
+            {
+                OpenChildFormPanelList(new FrmListLogin());
+            }
+            else if (type.Equals("Note"))
+            {
+                OpenChildFormPanelList(new FrmListNote());
+            }
+        }
+
+        public static void CloseFormPanelList()
+        {
+            if (currentChildFormPanelList != null)
+            {
+                currentChildFormPanelList.Close();
+            }
+        }
+
+        //Drag form (arrastar formulário)
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        public extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void Reset()
+        {
+            DisableButton();
+            leftBorderBtn.Visible = false;
+            iconCurrentChildForm.IconChar = IconChar.Home;
+            iconCurrentChildForm.IconColor = Color.MediumPurple;
+            lblTitleChildForm.Text = "Home";
+        }
+
+        public static void LogicPanelButtons(string type)
+        {
+            if (type.Equals("AddItemLogin") || type.Equals("AddItemNote"))
+            {
+                btnSave.Visible = true;
+                btnCancel.Visible = true;
+                btnEdit.Visible = false;
+                btnDelete.Visible = false;
+            }
+            if (type.Equals("ListLogin") || type.Equals("ListNota") || type.Equals("AddItem") || type.Equals("SafeBox"))
+            {
+                btnSave.Visible = false;
+                btnCancel.Visible = false;
+                btnEdit.Visible = false;
+                btnDelete.Visible = false;
+            }
+            if (type.Equals("BtnEdit"))
+            {
+                btnSave.Visible = true;
+                btnCancel.Visible = true;
+                btnEdit.Visible = false;
+                btnDelete.Visible = true;
+            }
+            if (type.Equals("SelectItemLogin") || type.Equals("SelectItemNote"))
+            {
+                btnSave.Visible = false;
+                btnCancel.Visible = false;
+                btnEdit.Visible = true;
+                btnDelete.Visible = true;
+            }
+        }       
 
         //--------------------------------------------------------------
 
@@ -193,24 +267,6 @@ namespace SafeBox
             OpenChildFormPanelList(new FrmListLogin());
         }
 
-        public static void OpenFormPanelList(string type)
-        {
-            if (type.Equals("Login"))
-            {
-                OpenChildFormPanelList(new FrmListLogin());
-            }
-            else if (type.Equals("Note"))
-            {
-                OpenChildFormPanelList(new FrmListNote());
-            }
-            
-        }
-
-        public static void OpenFormPanelDesktop()
-        {
-            OpenChildFormPanelSafebox(new FrmSafeBox());
-        }
-
         private void btnHome_Click(object sender, EventArgs e)
         {
             if (currentChildForm != null)
@@ -222,34 +278,10 @@ namespace SafeBox
             Reset();
         }
 
-        public static void CloseFormPanelList()
-        {
-            if (currentChildFormPanelList != null)
-            {
-                currentChildFormPanelList.Close();
-            }   
-        }
-
-        private void Reset()
-        {
-            DisableButton();
-            leftBorderBtn.Visible = false;
-            iconCurrentChildForm.IconChar = IconChar.Home;
-            iconCurrentChildForm.IconColor = Color.MediumPurple;
-            lblTitleChildForm.Text = "Home";
-        }
-
         private void lblTitleChildForm_Click(object sender, EventArgs e)
         {
 
         }
-
-        //Drag form (arrastar formulário)
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        public extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
@@ -330,53 +362,42 @@ namespace SafeBox
 
         private void btnSaveItem_Click(object sender, EventArgs e)
         {
-            FrmItemLogin.BtnSave();
+            if (typeForm.Equals("Login"))
+            {
+                FrmItemLogin.BtnSave();
+            }
+            if (typeForm.Equals("Note"))
+            {
+                FrmItemNote.BtnSave();
+            }
+            if (typeForm.Equals("AddItemLogin"))
+            {
+                FrmAddItemLogin.BtnSaveAddItemLogin();
+            }
+            if (typeForm.Equals("AddItemNote"))
+            {
+                FrmAddItemNote.BtnSaveAddItemLogin();
+            }
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
             
         }
-
-        public static void LogicPanelButtons(string type)
-        {
-            if (type.Equals("AddItemLogin") || type.Equals("AddItemNote"))
-            {
-                btnSave.Visible = true;
-                btnCancel.Visible = true;
-                btnEdit.Visible = false;
-                btnDelete.Visible = false;
-            }
-            if (type.Equals("ListLogin") || type.Equals("ListNota") || type.Equals("AddItem") || type.Equals("SafeBox"))
-            {
-                btnSave.Visible = false;
-                btnCancel.Visible = false;
-                btnEdit.Visible = false;
-                btnDelete.Visible = false;
-            }
-            if (type.Equals("BtnEdit"))
-            {
-                btnSave.Visible = true;
-                btnCancel.Visible = true;
-                btnEdit.Visible = false;
-                btnDelete.Visible = true;
-            }
-            if (type.Equals("SelectItemLogin") || type.Equals("SelectItemNote"))
-            {
-                btnSave.Visible = false;
-                btnCancel.Visible = false;
-                btnEdit.Visible = true;
-                btnDelete.Visible = true;
-            }
-
-        }
-
+       
         public void btnDelete_Click(object sender, EventArgs e)
         {
             string windows = "BtnEdit";
             LogicPanelButtons(windows);
 
-            FrmItemLogin.BtnDelete();
+            if (typeForm.Equals("Login"))
+            {
+                FrmItemLogin.BtnDelete();
+            }
+            if (typeForm.Equals("Note"))
+            {
+                FrmItemNote.BtnDelete();
+            }           
         }
 
         public static void btnEdit_Click(object sender, EventArgs e)
@@ -384,12 +405,27 @@ namespace SafeBox
             string windows = "BtnEdit";
             LogicPanelButtons(windows);
 
-            FrmItemLogin.BtnEdit();           
+            if (typeForm.Equals("Login"))
+            {
+                FrmItemLogin.BtnEdit();
+            }
+            if (typeForm.Equals("Note"))
+            {
+                FrmItemNote.BtnEdit();
+            }           
         }
 
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
-            FrmItemLogin.BtnCancel();
+            if (typeForm.Equals("Login"))
+            {
+                FrmItemLogin.BtnCancel();
+            }
+            if (typeForm.Equals("Note"))
+            {
+                FrmItemNote.BtnCancel();
+            }           
         }
+
     }
 }

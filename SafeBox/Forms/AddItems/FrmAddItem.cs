@@ -22,11 +22,11 @@ namespace SafeBox.Forms
         {
             FrmMain.LogicPanelButtons(windows);
             InitializeComponent();
+            OpenChildFormPanelAddItem(new FrmAddItemLogin());
         }
 
         //My Methods-------------------------------------------------------------------
 
-        //PanelAddItem
         private void OpenChildFormPanelAddItem(Form childForm)
         {
             if (currentChildForm != null)
@@ -44,15 +44,6 @@ namespace SafeBox.Forms
             childForm.Show();
             
         }
-
-
-
-
-
-
-
-
-
 
         //------------------------------------------------------------------------------
 
