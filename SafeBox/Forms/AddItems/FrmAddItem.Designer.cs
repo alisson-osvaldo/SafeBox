@@ -47,7 +47,7 @@
             this.panelAddItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAddItem.Location = new System.Drawing.Point(0, 0);
             this.panelAddItem.Name = "panelAddItem";
-            this.panelAddItem.Size = new System.Drawing.Size(496, 450);
+            this.panelAddItem.Size = new System.Drawing.Size(422, 450);
             this.panelAddItem.TabIndex = 0;
             this.panelAddItem.SizeChanged += new System.EventHandler(this.panelAddItem_SizeChanged);
             // 
@@ -58,7 +58,7 @@
             this.flowLayoutPanelAddItem.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanelAddItem.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelAddItem.Name = "flowLayoutPanelAddItem";
-            this.flowLayoutPanelAddItem.Size = new System.Drawing.Size(408, 570);
+            this.flowLayoutPanelAddItem.Size = new System.Drawing.Size(421, 570);
             this.flowLayoutPanelAddItem.TabIndex = 0;
             this.flowLayoutPanelAddItem.WrapContents = false;
             // 
@@ -70,15 +70,16 @@
             this.panel1.Controls.Add(this.comboBoxItems);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(348, 982);
+            this.panel1.Size = new System.Drawing.Size(400, 760);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panelAddType
             // 
             this.panelAddType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.panelAddType.Location = new System.Drawing.Point(3, 67);
+            this.panelAddType.Location = new System.Drawing.Point(3, 69);
             this.panelAddType.Name = "panelAddType";
-            this.panelAddType.Size = new System.Drawing.Size(377, 661);
+            this.panelAddType.Size = new System.Drawing.Size(395, 601);
             this.panelAddType.TabIndex = 2;
             this.panelAddType.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAddType_Paint);
             // 
@@ -87,21 +88,26 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(133, 6);
+            this.label1.Location = new System.Drawing.Point(136, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 31);
+            this.label1.Size = new System.Drawing.Size(187, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Add Item";
+            this.label1.Text = "Adicionar Item";
             // 
             // comboBoxItems
             // 
+            this.comboBoxItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.comboBoxItems.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxItems.ForeColor = System.Drawing.Color.Gainsboro;
             this.comboBoxItems.FormattingEnabled = true;
             this.comboBoxItems.Items.AddRange(new object[] {
             "Login",
             "Secure Note"});
-            this.comboBoxItems.Location = new System.Drawing.Point(59, 40);
+            this.comboBoxItems.Location = new System.Drawing.Point(95, 40);
             this.comboBoxItems.Name = "comboBoxItems";
-            this.comboBoxItems.Size = new System.Drawing.Size(264, 21);
+            this.comboBoxItems.Size = new System.Drawing.Size(264, 23);
             this.comboBoxItems.TabIndex = 1;
             this.comboBoxItems.Text = "Login";
             this.comboBoxItems.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -111,7 +117,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(496, 450);
+            this.ClientSize = new System.Drawing.Size(422, 450);
             this.Controls.Add(this.panelAddItem);
             this.Name = "FrmAddItem";
             this.Text = "FrmAddItem";

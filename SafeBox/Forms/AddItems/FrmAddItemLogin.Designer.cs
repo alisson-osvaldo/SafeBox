@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.panelAddLogin = new System.Windows.Forms.Panel();
-            this.flowLayoutPanelAddItemLogin = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            txtItemNote = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             txbItemURL = new System.Windows.Forms.TextBox();
@@ -43,10 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             txbItemNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            txtItemNote = new System.Windows.Forms.TextBox();
             this.panelAddLogin.SuspendLayout();
-            this.flowLayoutPanelAddItemLogin.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelAddTypeLogin.SuspendLayout();
@@ -56,44 +52,32 @@
             // 
             this.panelAddLogin.AutoSize = true;
             this.panelAddLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.panelAddLogin.Controls.Add(this.flowLayoutPanelAddItemLogin);
+            this.panelAddLogin.Controls.Add(this.panel3);
+            this.panelAddLogin.Controls.Add(this.panel2);
+            this.panelAddLogin.Controls.Add(this.panelAddTypeLogin);
             this.panelAddLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAddLogin.Location = new System.Drawing.Point(0, 0);
             this.panelAddLogin.Name = "panelAddLogin";
-            this.panelAddLogin.Size = new System.Drawing.Size(800, 573);
+            this.panelAddLogin.Size = new System.Drawing.Size(398, 573);
             this.panelAddLogin.TabIndex = 1;
-            // 
-            // flowLayoutPanelAddItemLogin
-            // 
-            this.flowLayoutPanelAddItemLogin.AutoScroll = true;
-            this.flowLayoutPanelAddItemLogin.Controls.Add(this.panel1);
-            this.flowLayoutPanelAddItemLogin.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelAddItemLogin.Location = new System.Drawing.Point(3, 0);
-            this.flowLayoutPanelAddItemLogin.Name = "flowLayoutPanelAddItemLogin";
-            this.flowLayoutPanelAddItemLogin.Size = new System.Drawing.Size(417, 517);
-            this.flowLayoutPanelAddItemLogin.TabIndex = 0;
-            this.flowLayoutPanelAddItemLogin.WrapContents = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panelAddTypeLogin);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(391, 562);
-            this.panel1.TabIndex = 2;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.panel3.Controls.Add(txtItemNote);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(6, 333);
+            this.panel3.Location = new System.Drawing.Point(3, 329);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(377, 220);
+            this.panel3.Size = new System.Drawing.Size(395, 220);
             this.panel3.TabIndex = 4;
+            // 
+            // txtItemNote
+            // 
+            txtItemNote.Location = new System.Drawing.Point(6, 32);
+            txtItemNote.Multiline = true;
+            txtItemNote.Name = "txtItemNote";
+            txtItemNote.Size = new System.Drawing.Size(377, 176);
+            txtItemNote.TabIndex = 3;
             // 
             // label5
             // 
@@ -111,16 +95,16 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.panel2.Controls.Add(txbItemURL);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(6, 225);
+            this.panel2.Location = new System.Drawing.Point(3, 220);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(377, 91);
+            this.panel2.Size = new System.Drawing.Size(395, 91);
             this.panel2.TabIndex = 3;
             // 
             // txbItemURL
             // 
-            txbItemURL.Location = new System.Drawing.Point(3, 33);
+            txbItemURL.Location = new System.Drawing.Point(6, 33);
             txbItemURL.Name = "txbItemURL";
-            txbItemURL.Size = new System.Drawing.Size(368, 20);
+            txbItemURL.Size = new System.Drawing.Size(377, 20);
             txbItemURL.TabIndex = 2;
             // 
             // label4
@@ -143,16 +127,16 @@
             this.panelAddTypeLogin.Controls.Add(this.label1);
             this.panelAddTypeLogin.Controls.Add(txbItemNome);
             this.panelAddTypeLogin.Controls.Add(this.label2);
-            this.panelAddTypeLogin.Location = new System.Drawing.Point(6, 9);
+            this.panelAddTypeLogin.Location = new System.Drawing.Point(3, 3);
             this.panelAddTypeLogin.Name = "panelAddTypeLogin";
-            this.panelAddTypeLogin.Size = new System.Drawing.Size(377, 196);
+            this.panelAddTypeLogin.Size = new System.Drawing.Size(395, 196);
             this.panelAddTypeLogin.TabIndex = 2;
             // 
             // txbItemPassword
             // 
             txbItemPassword.Location = new System.Drawing.Point(6, 140);
             txbItemPassword.Name = "txbItemPassword";
-            txbItemPassword.Size = new System.Drawing.Size(368, 20);
+            txbItemPassword.Size = new System.Drawing.Size(377, 20);
             txbItemPassword.TabIndex = 5;
             // 
             // label3
@@ -170,7 +154,7 @@
             // 
             txbItemUserName.Location = new System.Drawing.Point(6, 89);
             txbItemUserName.Name = "txbItemUserName";
-            txbItemUserName.Size = new System.Drawing.Size(368, 20);
+            txbItemUserName.Size = new System.Drawing.Size(377, 20);
             txbItemUserName.TabIndex = 3;
             // 
             // label1
@@ -188,7 +172,7 @@
             // 
             txbItemNome.Location = new System.Drawing.Point(6, 34);
             txbItemNome.Name = "txbItemNome";
-            txbItemNome.Size = new System.Drawing.Size(368, 20);
+            txbItemNome.Size = new System.Drawing.Size(377, 20);
             txbItemNome.TabIndex = 1;
             // 
             // label2
@@ -202,26 +186,16 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Name";
             // 
-            // txtItemNote
-            // 
-            txtItemNote.Location = new System.Drawing.Point(3, 32);
-            txtItemNote.Multiline = true;
-            txtItemNote.Name = "txtItemNote";
-            txtItemNote.Size = new System.Drawing.Size(368, 176);
-            txtItemNote.TabIndex = 3;
-            // 
             // FrmAddItemLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 573);
+            this.ClientSize = new System.Drawing.Size(398, 573);
             this.Controls.Add(this.panelAddLogin);
             this.Name = "FrmAddItemLogin";
             this.Text = "FrmAddItemLogin";
             this.Load += new System.EventHandler(this.FrmAddItemLogin_Load);
             this.panelAddLogin.ResumeLayout(false);
-            this.flowLayoutPanelAddItemLogin.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -236,8 +210,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelAddLogin;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelAddItemLogin;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelAddTypeLogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
