@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controller;
+using SafeBox.Forms.ListItems;
+using SafeBox.Forms.SelectedItems;
 
 namespace SafeBox.Forms.AddItems
 {
@@ -35,10 +37,15 @@ namespace SafeBox.Forms.AddItems
             }
             else
             {
-                item.Gravar();
+                int idReturn = item.Gravar();
 
                 FrmMain.CloseFormPanelList();
                 FrmMain.OpenFormPanelList(type);
+                if (!idReturn.Equals(-1))
+                {
+                    FrmListLogin.OpenChildFormPanelDesktop(new FrmItemNote(idReturn));
+                }
+                    
             }         
         }
       

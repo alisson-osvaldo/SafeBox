@@ -410,7 +410,7 @@
             btnEdit.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(194)))), ((int)(((byte)(122)))));
             btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEdit.IconSize = 30;
-            btnEdit.Location = new System.Drawing.Point(191, 7);
+            btnEdit.Location = new System.Drawing.Point(19, 7);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new System.Drawing.Size(54, 42);
             btnEdit.TabIndex = 4;

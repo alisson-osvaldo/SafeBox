@@ -23,9 +23,10 @@ namespace Controller
             return this.Name;
         }
 
-        public void Gravar()
+        public int Gravar()
         {
-            new Database.Item().Gravar(this.IdUser, this.Name, this.UserName, this.Password, this.URL, this.Note, this.Type);
+            int idReturn = new Database.Item().Gravar(this.IdUser, this.Name, this.UserName, this.Password, this.URL, this.Note, this.Type);
+            return idReturn;
         }
 
         /*

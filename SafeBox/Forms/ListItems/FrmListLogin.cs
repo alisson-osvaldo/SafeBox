@@ -19,7 +19,7 @@ namespace SafeBox.Forms.ListItems
         public string windows = "ListLogin";
 
         //Variaveis interação Layout
-        private Form currentChildForm;
+        private static Form currentChildForm;
 
         //Global
         public int ID { get; set; } 
@@ -32,7 +32,7 @@ namespace SafeBox.Forms.ListItems
             loadAll();
         }
 
-        private void OpenChildFormPanelDesktop(Form childForm)
+        public static void OpenChildFormPanelDesktop(Form childForm)
         {
             if (currentChildForm != null)
             {
@@ -69,7 +69,7 @@ namespace SafeBox.Forms.ListItems
             var item = (Item)listBoxLogin.SelectedValue;
             ID = item.Id;
 
-            if(Count == true)
+            if (Count == true)
             {
                 OpenFrmItemLogin();
             }
@@ -77,12 +77,6 @@ namespace SafeBox.Forms.ListItems
             {
                 FrmMain.OpenFormPanelDesktop();
             }
-            //Melhorar essa validação de telas aqui
-            /*
-             Criar uma Método com validação que:
-                -Se eu estiver selecionando um item da lista, abra FrmItemLogin()
-                -Se eu adicionar um item novo na AddItemLogin, Abrir a OpenFrmItemLogin() com o Id do item salvo 
-             */ 
         }
 
 

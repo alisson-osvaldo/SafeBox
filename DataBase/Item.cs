@@ -21,21 +21,28 @@ namespace Database
             connectionstringStatic = ConfigurationManager.AppSettings["SqlConnection"];
         }
 
-        public void Gravar(int idUser, string name, string username, string password, string url, string note, string type)
+        public int Gravar(int idUser, string name, string username, string password, string url, string note, string type)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionstring))
                 {
-                    string queryString = "INSERT INTO items(iduser, name, username, password, url, note, type) VALUES('" + idUser + "', '" + name + "', '" + username + "', '" + password + "', '" + url + "', '" + note + "', '" + type + "')";
+                    string queryString = "INSERT INTO items(iduser, name, username, password, url, note, type) " +
+                        "VALUES('" + idUser + "', '" + name + "', '" + username + "', '" + password + "', '" + url + "', '" + note + "', '" + type + "') " +
+                        "SELECT SCOPE_IDENTITY()";
+                                           
                     SqlCommand command = new SqlCommand(queryString, connection);
                     command.Connection.Open();
                     command.ExecuteNonQuery();
+                    Int32 idReturn = Convert.ToInt32(command.ExecuteScalar());
 
                     MessageBox.Show("Item cadastro com sucesso");
+
+                    return idReturn;
                 }
             }catch (Exception ex) {
                 MessageBox.Show("Error: " + ex);
+                return -1;
             }
         }
 
