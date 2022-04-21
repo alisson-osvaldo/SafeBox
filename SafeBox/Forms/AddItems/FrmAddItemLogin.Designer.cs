@@ -86,9 +86,9 @@
             this.label5.ForeColor = System.Drawing.Color.Gainsboro;
             this.label5.Location = new System.Drawing.Point(3, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 16);
+            this.label5.Size = new System.Drawing.Size(73, 16);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Note";
+            this.label5.Text = "Anotação";
             // 
             // panel2
             // 
@@ -146,9 +146,9 @@
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
             this.label3.Location = new System.Drawing.Point(3, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 16);
+            this.label3.Size = new System.Drawing.Size(51, 16);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Password";
+            this.label3.Text = "Senha";
             // 
             // txbItemUserName
             // 
@@ -164,9 +164,9 @@
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
             this.label1.Location = new System.Drawing.Point(3, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 16);
+            this.label1.Size = new System.Drawing.Size(129, 16);
             this.label1.TabIndex = 2;
-            this.label1.Text = "UserName";
+            this.label1.Text = "Nome de usuário ";
             // 
             // txbItemNome
             // 
@@ -184,7 +184,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Name";
+            this.label2.Text = "Nome";
             // 
             // FrmAddItemLogin
             // 

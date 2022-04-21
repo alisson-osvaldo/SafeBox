@@ -434,7 +434,14 @@ namespace SafeBox
             if (typeForm.Equals("Note"))
             {
                 FrmItemNote.BtnCancel();
-            }           
+            }   
+            if (typeForm.Equals("AddItemNote"))
+            {
+                FrmAddItemLogin.BtnCancel();
+            }if (typeForm.Equals("AddItemLogin"))
+            {
+                FrmAddItemNote.BtnCancel();
+            }
         }
 
        

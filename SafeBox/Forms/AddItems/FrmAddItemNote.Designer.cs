@@ -45,7 +45,7 @@
             this.panelAddNote.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAddNote.Location = new System.Drawing.Point(0, 0);
             this.panelAddNote.Name = "panelAddNote";
-            this.panelAddNote.Size = new System.Drawing.Size(800, 450);
+            this.panelAddNote.Size = new System.Drawing.Size(398, 573);
             this.panelAddNote.TabIndex = 0;
             // 
             // panel2
@@ -57,7 +57,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(358, 337);
+            this.panel2.Size = new System.Drawing.Size(395, 352);
             this.panel2.TabIndex = 0;
             // 
             // txbNote
@@ -65,7 +65,7 @@
             txbNote.Location = new System.Drawing.Point(6, 92);
             txbNote.Multiline = true;
             txbNote.Name = "txbNote";
-            txbNote.Size = new System.Drawing.Size(339, 229);
+            txbNote.Size = new System.Drawing.Size(377, 243);
             txbNote.TabIndex = 4;
             // 
             // label1
@@ -77,13 +77,13 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Note";
+            this.label1.Text = "Nota";
             // 
             // txbName
             // 
             txbName.Location = new System.Drawing.Point(6, 36);
             txbName.Name = "txbName";
-            txbName.Size = new System.Drawing.Size(339, 20);
+            txbName.Size = new System.Drawing.Size(377, 20);
             txbName.TabIndex = 2;
             // 
             // label2
@@ -95,13 +95,13 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Name";
+            this.label2.Text = "Nome";
             // 
             // FrmAddItemNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(398, 573);
             this.Controls.Add(this.panelAddNote);
             this.Name = "FrmAddItemNote";
             this.Text = "FrmItemNote";
@@ -118,8 +118,8 @@
         private System.Windows.Forms.Panel panelAddNote;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private static System.Windows.Forms.TextBox txbNote;
         private System.Windows.Forms.Label label1;
+        private static System.Windows.Forms.TextBox txbNote;
         private static System.Windows.Forms.TextBox txbName;
     }
 }

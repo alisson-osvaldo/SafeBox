@@ -300,7 +300,7 @@
             // 
             // panelButtonAdd
             // 
-            this.panelButtonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.panelButtonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.panelButtonAdd.Controls.Add(this.btnAdd);
             this.panelButtonAdd.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelButtonAdd.Location = new System.Drawing.Point(0, 428);
@@ -342,7 +342,7 @@
             // 
             // panelButtons
             // 
-            this.panelButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.panelButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.panelButtons.Controls.Add(btnDelete);
             this.panelButtons.Controls.Add(btnCancel);
             this.panelButtons.Controls.Add(btnEdit);

@@ -25,6 +25,12 @@ namespace SafeBox.Forms.AddItems
             InitializeComponent();           
         }
 
+        public static void BtnCancel()
+        {
+            FrmMain.CloseFormPanelList();
+            FrmMain.OpenFormPanelList(type);
+        }
+
         public static void BtnSaveAddItemLogin()
         {
             var item = new Item();
