@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,19 +12,19 @@ using SafeBox.Forms.SelectedItems;
 
 namespace SafeBox.Forms.ListItems
 {
-    public partial class FrmListLogin : Form
+    public partial class FrmListAll : Form
     {
-        public string type = "Login";
-        public string windows = "ListLogin";
+        public string type = "All";
+        public string windows = "SafeBox";
+
+        //Global
+        public int ID { get; set; }
+        public bool Count { get; set; }
 
         //Variaveis interação Layout
         private static Form currentChildForm;
 
-        //Global
-        public int ID { get; set; } 
-        public bool Count { get; set; }
-
-        public FrmListLogin()
+        public FrmListAll()
         {
             FrmMain.LogicPanelButtons(windows);
             InitializeComponent();
@@ -50,24 +49,32 @@ namespace SafeBox.Forms.ListItems
         }
 
         public void loadAll()
-        {   
-            listBoxLogin.DataSource = Item.SearchItemLoginType(type);                 
+        {
+            listBoxAll.DataSource = Item.Todos();
         }
 
         public void OpenFrmItemLogin()
         {
-            OpenChildFormPanelDesktop(new FrmItemLogin(ID));
+            if (type.Equals("Login"))
+            {
+                OpenChildFormPanelDesktop(new FrmItemLogin(ID));
+            }
+            if (type.Equals("Note"))
+            {
+                OpenChildFormPanelDesktop(new FrmItemNote(ID));
+            }                   
         }
 
-        private void FrmListLogin_Load_1(object sender, EventArgs e)
+        private void FrmListAll_Load(object sender, EventArgs e)
         {
             Count = true;
         }
 
-        public void listBoxLogin_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBoxAll_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var item = (Item)listBoxLogin.SelectedValue;
+            var item = (Item)listBoxAll.SelectedValue;
             ID = item.Id;
+            type = item.Type;
 
             if (Count == true)
             {
@@ -78,7 +85,5 @@ namespace SafeBox.Forms.ListItems
                 FrmMain.OpenFormPanelDesktop();
             }
         }
-
-
     }
 }

@@ -33,6 +33,7 @@
             this.sairDoSaleBoxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.BtnAll = new FontAwesome.Sharp.IconButton();
             this.btnNota = new FontAwesome.Sharp.IconButton();
             this.btnLogin = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -107,6 +108,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
+            this.panelMenu.Controls.Add(this.BtnAll);
             this.panelMenu.Controls.Add(this.btnNota);
             this.panelMenu.Controls.Add(this.btnLogin);
             this.panelMenu.Controls.Add(this.panelLogo);
@@ -116,6 +118,28 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(212, 560);
             this.panelMenu.TabIndex = 2;
+            // 
+            // BtnAll
+            // 
+            this.BtnAll.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnAll.FlatAppearance.BorderSize = 0;
+            this.BtnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAll.ForeColor = System.Drawing.Color.Gainsboro;
+            this.BtnAll.IconChar = FontAwesome.Sharp.IconChar.AlignJustify;
+            this.BtnAll.IconColor = System.Drawing.Color.Gainsboro;
+            this.BtnAll.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnAll.IconSize = 32;
+            this.BtnAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnAll.Location = new System.Drawing.Point(0, 205);
+            this.BtnAll.Name = "BtnAll";
+            this.BtnAll.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.BtnAll.Size = new System.Drawing.Size(212, 60);
+            this.BtnAll.TabIndex = 4;
+            this.BtnAll.Text = "Todos";
+            this.BtnAll.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnAll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnAll.UseVisualStyleBackColor = true;
+            this.BtnAll.Click += new System.EventHandler(this.BtnAll_Click);
             // 
             // btnNota
             // 
@@ -499,6 +523,7 @@
         private System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Panel panelButtons;
+        private FontAwesome.Sharp.IconButton BtnAll;
         private static FontAwesome.Sharp.IconButton btnSave;
         private static FontAwesome.Sharp.IconButton btnEdit;
         private static FontAwesome.Sharp.IconButton btnDelete;

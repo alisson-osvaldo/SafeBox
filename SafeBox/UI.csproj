@@ -185,6 +185,12 @@
     <Compile Include="Forms\FrmSafeBox.Designer.cs">
       <DependentUpon>FrmSafeBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ListItems\FrmListAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListItems\FrmListAll.Designer.cs">
+      <DependentUpon>FrmListAll.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ListItems\FrmListLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSafeBox.resx">
       <DependentUpon>FrmSafeBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListItems\FrmListAll.resx">
+      <DependentUpon>FrmListAll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ListItems\FrmListLogin.resx">
       <DependentUpon>FrmListLogin.cs</DependentUpon>

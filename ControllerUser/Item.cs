@@ -29,7 +29,7 @@ namespace Controller
             return idReturn;
         }
 
-        /*
+        
         public static List<Item> Todos()
         {
             var list = new List<Item>();
@@ -51,7 +51,7 @@ namespace Controller
                 }
             }
             return list;
-        }*/
+        }
 
         public static List<Item> SearchItemLoginType(string type)
         {

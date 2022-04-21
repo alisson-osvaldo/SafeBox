@@ -165,6 +165,10 @@ namespace SafeBox
             {
                 OpenChildFormPanelList(new FrmListNote());
             }
+            else if (type.Equals("All"))
+            {
+                OpenChildFormPanelList(new FrmListAll());
+            }
         }
 
         public static void CloseFormPanelList()
@@ -253,6 +257,12 @@ namespace SafeBox
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void BtnAll_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
+            OpenChildFormPanelList(new FrmListAll());
         }
 
         private void iconNota_Click(object sender, EventArgs e)
@@ -427,5 +437,6 @@ namespace SafeBox
             }           
         }
 
+       
     }
 }
