@@ -35,6 +35,11 @@ namespace SafeBox
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
+
+            //OpenListBox All
+            typeForm = "All";
+            OpenFormPanelList(typeForm);
+
             //Form
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -106,7 +111,6 @@ namespace SafeBox
             panelList.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lblTitleChildForm.Text = childForm.Text;
         }
 
         private static void OpenChildFormPanelDesktop(Form childForm)
@@ -124,7 +128,6 @@ namespace SafeBox
             panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lblTitleChildForm.Text = childForm.Text;
         }
 
         private static void OpenChildFormPanelSafebox(Form childForm)
@@ -142,7 +145,6 @@ namespace SafeBox
             panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lblTitleChildForm.Text = childForm.Text;
         }
 
         public static void ReturnType(string type)
@@ -168,7 +170,7 @@ namespace SafeBox
             else if (type.Equals("All"))
             {
                 OpenChildFormPanelList(new FrmListAll());
-            }
+            }           
         }
 
         public static void CloseFormPanelList()
@@ -261,18 +263,21 @@ namespace SafeBox
 
         private void BtnAll_Click(object sender, EventArgs e)
         {
+            lblTitleChildForm.Text = "Todos os Items";
             ActivateButton(sender, RGBColors.color3);
             OpenChildFormPanelList(new FrmListAll());
         }
 
         private void iconNota_Click(object sender, EventArgs e)
         {
+            lblTitleChildForm.Text = "Nota";
             ActivateButton(sender, RGBColors.color2);
             OpenChildFormPanelList(new FrmListNote()); 
         }
 
         private void btnLogin_Click_1(object sender, EventArgs e)
-        {
+        {      
+            lblTitleChildForm.Text = "Login";
             ActivateButton(sender, RGBColors.color1);
             OpenChildFormPanelList(new FrmListLogin());
         }
@@ -322,7 +327,7 @@ namespace SafeBox
 
         private void panelDesktop_Paint(object sender, PaintEventArgs e)
         {
-
+           
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -438,12 +443,31 @@ namespace SafeBox
             if (typeForm.Equals("AddItemNote"))
             {
                 FrmAddItemLogin.BtnCancel();
-            }if (typeForm.Equals("AddItemLogin"))
+            }
+            if (typeForm.Equals("AddItemLogin"))
             {
                 FrmAddItemNote.BtnCancel();
             }
         }
 
-       
+        private void adicionarItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildFormPanelDesktop(new FrmAddItem());
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void trocarDeContaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void editarContaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace Database
     public class User
     {
         private string connectionstring;
+        private static string connectionstringStatic;
 
         public User()
         {
@@ -70,27 +71,32 @@ namespace Database
             }
         }
 
-        //
-        /*public int ReturnIdUser(string username, string password)
+        public static void UpdateUser(int Id, string Name, string UserName, string Password)
         {
-            using (SqlConnection connection = new SqlConnection(connectionstring))
+            try
             {
-                string queryString = "SELECT * FROM registers WHERE username = '" + username + "' AND password = '" + password + "' ";
-
-                SqlDataAdapter adapter = new SqlDataAdapter(queryString, connection);
-                DataTable table = new DataTable();
-                adapter.Fill(table);           
-
-                foreach (DataRow tb in table.Rows)
+                using (SqlConnection connection = new SqlConnection(connectionstringStatic))
+                using (SqlCommand command = connection.CreateCommand())
                 {
-                    string id = tb["id"].ToString();
-                    int idUser = int.Parse(id);
-                    return idUser; //esse return não pode ficar aqui ()erro
+                    command.CommandText = "UPDATE registers SET name = @name, username = @username, password = @passworde WHERE id = @id";
+
+                    command.Parameters.AddWithValue("@name", Name);
+                    command.Parameters.AddWithValue("@username", UserName);
+                    command.Parameters.AddWithValue("@password", Password);
+                    command.Parameters.AddWithValue("@id", Id);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+
+                    MessageBox.Show("Conta Alterado com sucesso");
                 }
-
-            }   
-        }*/
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
 
         public DataTable Todos()
         {

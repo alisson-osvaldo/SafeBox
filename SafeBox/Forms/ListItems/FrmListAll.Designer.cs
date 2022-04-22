@@ -33,11 +33,20 @@
             // 
             // listBoxAll
             // 
+            this.listBoxAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.listBoxAll.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listBoxAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxAll.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxAll.ForeColor = System.Drawing.Color.Gainsboro;
             this.listBoxAll.FormattingEnabled = true;
+            this.listBoxAll.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.listBoxAll.IntegralHeight = false;
-            this.listBoxAll.Location = new System.Drawing.Point(12, 12);
+            this.listBoxAll.ItemHeight = 23;
+            this.listBoxAll.Location = new System.Drawing.Point(0, 0);
             this.listBoxAll.Name = "listBoxAll";
-            this.listBoxAll.Size = new System.Drawing.Size(249, 342);
+            this.listBoxAll.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.listBoxAll.Size = new System.Drawing.Size(272, 372);
             this.listBoxAll.TabIndex = 1;
             this.listBoxAll.SelectedIndexChanged += new System.EventHandler(this.listBoxAll_SelectedIndexChanged);
             // 
@@ -45,7 +54,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(272, 372);
             this.Controls.Add(this.listBoxAll);
             this.Name = "FrmListAll";
             this.Text = "FrmListAll";

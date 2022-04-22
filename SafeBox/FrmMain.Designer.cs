@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairDoSaleBoxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.BtnAll = new FontAwesome.Sharp.IconButton();
             this.btnNota = new FontAwesome.Sharp.IconButton();
             this.btnLogin = new FontAwesome.Sharp.IconButton();
@@ -40,10 +42,19 @@
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.iconWindowsExit = new FontAwesome.Sharp.IconPictureBox();
-            this.iconWindowsMinimize = new FontAwesome.Sharp.IconPictureBox();
             lblTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.arquivoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.adicionarItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trocarDeContaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarContaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iconWindowsExit = new FontAwesome.Sharp.IconPictureBox();
+            this.iconWindowsMinimize = new FontAwesome.Sharp.IconPictureBox();
             panelList = new System.Windows.Forms.Panel();
             this.panelButtonAdd = new System.Windows.Forms.Panel();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
@@ -58,9 +69,10 @@
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panelTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
+            this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconWindowsExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconWindowsMinimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             panelList.SuspendLayout();
             this.panelButtonAdd.SuspendLayout();
             this.panelButtons.SuspendLayout();
@@ -105,6 +117,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
+            this.panelMenu.Controls.Add(this.label1);
             this.panelMenu.Controls.Add(this.BtnAll);
             this.panelMenu.Controls.Add(this.btnNota);
             this.panelMenu.Controls.Add(this.btnLogin);
@@ -116,9 +129,20 @@
             this.panelMenu.Size = new System.Drawing.Size(212, 560);
             this.panelMenu.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(0, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 15);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Tipos";
+            // 
             // BtnAll
             // 
-            this.BtnAll.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnAll.FlatAppearance.BorderSize = 0;
             this.BtnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAll.ForeColor = System.Drawing.Color.Gainsboro;
@@ -127,7 +151,7 @@
             this.BtnAll.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnAll.IconSize = 32;
             this.BtnAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnAll.Location = new System.Drawing.Point(0, 205);
+            this.BtnAll.Location = new System.Drawing.Point(-1, 103);
             this.BtnAll.Name = "BtnAll";
             this.BtnAll.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.BtnAll.Size = new System.Drawing.Size(212, 60);
@@ -140,7 +164,6 @@
             // 
             // btnNota
             // 
-            this.btnNota.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNota.FlatAppearance.BorderSize = 0;
             this.btnNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNota.ForeColor = System.Drawing.Color.Gainsboro;
@@ -149,7 +172,7 @@
             this.btnNota.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNota.IconSize = 32;
             this.btnNota.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNota.Location = new System.Drawing.Point(0, 145);
+            this.btnNota.Location = new System.Drawing.Point(3, 235);
             this.btnNota.Name = "btnNota";
             this.btnNota.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnNota.Size = new System.Drawing.Size(212, 60);
@@ -162,7 +185,6 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.ForeColor = System.Drawing.Color.Gainsboro;
@@ -171,7 +193,7 @@
             this.btnLogin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogin.IconSize = 32;
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogin.Location = new System.Drawing.Point(0, 85);
+            this.btnLogin.Location = new System.Drawing.Point(-1, 169);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnLogin.Size = new System.Drawing.Size(212, 60);
@@ -208,10 +230,9 @@
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(64)))));
             this.panelTitleBar.Controls.Add(this.lblUserName);
-            this.panelTitleBar.Controls.Add(this.iconWindowsExit);
-            this.panelTitleBar.Controls.Add(this.iconWindowsMinimize);
             this.panelTitleBar.Controls.Add(lblTitleChildForm);
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
+            this.panelTitleBar.Controls.Add(this.menuStrip2);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(212, 24);
             this.panelTitleBar.Name = "panelTitleBar";
@@ -228,39 +249,6 @@
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(0, 18);
             this.lblUserName.TabIndex = 5;
-            // 
-            // iconWindowsExit
-            // 
-            this.iconWindowsExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(64)))));
-            this.iconWindowsExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconWindowsExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.iconWindowsExit.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconWindowsExit.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.iconWindowsExit.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconWindowsExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconWindowsExit.Location = new System.Drawing.Point(721, 0);
-            this.iconWindowsExit.Name = "iconWindowsExit";
-            this.iconWindowsExit.Size = new System.Drawing.Size(32, 75);
-            this.iconWindowsExit.TabIndex = 4;
-            this.iconWindowsExit.TabStop = false;
-            this.iconWindowsExit.Click += new System.EventHandler(this.iconWindowsExit_Click);
-            // 
-            // iconWindowsMinimize
-            // 
-            this.iconWindowsMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconWindowsMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(64)))));
-            this.iconWindowsMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconWindowsMinimize.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconWindowsMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.iconWindowsMinimize.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconWindowsMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconWindowsMinimize.IconSize = 19;
-            this.iconWindowsMinimize.Location = new System.Drawing.Point(696, 3);
-            this.iconWindowsMinimize.Name = "iconWindowsMinimize";
-            this.iconWindowsMinimize.Size = new System.Drawing.Size(19, 23);
-            this.iconWindowsMinimize.TabIndex = 2;
-            this.iconWindowsMinimize.TabStop = false;
-            this.iconWindowsMinimize.Click += new System.EventHandler(this.iconWindowsMinimize_Click_1);
             // 
             // lblTitleChildForm
             // 
@@ -285,6 +273,109 @@
             this.iconCurrentChildForm.Size = new System.Drawing.Size(32, 32);
             this.iconCurrentChildForm.TabIndex = 0;
             this.iconCurrentChildForm.TabStop = false;
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.arquivoToolStripMenuItem1,
+            this.contaToolStripMenuItem,
+            this.informaçõesToolStripMenuItem});
+            this.menuStrip2.Location = new System.Drawing.Point(161, 21);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(325, 24);
+            this.menuStrip2.TabIndex = 6;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // arquivoToolStripMenuItem1
+            // 
+            this.arquivoToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adicionarItemToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.sairToolStripMenuItem});
+            this.arquivoToolStripMenuItem1.Name = "arquivoToolStripMenuItem1";
+            this.arquivoToolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
+            this.arquivoToolStripMenuItem1.Text = "Arquivo";
+            // 
+            // adicionarItemToolStripMenuItem
+            // 
+            this.adicionarItemToolStripMenuItem.Name = "adicionarItemToolStripMenuItem";
+            this.adicionarItemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.adicionarItemToolStripMenuItem.Text = "Adicionar Item";
+            this.adicionarItemToolStripMenuItem.Click += new System.EventHandler(this.adicionarItemToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sairToolStripMenuItem.Text = "Sair ";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
+            // contaToolStripMenuItem
+            // 
+            this.contaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.trocarDeContaToolStripMenuItem,
+            this.editarContaToolStripMenuItem});
+            this.contaToolStripMenuItem.Name = "contaToolStripMenuItem";
+            this.contaToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.contaToolStripMenuItem.Text = "Conta";
+            // 
+            // trocarDeContaToolStripMenuItem
+            // 
+            this.trocarDeContaToolStripMenuItem.Name = "trocarDeContaToolStripMenuItem";
+            this.trocarDeContaToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.trocarDeContaToolStripMenuItem.Text = "Entrar em outra conta";
+            this.trocarDeContaToolStripMenuItem.Click += new System.EventHandler(this.trocarDeContaToolStripMenuItem_Click);
+            // 
+            // editarContaToolStripMenuItem
+            // 
+            this.editarContaToolStripMenuItem.Name = "editarContaToolStripMenuItem";
+            this.editarContaToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.editarContaToolStripMenuItem.Text = "Editar Conta ";
+            this.editarContaToolStripMenuItem.Click += new System.EventHandler(this.editarContaToolStripMenuItem_Click);
+            // 
+            // informaçõesToolStripMenuItem
+            // 
+            this.informaçõesToolStripMenuItem.Name = "informaçõesToolStripMenuItem";
+            this.informaçõesToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.informaçõesToolStripMenuItem.Text = "Informações";
+            // 
+            // iconWindowsExit
+            // 
+            this.iconWindowsExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(64)))));
+            this.iconWindowsExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconWindowsExit.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconWindowsExit.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.iconWindowsExit.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconWindowsExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconWindowsExit.Location = new System.Drawing.Point(933, 0);
+            this.iconWindowsExit.Name = "iconWindowsExit";
+            this.iconWindowsExit.Size = new System.Drawing.Size(32, 43);
+            this.iconWindowsExit.TabIndex = 4;
+            this.iconWindowsExit.TabStop = false;
+            this.iconWindowsExit.Click += new System.EventHandler(this.iconWindowsExit_Click);
+            // 
+            // iconWindowsMinimize
+            // 
+            this.iconWindowsMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconWindowsMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(64)))));
+            this.iconWindowsMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconWindowsMinimize.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconWindowsMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.iconWindowsMinimize.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconWindowsMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconWindowsMinimize.IconSize = 20;
+            this.iconWindowsMinimize.Location = new System.Drawing.Point(913, 0);
+            this.iconWindowsMinimize.Name = "iconWindowsMinimize";
+            this.iconWindowsMinimize.Size = new System.Drawing.Size(20, 24);
+            this.iconWindowsMinimize.TabIndex = 2;
+            this.iconWindowsMinimize.TabStop = false;
+            this.iconWindowsMinimize.Click += new System.EventHandler(this.iconWindowsMinimize_Click_1);
             // 
             // panelList
             // 
@@ -443,27 +534,36 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(965, 584);
             this.Controls.Add(this.panelButtons);
+            this.Controls.Add(this.iconWindowsExit);
             this.Controls.Add(panelDesktop);
+            this.Controls.Add(this.iconWindowsMinimize);
             this.Controls.Add(panelList);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaximizeBox = false;
             this.Name = "FrmMain";
-            this.Text = "FrmMain";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "SafeBox";
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panelMenu.ResumeLayout(false);
+            this.panelMenu.PerformLayout();
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconWindowsExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconWindowsMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
             panelList.ResumeLayout(false);
             this.panelButtonAdd.ResumeLayout(false);
             this.panelButtons.ResumeLayout(false);
@@ -486,12 +586,22 @@
         private FontAwesome.Sharp.IconPictureBox iconWindowsExit;
         private System.Windows.Forms.Panel panelButtonAdd;
         private FontAwesome.Sharp.IconButton btnAdd;
+        private FontAwesome.Sharp.IconButton BtnAll;
         private FontAwesome.Sharp.IconButton btnNota;
         private FontAwesome.Sharp.IconButton btnLogin;
         private System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Panel panelButtons;
-        private FontAwesome.Sharp.IconButton BtnAll;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem adicionarItemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem trocarDeContaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarContaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informaçõesToolStripMenuItem;
         private static FontAwesome.Sharp.IconButton btnSave;
         private static FontAwesome.Sharp.IconButton btnEdit;
         private static FontAwesome.Sharp.IconButton btnDelete;

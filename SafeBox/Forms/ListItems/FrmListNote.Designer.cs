@@ -33,21 +33,28 @@
             // 
             // listBoxNote
             // 
+            this.listBoxNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.listBoxNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxNote.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listBoxNote.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxNote.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxNote.ForeColor = System.Drawing.Color.Gainsboro;
             this.listBoxNote.FormattingEnabled = true;
             this.listBoxNote.IntegralHeight = false;
-            this.listBoxNote.Location = new System.Drawing.Point(12, 12);
+            this.listBoxNote.ItemHeight = 23;
+            this.listBoxNote.Location = new System.Drawing.Point(0, 0);
             this.listBoxNote.Name = "listBoxNote";
-            this.listBoxNote.Size = new System.Drawing.Size(249, 342);
+            this.listBoxNote.Size = new System.Drawing.Size(272, 450);
             this.listBoxNote.TabIndex = 1;
             this.listBoxNote.SelectedIndexChanged += new System.EventHandler(this.listBoxNote_SelectedIndexChanged);
             // 
-            // FrmListNota
+            // FrmListNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(272, 450);
             this.Controls.Add(this.listBoxNote);
-            this.Name = "FrmListNota";
+            this.Name = "FrmListNote";
             this.Text = "FrmListNota";
             this.Load += new System.EventHandler(this.FrmListNota_Load);
             this.ResumeLayout(false);

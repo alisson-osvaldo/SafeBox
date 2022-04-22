@@ -40,18 +40,19 @@
             this.panelSafeBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSafeBox.Location = new System.Drawing.Point(0, 0);
             this.panelSafeBox.Name = "panelSafeBox";
-            this.panelSafeBox.Size = new System.Drawing.Size(800, 450);
+            this.panelSafeBox.Size = new System.Drawing.Size(459, 450);
             this.panelSafeBox.TabIndex = 0;
             this.panelSafeBox.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
             this.label1.Location = new System.Drawing.Point(122, 210);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 55);
+            this.label1.Size = new System.Drawing.Size(194, 50);
             this.label1.TabIndex = 0;
             this.label1.Text = "SafeBox";
             // 
@@ -59,7 +60,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(459, 450);
             this.Controls.Add(this.panelSafeBox);
             this.Name = "FrmSafeBox";
             this.Text = "FrmSafeBox";

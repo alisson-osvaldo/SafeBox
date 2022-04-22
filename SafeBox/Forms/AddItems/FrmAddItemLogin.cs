@@ -33,7 +33,7 @@ namespace SafeBox.Forms.AddItems
         public static void BtnCancel()
         {
             FrmMain.CloseFormPanelList();
-            FrmMain.OpenFormPanelList(type);
+            FrmMain.OpenFormPanelList(type);           
         }
 
         public static void BtnSaveAddItemLogin()

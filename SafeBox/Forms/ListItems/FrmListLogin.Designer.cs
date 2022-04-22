@@ -33,11 +33,18 @@
             // 
             // listBoxLogin
             // 
+            this.listBoxLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.listBoxLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listBoxLogin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxLogin.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxLogin.ForeColor = System.Drawing.Color.Gainsboro;
             this.listBoxLogin.FormattingEnabled = true;
             this.listBoxLogin.IntegralHeight = false;
-            this.listBoxLogin.Location = new System.Drawing.Point(12, 12);
+            this.listBoxLogin.ItemHeight = 23;
+            this.listBoxLogin.Location = new System.Drawing.Point(0, 0);
             this.listBoxLogin.Name = "listBoxLogin";
-            this.listBoxLogin.Size = new System.Drawing.Size(249, 342);
+            this.listBoxLogin.Size = new System.Drawing.Size(270, 450);
             this.listBoxLogin.TabIndex = 0;
             this.listBoxLogin.SelectedIndexChanged += new System.EventHandler(this.listBoxLogin_SelectedIndexChanged);
             this.listBoxLogin.DoubleClick += new System.EventHandler(this.listBoxLogin_SelectedIndexChanged);
