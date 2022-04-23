@@ -20,7 +20,7 @@ namespace SafeBox
         public static string User_Name { get; set; }
 
         Thread t1;
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -45,13 +45,16 @@ namespace SafeBox
                 this.Close();
                 t1 = new Thread(abrirMain);
                 t1.SetApartmentState(ApartmentState.STA); //STA thread unica(para 1 janela) caso mais de uma MTA 
-                t1.Start();        
+                t1.Start();
             } else
             {
                 MessageBox.Show("Senha incorreta! tente novamente.");
                 txtPasswordLogin.Clear();
-            }   
+            }
         }
+
+        public static string ReturnUserName() { return User_Name; }
+        public static int ReturnId() { return User_ID; }
 
         public void abrirMain(Object obj)
         {

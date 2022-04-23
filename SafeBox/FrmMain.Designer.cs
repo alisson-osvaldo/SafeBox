@@ -283,7 +283,7 @@
             this.informaçõesToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(161, 21);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(325, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(205, 24);
             this.menuStrip2.TabIndex = 6;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -336,7 +336,7 @@
             // 
             this.editarContaToolStripMenuItem.Name = "editarContaToolStripMenuItem";
             this.editarContaToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.editarContaToolStripMenuItem.Text = "Editar Conta ";
+            this.editarContaToolStripMenuItem.Text = "Configurações";
             this.editarContaToolStripMenuItem.Click += new System.EventHandler(this.editarContaToolStripMenuItem_Click);
             // 
             // informaçõesToolStripMenuItem
@@ -344,11 +344,11 @@
             this.informaçõesToolStripMenuItem.Name = "informaçõesToolStripMenuItem";
             this.informaçõesToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.informaçõesToolStripMenuItem.Text = "Informações";
+            this.informaçõesToolStripMenuItem.Click += new System.EventHandler(this.informaçõesToolStripMenuItem_Click);
             // 
             // iconWindowsExit
             // 
             this.iconWindowsExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(64)))));
-            this.iconWindowsExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconWindowsExit.ForeColor = System.Drawing.Color.Gainsboro;
             this.iconWindowsExit.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
             this.iconWindowsExit.IconColor = System.Drawing.Color.Gainsboro;
@@ -364,7 +364,6 @@
             // 
             this.iconWindowsMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconWindowsMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(64)))));
-            this.iconWindowsMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconWindowsMinimize.ForeColor = System.Drawing.Color.Gainsboro;
             this.iconWindowsMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.iconWindowsMinimize.IconColor = System.Drawing.Color.Gainsboro;
@@ -406,7 +405,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.IconChar = FontAwesome.Sharp.IconChar.Plus;
@@ -452,7 +450,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            btnDelete.Cursor = System.Windows.Forms.Cursors.IBeam;
             btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnDelete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
@@ -491,7 +488,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            btnEdit.Cursor = System.Windows.Forms.Cursors.IBeam;
             btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnEdit.IconChar = FontAwesome.Sharp.IconChar.Edit;
             btnEdit.IconColor = System.Drawing.Color.LawnGreen;
@@ -512,7 +508,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            btnSave.Cursor = System.Windows.Forms.Cursors.IBeam;
             btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnSave.IconChar = FontAwesome.Sharp.IconChar.Save;

@@ -12,20 +12,38 @@ namespace SafeBox.Forms.User
 {
     public partial class FrmUpdateUser : Form
     {
-        public FrmUpdateUser(string id)
+        public FrmUpdateUser()
         {
             InitializeComponent();
 
-           // txtNewNameUser.Text = 
+            string UserName = Form1.ReturnUserName();
+            txtNameUser.Text = UserName;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            int Id = Form1.ReturnId();
+            string newUsername = txtNameUser.Text;
+            string Password = txtPassword.Text;  
+            string newPassword = txtNewPassword.Text;
 
+            Database.User.UpdateUser(Id, Password, newUsername, newPassword);
 
-           // Database.User.UpdateUser();
+            Close();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Tem Certeza que Deseja Deletar Sua Conta?", "Deletar Conta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            
+            if (confirm.ToString().ToUpper() == "YES")
+            {
+                int Id = Form1.ReturnId();
+                Database.User.DeleteUser(Id);
+                Application.Restart();
+            }
+            Close();              
+        }
+
     }
 }
-
-//e se eu criar um método no Form1 que retorne Id ???

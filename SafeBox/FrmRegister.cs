@@ -39,7 +39,7 @@ namespace SafeBox
             } else
             {
                 user.Gravar();
-                Close();
+                Application.Restart();
             }  
         }
 

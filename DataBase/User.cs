@@ -12,8 +12,8 @@ namespace Database
 {
     public class User
     {
-        private string connectionstring;
-        private static string connectionstringStatic;
+        private static  string connectionstring;
+        //private static string connectionstringStatic;
 
         public User()
         {
@@ -71,17 +71,17 @@ namespace Database
             }
         }
 
-        public static void UpdateUser(int Id, string Name, string UserName, string Password)
+        public static void UpdateUser(int Id, string Password, string newUserName, string newPassword)
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionstringStatic))
+                using (SqlConnection connection = new SqlConnection(connectionstring))
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "UPDATE registers SET name = @name, username = @username, password = @passworde WHERE id = @id";
+                    command.CommandText = "UPDATE registers SET username = @username, password = @newPassword WHERE id = @id and password = @password";
 
-                    command.Parameters.AddWithValue("@name", Name);
-                    command.Parameters.AddWithValue("@username", UserName);
+                    command.Parameters.AddWithValue("@username", newUserName);
+                    command.Parameters.AddWithValue("@newPassword", newPassword);
                     command.Parameters.AddWithValue("@password", Password);
                     command.Parameters.AddWithValue("@id", Id);
 
@@ -95,6 +95,23 @@ namespace Database
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        public static void DeleteUser(int Id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            using (SqlCommand command = connection.CreateCommand())
+            {
+                command.CommandText = "DELETE FROM registers WHERE id = @id";
+
+                command.Parameters.AddWithValue("@id", Id);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+
+                MessageBox.Show("Conta Deletada com sucesso");
             }
         }
 

@@ -14,6 +14,7 @@ using SafeBox.Forms;
 using SafeBox.Forms.AddItems;
 using SafeBox.Forms.ListItems;
 using SafeBox.Forms.SelectedItems;
+using SafeBox.Forms.User;
 
 namespace SafeBox
 {
@@ -467,7 +468,12 @@ namespace SafeBox
 
         private void editarContaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            new FrmUpdateUser().Show();
+        }
 
+        private void informaçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmInfo().Show();
         }
     }
 }
