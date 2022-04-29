@@ -104,8 +104,8 @@ namespace SafeBox.Forms
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
             lblVideo.ForeColor = Color.LawnGreen;
-            lblVideo.Location = new Point(490, 176);
-            lblVideo.Text = "Muito obrigado por utilizaro o SafeBox";
+            lblVideo.Location = new Point(490, 161);
+            lblVideo.Text = "Muito obrigado por utilizar o SafeBox";
             btnVideo.IconColor = Color.LawnGreen;
 
             axWindowsMediaPlayer1.Visible = true;

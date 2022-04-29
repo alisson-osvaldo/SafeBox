@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInfo));
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.lblVideo = new System.Windows.Forms.Label();
+            this.btnVideo = new FontAwesome.Sharp.IconButton();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.btnLinkedin = new FontAwesome.Sharp.IconButton();
             this.btnGitHub = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnVideo = new FontAwesome.Sharp.IconButton();
-            this.lblVideo = new System.Windows.Forms.Label();
             this.panelInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,33 @@
             this.panelInfo.Size = new System.Drawing.Size(800, 450);
             this.panelInfo.TabIndex = 0;
             this.panelInfo.TabStop = true;
+            // 
+            // lblVideo
+            // 
+            this.lblVideo.AutoSize = true;
+            this.lblVideo.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVideo.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblVideo.Location = new System.Drawing.Point(625, 161);
+            this.lblVideo.Name = "lblVideo";
+            this.lblVideo.Size = new System.Drawing.Size(122, 15);
+            this.lblVideo.TabIndex = 9;
+            this.lblVideo.Text = "Não Clique Aqui ->";
+            // 
+            // btnVideo
+            // 
+            this.btnVideo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnVideo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVideo.IconChar = FontAwesome.Sharp.IconChar.Ghost;
+            this.btnVideo.IconColor = System.Drawing.Color.Red;
+            this.btnVideo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVideo.IconSize = 30;
+            this.btnVideo.Location = new System.Drawing.Point(744, 148);
+            this.btnVideo.Name = "btnVideo";
+            this.btnVideo.Size = new System.Drawing.Size(45, 38);
+            this.btnVideo.TabIndex = 8;
+            this.btnVideo.UseVisualStyleBackColor = false;
+            this.btnVideo.Click += new System.EventHandler(this.iconButton1_Click_1);
             // 
             // axWindowsMediaPlayer1
             // 
@@ -121,7 +148,6 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.LawnGreen;
             this.textBox1.Location = new System.Drawing.Point(17, 38);
@@ -129,7 +155,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(711, 43);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Essa ferramento foi desenvolvida com intuito de ajudar a organizar suas senhas e " +
     "notas e  de forma pratica e segura.";
             // 
@@ -143,33 +169,6 @@
             this.label1.Size = new System.Drawing.Size(226, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bem vindo ao SafeBox";
-            // 
-            // btnVideo
-            // 
-            this.btnVideo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnVideo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVideo.IconChar = FontAwesome.Sharp.IconChar.Ghost;
-            this.btnVideo.IconColor = System.Drawing.Color.Red;
-            this.btnVideo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVideo.IconSize = 30;
-            this.btnVideo.Location = new System.Drawing.Point(744, 148);
-            this.btnVideo.Name = "btnVideo";
-            this.btnVideo.Size = new System.Drawing.Size(45, 38);
-            this.btnVideo.TabIndex = 8;
-            this.btnVideo.UseVisualStyleBackColor = false;
-            this.btnVideo.Click += new System.EventHandler(this.iconButton1_Click_1);
-            // 
-            // lblVideo
-            // 
-            this.lblVideo.AutoSize = true;
-            this.lblVideo.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVideo.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblVideo.Location = new System.Drawing.Point(625, 161);
-            this.lblVideo.Name = "lblVideo";
-            this.lblVideo.Size = new System.Drawing.Size(113, 15);
-            this.lblVideo.TabIndex = 9;
-            this.lblVideo.Text = "Não Click Aqui ->";
             // 
             // FrmInfo
             // 

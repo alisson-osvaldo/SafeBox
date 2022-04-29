@@ -45,5 +45,9 @@ namespace SafeBox.Forms.User
             Close();              
         }
 
+        private void rjTextBox1__TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

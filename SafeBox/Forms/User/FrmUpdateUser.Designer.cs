@@ -39,11 +39,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNewPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.rjTextBox2 = new SafeBox.Forms.User.RJTextBox();
+            this.rjTextBox1 = new SafeBox.Forms.User.RJTextBox();
+            this.rjTextBox3 = new SafeBox.Forms.User.RJTextBox();
+            this.rjTextBox4 = new SafeBox.Forms.User.RJTextBox();
             this.panelUpdateUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelUpdateUser
             // 
+            this.panelUpdateUser.Controls.Add(this.rjTextBox4);
+            this.panelUpdateUser.Controls.Add(this.rjTextBox3);
+            this.panelUpdateUser.Controls.Add(this.rjTextBox2);
+            this.panelUpdateUser.Controls.Add(this.rjTextBox1);
             this.panelUpdateUser.Controls.Add(this.label5);
             this.panelUpdateUser.Controls.Add(this.btnDelete);
             this.panelUpdateUser.Controls.Add(this.label4);
@@ -58,7 +66,7 @@
             this.panelUpdateUser.Location = new System.Drawing.Point(0, 0);
             this.panelUpdateUser.Name = "panelUpdateUser";
             this.panelUpdateUser.Size = new System.Drawing.Size(800, 450);
-            this.panelUpdateUser.TabIndex = 0; 
+            this.panelUpdateUser.TabIndex = 0;
             // 
             // label5
             // 
@@ -163,6 +171,83 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Atualizar Conta";
             // 
+            // rjTextBox2
+            // 
+            this.rjTextBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.rjTextBox2.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.Purple;
+            this.rjTextBox2.BorderSize = 2;
+            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox2.ForeColor = System.Drawing.Color.DimGray;
+            this.rjTextBox2.Location = new System.Drawing.Point(388, 123);
+            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.rjTextBox2.Multiline = false;
+            this.rjTextBox2.Name = "rjTextBox2";
+            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(7);
+            this.rjTextBox2.PasswordChar = false;
+            this.rjTextBox2.Size = new System.Drawing.Size(250, 31);
+            this.rjTextBox2.TabIndex = 15;
+            this.rjTextBox2.Texts = "";
+            this.rjTextBox2.UnderlinebdStyle = false;
+            // 
+            // rjTextBox1
+            // 
+            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.rjTextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rjTextBox1.BorderSize = 2;
+            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.rjTextBox1.Location = new System.Drawing.Point(388, 81);
+            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.rjTextBox1.Multiline = false;
+            this.rjTextBox1.Name = "rjTextBox1";
+            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(7);
+            this.rjTextBox1.PasswordChar = true;
+            this.rjTextBox1.Size = new System.Drawing.Size(250, 31);
+            this.rjTextBox1.TabIndex = 14;
+            this.rjTextBox1.Texts = "";
+            this.rjTextBox1.UnderlinebdStyle = false;
+            this.rjTextBox1._TextChanged += new System.EventHandler(this.rjTextBox1__TextChanged);
+            // 
+            // rjTextBox3
+            // 
+            this.rjTextBox3.BackColor = System.Drawing.SystemColors.Window;
+            this.rjTextBox3.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjTextBox3.BorderFocusColor = System.Drawing.Color.DarkTurquoise;
+            this.rjTextBox3.BorderSize = 2;
+            this.rjTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox3.ForeColor = System.Drawing.Color.DimGray;
+            this.rjTextBox3.Location = new System.Drawing.Point(388, 175);
+            this.rjTextBox3.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.rjTextBox3.Multiline = false;
+            this.rjTextBox3.Name = "rjTextBox3";
+            this.rjTextBox3.Padding = new System.Windows.Forms.Padding(7);
+            this.rjTextBox3.PasswordChar = false;
+            this.rjTextBox3.Size = new System.Drawing.Size(250, 31);
+            this.rjTextBox3.TabIndex = 16;
+            this.rjTextBox3.Texts = "";
+            this.rjTextBox3.UnderlinebdStyle = false;
+            // 
+            // rjTextBox4
+            // 
+            this.rjTextBox4.BackColor = System.Drawing.SystemColors.Window;
+            this.rjTextBox4.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjTextBox4.BorderFocusColor = System.Drawing.Color.Lime;
+            this.rjTextBox4.BorderSize = 2;
+            this.rjTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox4.ForeColor = System.Drawing.Color.DimGray;
+            this.rjTextBox4.Location = new System.Drawing.Point(388, 227);
+            this.rjTextBox4.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.rjTextBox4.Multiline = false;
+            this.rjTextBox4.Name = "rjTextBox4";
+            this.rjTextBox4.Padding = new System.Windows.Forms.Padding(7);
+            this.rjTextBox4.PasswordChar = true;
+            this.rjTextBox4.Size = new System.Drawing.Size(250, 31);
+            this.rjTextBox4.TabIndex = 17;
+            this.rjTextBox4.Texts = "";
+            this.rjTextBox4.UnderlinebdStyle = false;
+            // 
             // FrmUpdateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,5 +275,9 @@
         private System.Windows.Forms.TextBox txtPassword;
         private FontAwesome.Sharp.IconButton btnDelete;
         private System.Windows.Forms.Label label5;
+        private RJTextBox rjTextBox1;
+        private RJTextBox rjTextBox2;
+        private RJTextBox rjTextBox4;
+        private RJTextBox rjTextBox3;
     }
 }
