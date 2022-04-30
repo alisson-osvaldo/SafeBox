@@ -179,12 +179,6 @@
     <Compile Include="Forms\AddItems\FrmAddItem.Designer.cs">
       <DependentUpon>FrmAddItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RJtools\TextBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\RJtools\TextBox.Designer.cs">
-      <DependentUpon>TextBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FrmInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,9 +258,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddItems\FrmAddItem.resx">
       <DependentUpon>FrmAddItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RJtools\TextBox.resx">
-      <DependentUpon>TextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmInfo.resx">
       <DependentUpon>FrmInfo.cs</DependentUpon>
