@@ -468,7 +468,7 @@ namespace SafeBox
 
         private void editarContaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FrmUpdateUser().Show();
+            OpenChildFormPanelDesktop(new FrmUpdateUser());
         }
 
         private void informaçõesToolStripMenuItem_Click(object sender, EventArgs e)

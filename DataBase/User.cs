@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace Database
@@ -67,35 +68,61 @@ namespace Database
                 }
 
                 //var result = command.ExecuteScalar(); //verifica apenas 1 coluna
-
             }
         }
 
-        public static void UpdateUser(int Id, string Password, string newUserName, string newPassword)
+        public static void UpdateUser(int Id, string newUserName, string newPassword)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionstring))
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "UPDATE registers SET username = @username, password = @newPassword WHERE id = @id and password = @password";
+                    command.CommandText = "UPDATE registers SET username = @username, password = @newPassword WHERE id = @id ";
 
                     command.Parameters.AddWithValue("@username", newUserName);
                     command.Parameters.AddWithValue("@newPassword", newPassword);
-                    command.Parameters.AddWithValue("@password", Password);
                     command.Parameters.AddWithValue("@id", Id);
 
                     connection.Open();
                     command.ExecuteNonQuery();
                     connection.Close();
-
-                    MessageBox.Show("Conta Alterado com sucesso");
+            
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        //Validar senha atual
+        public static bool validationPassword( int id, string password )
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                string queryString = "SELECT * FROM registers WHERE id = '" + id + "' AND password = '" + password + "' ";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(queryString, connection);
+                DataTable table = new DataTable();
+                adapter.Fill(table);               
+
+                if (table.Rows.Count == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+                
+        }
+        
+        //Validar Criação de senha
+        public bool validationNewPassword()
+        {
+            return true;
         }
 
         public static void DeleteUser(int Id)
@@ -132,6 +159,47 @@ namespace Database
                 return table;
             }
         }
+
+
+
+        /* public static void UpdateUser(int Id, string Password, string newUserName, string newPassword)
+        {          
+          try
+           {
+              using (SqlConnection connection = new SqlConnection(connectionstring))
+              using (SqlCommand command = connection.CreateCommand())
+              {
+                  //command.CommandType = CommandType.StoredProcedure;
+                  //int RowCount = 0;
+
+                  command.CommandText = "UPDATE registers SET username = @username, password = @newPassword WHERE id = @id and password = @password SELECT @@ROWCOUNT"; //'" + RowCount + "'
+
+                  SqlParameter parameter = command.Parameters.Add("@@ROWCOUNT", SqlDbType.Int);
+                  parameter.Direction = ParameterDirection.ReturnValue;
+
+
+                  command.Parameters.AddWithValue("@username", newUserName);
+                  command.Parameters.AddWithValue("@newPassword", newPassword);
+                  command.Parameters.AddWithValue("@password", Password);
+                  command.Parameters.AddWithValue("@id", Id);
+                  //command.Parameters.AddWithValue("@RowCount", RowCount);
+
+                  connection.Open();
+                  command.ExecuteNonQuery();
+
+                  Int32 rowCount = (Int32)command.Parameters["@@ROWCOUNT"].Value;
+                  Console.WriteLine(rowCount);
+                  connection.Close();
+
+
+                  MessageBox.Show("Conta Alterado com sucesso");
+              }
+          }
+          catch (Exception ex)
+          {
+              MessageBox.Show("Error: " + ex.Message);
+          }
+        }*/
 
     }
 }

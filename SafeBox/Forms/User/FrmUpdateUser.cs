@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,37 +18,101 @@ namespace SafeBox.Forms.User
             InitializeComponent();
 
             string UserName = Form1.ReturnUserName();
-            txtNameUser.Text = UserName;
+            txtNameUser.Texts = UserName;
         }
+
+        //--------------------------------------------------------------------------------------------
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             int Id = Form1.ReturnId();
-            string newUsername = txtNameUser.Text;
-            string Password = txtPassword.Text;  
-            string newPassword = txtNewPassword.Text;
+            string newUsername = txtNameUser.Texts;
+            string Password = txtPassword.Texts;  
+            string newPassword = txtNewPassword.Texts;
 
-            Database.User.UpdateUser(Id, Password, newUsername, newPassword);
+            bool validation =  Database.User.validationPassword(Id, Password);
 
-            Close();
+            if (validation != true)
+            {
+                MessageBox.Show("Senha Incorreta!!!\nTente novamente.");
+                txtPassword.Texts = "";
+            }
+            else
+            {
+                Database.User.UpdateUser(Id, newUsername, newPassword);
+
+                MessageBox.Show("Conta editada com sucesso");
+
+                Close();
+            }
+            
+
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            int Id = Form1.ReturnId();
+            string Password = txtPassword.Texts;
+             
             DialogResult confirm = MessageBox.Show("Tem Certeza que Deseja Deletar Sua Conta?", "Deletar Conta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             
-            if (confirm.ToString().ToUpper() == "YES")
+                
+
+            while(confirm.ToString().ToUpper() != "NO")
             {
-                int Id = Form1.ReturnId();
-                Database.User.DeleteUser(Id);
-                Application.Restart();
+                bool validation = Database.User.validationPassword(Id, Password);
+
+                if (txtPassword.Texts == "")
+                {
+                    MessageBox.Show("Por favor, antes confirme sua senha no campo 'Senha Atual'!");
+                }
+                else if (validation != true)
+                {
+                    MessageBox.Show("Senha incorreta!, Tente novamente.");
+                    txtPassword.Texts = "";
+                }
+
+                if (confirm.ToString().ToUpper() == "YES" && validation != false)
+                {
+                    Database.User.DeleteUser(Id);
+                    Application.Restart();
+                    Close();
+                }
+                break;
             }
-            Close();              
+                      
         }
 
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
         {
             
         }
+
+        private void txtNameUser__TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnPassword_Click(object sender, EventArgs e)
+        {
+            int op;
+
+            if (txtNewPassword.PasswordChar.Equals(false)) {op = 1;} 
+            else {op = 0;}          
+
+            switch(op)
+            {
+                case 0:
+                    txtNewPassword.PasswordChar = false;
+                        btnPassword.IconChar = FontAwesome.Sharp.IconChar.Eye;
+                    break;
+                case 1:
+                    txtNewPassword.PasswordChar = true;
+                        btnPassword.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+                    break;
+            }
+        }
+
     }
 }
