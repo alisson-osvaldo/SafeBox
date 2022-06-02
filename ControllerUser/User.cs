@@ -31,7 +31,7 @@ namespace Controller
             return log;
         }
             
-        //Lista de todos
+        //Listar todos
         public static List<User> Todos()
         {
             var list = new List<User>();

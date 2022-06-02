@@ -21,6 +21,15 @@ namespace SafeBox.Forms.User
             txtNameUser.Texts = UserName;
         }
 
+        public enum PasswordStrength
+        {
+            Inaceitavel,
+            Fraca,
+            Aceitavel,
+            Forte,
+            Segura
+        }
+
         //--------------------------------------------------------------------------------------------
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -32,10 +41,17 @@ namespace SafeBox.Forms.User
 
             bool validation =  Database.User.validationPassword(Id, Password);
 
+            bool validationCaracters = Controller.CheckPasswordStrength.ValidationCaracters(txtNewPassword.Texts);
+            string passwordStrength = Controller.CheckPasswordStrength.GetPasswordStrength(txtNewPassword.Texts);
+
             if (validation != true)
             {
                 MessageBox.Show("Senha Incorreta!!!\nTente novamente.");
                 txtPassword.Texts = "";
+            }
+            else if (validationCaracters != true || passwordStrength == "Inaceitavel")
+            {
+                MessageBox.Show("Senha Inaceitável");
             }
             else
             {
@@ -44,10 +60,7 @@ namespace SafeBox.Forms.User
                 MessageBox.Show("Conta editada com sucesso");
 
                 Close();
-            }
-            
-
-            
+            }                       
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -55,9 +68,7 @@ namespace SafeBox.Forms.User
             int Id = Form1.ReturnId();
             string Password = txtPassword.Texts;
              
-            DialogResult confirm = MessageBox.Show("Tem Certeza que Deseja Deletar Sua Conta?", "Deletar Conta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-            
-                
+            DialogResult confirm = MessageBox.Show("Tem Certeza que Deseja Deletar Sua Conta?", "Deletar Conta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);                        
 
             while(confirm.ToString().ToUpper() != "NO")
             {
@@ -114,5 +125,16 @@ namespace SafeBox.Forms.User
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string password = txtNewPassword.Texts;
+
+            Controller.CheckPasswordStrength.ValidationCaracters(password);
+
+            string passwordStrength = Controller.CheckPasswordStrength.GetPasswordStrength(password);
+
+            lblPasswordStrength.Text = passwordStrength;
+        }
     }
 }
+
