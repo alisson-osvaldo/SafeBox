@@ -1,2 +1,3 @@
 # SafeBox
-C# Windows Forms (.NET Framework)
+- C# Windows Forms (.NET Framework)
+- SQL Server
