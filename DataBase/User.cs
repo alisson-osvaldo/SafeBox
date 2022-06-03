@@ -47,7 +47,7 @@ namespace Database
         {
             using (SqlConnection connection = new SqlConnection(connectionstring))
             {
-                string queryString = "SELECT * FROM registers WHERE username = '" + username + "' AND password = '" + password + "' ";
+                string queryString = "SELECT * FROM registers WHERE username = '" + username + "' AND password COLLATE Latin1_General_CS_AS = '" + password + "' ";
 
                 SqlDataAdapter adapter = new SqlDataAdapter(queryString, connection);
                 DataTable table = new DataTable();
@@ -101,7 +101,7 @@ namespace Database
         {
             using (SqlConnection connection = new SqlConnection(connectionstring))
             {
-                string queryString = "SELECT * FROM registers WHERE id = '" + id + "' AND password = '" + password + "' ";
+                string queryString = "SELECT * FROM registers WHERE id = '" + id + "' AND password COLLATE Latin1_General_CS_AS = '" + password + "' ";
 
                 SqlDataAdapter adapter = new SqlDataAdapter(queryString, connection);
                 DataTable table = new DataTable();

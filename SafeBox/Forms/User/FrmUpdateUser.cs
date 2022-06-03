@@ -21,15 +21,6 @@ namespace SafeBox.Forms.User
             txtNameUser.Texts = UserName;
         }
 
-        public enum PasswordStrength
-        {
-            Inaceitavel,
-            Fraca,
-            Aceitavel,
-            Forte,
-            Segura
-        }
-
         //--------------------------------------------------------------------------------------------
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -46,7 +37,7 @@ namespace SafeBox.Forms.User
 
             if (validation != true)
             {
-                MessageBox.Show("Senha Incorreta!!!\nTente novamente.");
+                MessageBox.Show("Senha Atual Incorreta!!!\nTente novamente.");
                 txtPassword.Texts = "";
             }
             else if (validationCaracters != true || passwordStrength == "Inaceitavel")
