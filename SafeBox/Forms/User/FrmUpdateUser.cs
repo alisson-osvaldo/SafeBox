@@ -34,13 +34,14 @@ namespace SafeBox.Forms.User
 
             bool validationCaracters = Controller.CheckPasswordStrength.ValidationCaracters(txtNewPassword.Texts);
             string passwordStrength = Controller.CheckPasswordStrength.GetPasswordStrength(txtNewPassword.Texts);
+            bool QtdCaracters = Controller.CheckPasswordStrength.ValidationNumberOfCaracter(txtNewPassword.Texts);
 
             if (validation != true)
             {
                 MessageBox.Show("Senha Atual Incorreta!!!\nTente novamente.");
                 txtPassword.Texts = "";
             }
-            else if (validationCaracters != true || passwordStrength == "Inaceitavel")
+            else if (validationCaracters != true || passwordStrength == "Inaceitavel" || QtdCaracters != true)
             {
                 MessageBox.Show("Senha Inaceitável");
             }
@@ -59,7 +60,15 @@ namespace SafeBox.Forms.User
             int Id = Form1.ReturnId();
             string Password = txtPassword.Texts;
              
-            DialogResult confirm = MessageBox.Show("Tem Certeza que Deseja Deletar Sua Conta?", "Deletar Conta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);                        
+            DialogResult confirm = MessageBox.Show(
+                "Tem Certeza que Deseja Deletar Sua Conta?" +
+                "\n" +
+                "\nTodas as Senhas Salvas Serão Perdidas!",
+                "Deletar Conta",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Exclamation,
+                MessageBoxDefaultButton.Button2
+                );                        
 
             while(confirm.ToString().ToUpper() != "NO")
             {
@@ -121,6 +130,7 @@ namespace SafeBox.Forms.User
             string password = txtNewPassword.Texts;
 
             Controller.CheckPasswordStrength.ValidationCaracters(password);
+            Controller.CheckPasswordStrength.ValidationNumberOfCaracter(password);
 
             string passwordStrength = Controller.CheckPasswordStrength.GetPasswordStrength(password);
 

@@ -34,6 +34,7 @@ namespace SafeBox.Forms.AddItems
         public static void BtnSaveAddItemLogin()
         {
             var item = new Item();
+            item.IdUser = Form1.User_ID;
             item.Name = txbName.Text;
             item.Note = txbNote.Text;
             item.Type = type;

@@ -140,6 +140,7 @@ namespace Database
 
                 MessageBox.Show("Conta Deletada com sucesso");
             }
+            Item.DeleteItemIdRegister(Id);
         }
 
         public DataTable Todos()

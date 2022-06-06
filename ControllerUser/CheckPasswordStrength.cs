@@ -81,8 +81,8 @@ namespace Controller
         }
 
         public static bool ValidationCaracters(string password)
-        {
-            if ( Regex.IsMatch(password, "[-!#$%&')(*+,./:;<=>?@\\^_`{|}~]") & Regex.IsMatch(password, "[A-Z]"))
+        {           
+            if ( Regex.IsMatch(password, "[-!#$%&')(*+,./:;<=>?@\\^_`{|}~]") & Regex.IsMatch(password, "[A-Z]") )
             {
                 return true;               
             }
@@ -92,6 +92,18 @@ namespace Controller
                 "\n Letras Maiúsculas: A-Z" +
                 "\n Símbolos: !  # $ % & ' ( ) * + , - . / : ; < = > ? @ ^ _` { | } ~ "
                 );
+            return false;
+        }
+
+        public static bool ValidationNumberOfCaracter (string password)
+        {
+            int QtdCaracter = password.Length;
+
+            if (QtdCaracter >= 6)
+            {
+                return true;
+            }
+            MessageBox.Show("A senha deve ter no mínimo 6 caractéres");
             return false;
         }
 

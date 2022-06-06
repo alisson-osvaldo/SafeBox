@@ -31,10 +31,10 @@
             this.panelAddItem = new System.Windows.Forms.Panel();
             this.flowLayoutPanelAddItem = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelAddType = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxItems = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panelAddItem.SuspendLayout();
             this.flowLayoutPanelAddItem.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -76,6 +76,17 @@
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label2.Location = new System.Drawing.Point(10, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Tipo";
+            // 
             // panelAddType
             // 
             this.panelAddType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
@@ -110,21 +121,11 @@
             "Secure Note"});
             this.comboBoxItems.Location = new System.Drawing.Point(9, 67);
             this.comboBoxItems.Name = "comboBoxItems";
+            this.comboBoxItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBoxItems.Size = new System.Drawing.Size(388, 23);
             this.comboBoxItems.TabIndex = 1;
             this.comboBoxItems.Tag = "";
             this.comboBoxItems.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(10, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Tipo";
             // 
             // FrmAddItem
             // 

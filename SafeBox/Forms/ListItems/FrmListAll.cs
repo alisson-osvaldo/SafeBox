@@ -50,7 +50,8 @@ namespace SafeBox.Forms.ListItems
 
         public void loadAll()
         {
-            listBoxAll.DataSource = Item.Todos();
+            int idUser = Form1.User_ID;
+            listBoxAll.DataSource = Item.Todos(idUser);
         }
 
         public void OpenFrmItemLogin()

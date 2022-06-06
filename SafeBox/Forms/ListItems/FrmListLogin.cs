@@ -50,8 +50,9 @@ namespace SafeBox.Forms.ListItems
         }
 
         public void loadAll()
-        {   
-            listBoxLogin.DataSource = Item.SearchItemLoginType(type);                 
+        {
+            int idUser = Form1.User_ID;
+            listBoxLogin.DataSource = Item.SearchItemLoginType(type, idUser);                 
         }
 
         public void OpenFrmItemLogin()

@@ -19,6 +19,10 @@ namespace SafeBox
         public static int User_ID { get; set; }
         public static string User_Name { get; set; }
 
+        //Não precisamos desses caras, conseguimos pegar as VAR Globais apenas : int varEx = SafeBox.Form1.User_ID;
+        public static string ReturnUserName() { return User_Name; }
+        public static int ReturnId() { return User_ID; }
+
         Thread t1;
 
         public Form1()
@@ -53,8 +57,7 @@ namespace SafeBox
             }
         }
 
-        public static string ReturnUserName() { return User_Name; }
-        public static int ReturnId() { return User_ID; }
+        
 
         public void abrirMain(Object obj)
         {

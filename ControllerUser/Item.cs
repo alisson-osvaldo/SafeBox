@@ -30,10 +30,10 @@ namespace Controller
         }
 
         
-        public static List<Item> Todos()
+        public static List<Item> Todos(int idUser)
         {
             var list = new List<Item>();
-            var table = new Database.Item().Todos();
+            var table = new Database.Item().Todos(idUser);
             if (table.Rows.Count > 0)
             {
                 foreach (DataRow row in table.Rows)
@@ -53,10 +53,10 @@ namespace Controller
             return list;
         }
 
-        public static List<Item> SearchItemLoginType(string type)
+        public static List<Item> SearchItemLoginType(string type, int idUser)
         {
             var list = new List<Item>();
-            var table = new Database.Item().SearchItemType(type);
+            var table = new Database.Item().SearchItemType(type, idUser);
             if (table.Rows.Count > 0)
             {
                 foreach (DataRow row in table.Rows)
@@ -75,10 +75,10 @@ namespace Controller
             return list;
         }
 
-        public static List<Item> SearchItemNoteType(string type)
+        public static List<Item> SearchItemNoteType(string type, int idUser)
         {
             var list = new List<Item>();
-            var table = new Database.Item().SearchItemType(type);
+            var table = new Database.Item().SearchItemType(type, idUser);
             if (table.Rows.Count > 0)
             {
                 foreach (DataRow row in table.Rows)

@@ -53,7 +53,6 @@ namespace SafeBox.Forms.AddItems
             else
             {
                 int idReturn = item.Gravar();
-
                 FrmMain.CloseFormPanelList();
                 FrmMain.OpenFormPanelList(type);
                 if (!idReturn.Equals(-1))

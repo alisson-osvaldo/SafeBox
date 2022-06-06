@@ -50,7 +50,8 @@ namespace SafeBox.Forms.ListItems
 
         public void loadAll()
         {
-            listBoxNote.DataSource = Item.SearchItemNoteType(type);
+            int idUser = Form1.User_ID;
+            listBoxNote.DataSource = Item.SearchItemNoteType(type, idUser);
         }
 
         public void OpenFrmItemNote()

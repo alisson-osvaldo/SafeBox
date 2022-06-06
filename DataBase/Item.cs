@@ -28,29 +28,48 @@ namespace Database
                 using (SqlConnection connection = new SqlConnection(connectionstring))
                 {
                     string queryString = "INSERT INTO items(iduser, name, username, password, url, note, type) " +
-                        "VALUES('" + idUser + "', '" + name + "', '" + username + "', '" + password + "', '" + url + "', '" + note + "', '" + type + "') " +
-                        "SELECT SCOPE_IDENTITY()";
-                                           
+                        "VALUES('" + idUser + "', '" + name + "', '" + username + "', '" + password + "', '" + url + "', '" + note + "', '" + type + "') ";
+
                     SqlCommand command = new SqlCommand(queryString, connection);
                     command.Connection.Open();
-                    command.ExecuteNonQuery();
-                    Int32 idReturn = Convert.ToInt32(command.ExecuteScalar());
-
+                    command.ExecuteNonQuery();  
+                    connection.Close();
                     MessageBox.Show("Item cadastro com sucesso");
 
+
+                    int idReturn = returnMaxId(0);
                     return idReturn;
-                }
-            }catch (Exception ex) {
+                }            
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show("Error: " + ex);
                 return -1;
             }
         }
 
-        public DataTable Todos()
+        public static int returnMaxId(int result)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstringStatic))
+            {
+                string queryString = "SELECT IDENT_CURRENT('dbo.items');";
+
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read() & !reader.IsDBNull(0))
+                {
+                    return result = Convert.ToInt32(reader[0]);
+                }              
+            }
+            return result;
+        }
+
+        public DataTable Todos(int idUser)
         {
             using (SqlConnection connection = new SqlConnection(connectionstring))
             {
-                string queryString = "SELECT * FROM items";
+                string queryString = "SELECT * FROM items WHERE iduser = '"+ idUser +"' ";
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
 
@@ -64,11 +83,11 @@ namespace Database
             }
         }
 
-        public DataTable SearchItemType(string type)
+        public DataTable SearchItemType(string type, int idUser)
         {
             using (SqlConnection connection = new SqlConnection(connectionstring))
             {
-                string queryString = "SELECT * FROM items WHERE type = '" + type + "' ";
+                string queryString = "SELECT * FROM items WHERE type = '" + type + "' AND  iduser = '" + idUser + "' ";
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
 
@@ -90,7 +109,7 @@ namespace Database
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
 
-                SqlDataAdapter adapter = new SqlDataAdapter(); 
+                SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = command;
 
                 DataTable table = new DataTable();
@@ -99,7 +118,7 @@ namespace Database
                 return table;
             }
         }
-       
+
         public static void UpdateItem(int Id, string Name, string UserName, string Password, string URL, string Note)
         {
             try
@@ -122,7 +141,8 @@ namespace Database
 
                     MessageBox.Show("Item Alterado com sucesso");
                 }
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
@@ -142,6 +162,21 @@ namespace Database
                 connection.Close();
 
                 MessageBox.Show("Item Deletado com sucesso");
+            }
+        }
+
+        public static void DeleteItemIdRegister(int IdUser)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstringStatic))
+            using (SqlCommand command = connection.CreateCommand())
+            {
+                command.CommandText = "DELETE FROM items WHERE iduser = @iduser";
+
+                command.Parameters.AddWithValue("@iduser", IdUser);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
             }
         }
 
