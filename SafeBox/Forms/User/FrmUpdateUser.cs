@@ -136,6 +136,11 @@ namespace SafeBox.Forms.User
 
             lblPasswordStrength.Text = passwordStrength;
         }
+
+        private void FrmUpdateUser_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -176,9 +176,9 @@
             this.label3.Location = new System.Drawing.Point(179, 58);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 16);
+            this.label3.Size = new System.Drawing.Size(119, 16);
             this.label3.TabIndex = 7;
-            this.label3.Text = "nome de usuário";
+            this.label3.Text = "Nome de Usuário";
             // 
             // label2
             // 
@@ -295,6 +295,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmUpdateUser";
             this.Text = "FrmUpdateUser";
+            this.Load += new System.EventHandler(this.FrmUpdateUser_Load);
             this.panelUpdateUser.ResumeLayout(false);
             this.panelUpdateUser.PerformLayout();
             this.panel1.ResumeLayout(false);
