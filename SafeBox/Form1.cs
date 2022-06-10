@@ -36,7 +36,7 @@ namespace SafeBox
             var login = new User();
 
             login.UserName = comboBoxLoginUserName.Text;
-            login.Password = txtPasswordLogin.Text;
+            login.Password = txtPasswordLogin.Texts;
             bool log = login.ValidacaoLogin();
 
             //getting id and username
@@ -53,7 +53,7 @@ namespace SafeBox
             } else
             {
                 MessageBox.Show("Senha incorreta! tente novamente.");
-                txtPasswordLogin.Clear();
+                txtPasswordLogin.Texts = "";
             }
         }
 
@@ -79,9 +79,24 @@ namespace SafeBox
             comboBoxLoginUserName.DataSource = User.Todos();
         }
 
-        private void comboBoxLoginUserName_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnPassword_Click(object sender, EventArgs e)
         {
+            int op;
 
+            if (txtPasswordLogin.PasswordChar.Equals(false)) { op = 1; }
+            else { op = 0; }
+
+            switch (op)
+            {
+                case 0:
+                    txtPasswordLogin.PasswordChar = false;
+                    btnPassword.IconChar = FontAwesome.Sharp.IconChar.Eye;
+                    break;
+                case 1:
+                    txtPasswordLogin.PasswordChar = true;
+                    btnPassword.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+                    break;
+            }
         }
     }
 }

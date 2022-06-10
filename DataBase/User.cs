@@ -33,7 +33,7 @@ namespace Database
                     command.Connection.Open();
                     command.ExecuteNonQuery();
 
-                    MessageBox.Show("Cadastro feito com sucesso");
+                    MessageBox.Show("Cadastro feito com sucesso\nAgora é só entrar utilizando sua senha.");
                 }
             }
             catch (System.Data.SqlClient.SqlException)

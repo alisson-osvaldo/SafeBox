@@ -112,15 +112,13 @@ namespace Controller
             int placar = GeneratePasswordPoints(password);
 
             if (placar < 50)
-                return "Inaceitavel";
+                return "Inaceitável";
             else if (placar < 60)
                 return "Fraca";
             else if (placar < 80)
-                return "Aceitavel";
-            else if (placar < 100)
-                return "Segura";
-            else
-                return "Segura";
+                return "Aceitável";
+            else 
+                return "Segura";    
         }
 
     }

@@ -526,6 +526,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(965, 584);
             this.Controls.Add(this.panelButtons);
@@ -606,3 +607,20 @@
         public static System.Windows.Forms.Panel panelDesktop;
     }
 }
+
+/*
+
+
+
+
+
+
+
+        private static FontAwesome.Sharp.IconButton btnSave;
+        private static FontAwesome.Sharp.IconButton btnEdit;
+        private static FontAwesome.Sharp.IconButton btnDelete;
+        private static System.Windows.Forms.Button btnCancel;
+        public static System.Windows.Forms.Label lblTitleChildForm;
+        public static System.Windows.Forms.Panel panelList;
+        public static System.Windows.Forms.Panel panelDesktop;
+ */

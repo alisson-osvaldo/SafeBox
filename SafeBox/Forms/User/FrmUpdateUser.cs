@@ -41,7 +41,7 @@ namespace SafeBox.Forms.User
                 MessageBox.Show("Senha Atual Incorreta!!!\nTente novamente.");
                 txtPassword.Texts = "";
             }
-            else if (validationCaracters != true || passwordStrength == "Inaceitavel" || QtdCaracters != true)
+            else if (validationCaracters != true || passwordStrength == "Inaceitável" || QtdCaracters != true)
             {
                 MessageBox.Show("Senha Inaceitável");
             }
@@ -95,10 +95,6 @@ namespace SafeBox.Forms.User
                       
         }
 
-        private void rjTextBox1__TextChanged(object sender, EventArgs e)
-        {
-            
-        }
 
         private void txtNameUser__TextChanged(object sender, EventArgs e)
         {
@@ -133,6 +129,23 @@ namespace SafeBox.Forms.User
             Controller.CheckPasswordStrength.ValidationNumberOfCaracter(password);
 
             string passwordStrength = Controller.CheckPasswordStrength.GetPasswordStrength(password);
+
+            if (passwordStrength == "Inaceitável")
+            {
+                lblPasswordStrength.ForeColor = Color.Red;
+            }
+            else if (passwordStrength == "Fraca")
+            {
+                lblPasswordStrength.ForeColor = Color.Orange;
+            }
+            else if (passwordStrength == "Aceitável")
+            {
+                lblPasswordStrength.ForeColor = Color.Yellow;
+            }
+            else
+            {
+                lblPasswordStrength.ForeColor = Color.Green;
+            }
 
             lblPasswordStrength.Text = passwordStrength;
         }
