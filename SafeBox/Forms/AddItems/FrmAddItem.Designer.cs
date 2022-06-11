@@ -35,6 +35,7 @@
             this.panelAddType = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxItems = new System.Windows.Forms.ComboBox();
+            this.lblType = new System.Windows.Forms.Label();
             this.panelAddItem.SuspendLayout();
             this.flowLayoutPanelAddItem.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -50,7 +51,6 @@
             this.panelAddItem.Name = "panelAddItem";
             this.panelAddItem.Size = new System.Drawing.Size(422, 450);
             this.panelAddItem.TabIndex = 0;
-            this.panelAddItem.SizeChanged += new System.EventHandler(this.panelAddItem_SizeChanged);
             // 
             // flowLayoutPanelAddItem
             // 
@@ -66,6 +66,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.lblType);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panelAddType);
             this.panel1.Controls.Add(this.label1);
@@ -74,18 +75,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 760);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label2.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
             this.label2.Location = new System.Drawing.Point(10, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 15);
+            this.label2.Size = new System.Drawing.Size(40, 16);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Tipo";
+            this.label2.Text = "Tipo:";
             // 
             // panelAddType
             // 
@@ -94,16 +94,15 @@
             this.panelAddType.Name = "panelAddType";
             this.panelAddType.Size = new System.Drawing.Size(395, 574);
             this.panelAddType.TabIndex = 2;
-            this.panelAddType.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAddType_Paint);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
             this.label1.Location = new System.Drawing.Point(136, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 31);
+            this.label1.Size = new System.Drawing.Size(194, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Adicionar Item";
             // 
@@ -113,8 +112,8 @@
             this.comboBoxItems.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxItems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxItems.ForeColor = System.Drawing.Color.Gainsboro;
+            this.comboBoxItems.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxItems.ForeColor = System.Drawing.SystemColors.Window;
             this.comboBoxItems.FormattingEnabled = true;
             this.comboBoxItems.Items.AddRange(new object[] {
             "Login",
@@ -122,10 +121,21 @@
             this.comboBoxItems.Location = new System.Drawing.Point(9, 67);
             this.comboBoxItems.Name = "comboBoxItems";
             this.comboBoxItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.comboBoxItems.Size = new System.Drawing.Size(388, 23);
+            this.comboBoxItems.Size = new System.Drawing.Size(388, 26);
             this.comboBoxItems.TabIndex = 1;
             this.comboBoxItems.Tag = "";
             this.comboBoxItems.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblType.Location = new System.Drawing.Point(52, 48);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(43, 16);
+            this.lblType.TabIndex = 4;
+            this.lblType.Text = "Login";
             // 
             // FrmAddItem
             // 
@@ -137,7 +147,6 @@
             this.Name = "FrmAddItem";
             this.Text = "FrmAddItem";
             this.Load += new System.EventHandler(this.FrmAddItem_Load);
-            this.SizeChanged += new System.EventHandler(this.FrmAddItem_SizeChanged);
             this.panelAddItem.ResumeLayout(false);
             this.flowLayoutPanelAddItem.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -156,5 +165,6 @@
         private System.Windows.Forms.ComboBox comboBoxItems;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelAddItem;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblType;
     }
 }

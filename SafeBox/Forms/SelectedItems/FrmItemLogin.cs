@@ -127,5 +127,34 @@ namespace SafeBox.Forms.SelectedItems
             FrmMain.OpenFormPanelList(type);
         }
 
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtPassword.Text);
+        }
+
+        private void btnPassword_Click(object sender, EventArgs e)
+        {
+            int op;
+
+            if (txtPassword.UseSystemPasswordChar.Equals(false)) { op = 1; }
+            else { op = 0; }
+
+            switch (op)
+            {
+                case 0:
+                    txtPassword.UseSystemPasswordChar = false;
+                    btnPassword.IconChar = FontAwesome.Sharp.IconChar.Eye;
+                    break;
+                case 1:
+                    txtPassword.UseSystemPasswordChar = true;
+                    btnPassword.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+                    break;
+            }
+        }
+
+        private void btnCopyUserName_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtUserName.Text);
+        }
     }
 }

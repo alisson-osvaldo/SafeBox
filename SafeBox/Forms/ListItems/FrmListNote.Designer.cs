@@ -37,11 +37,11 @@
             this.listBoxNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBoxNote.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listBoxNote.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxNote.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxNote.ForeColor = System.Drawing.Color.Gainsboro;
+            this.listBoxNote.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxNote.ForeColor = System.Drawing.SystemColors.Window;
             this.listBoxNote.FormattingEnabled = true;
             this.listBoxNote.IntegralHeight = false;
-            this.listBoxNote.ItemHeight = 23;
+            this.listBoxNote.ItemHeight = 19;
             this.listBoxNote.Location = new System.Drawing.Point(0, 0);
             this.listBoxNote.Name = "listBoxNote";
             this.listBoxNote.Size = new System.Drawing.Size(272, 450);

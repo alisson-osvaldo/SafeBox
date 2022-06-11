@@ -37,11 +37,11 @@
             this.listBoxLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBoxLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listBoxLogin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxLogin.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxLogin.ForeColor = System.Drawing.Color.Gainsboro;
+            this.listBoxLogin.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxLogin.ForeColor = System.Drawing.SystemColors.Window;
             this.listBoxLogin.FormattingEnabled = true;
             this.listBoxLogin.IntegralHeight = false;
-            this.listBoxLogin.ItemHeight = 23;
+            this.listBoxLogin.ItemHeight = 20;
             this.listBoxLogin.Location = new System.Drawing.Point(0, 0);
             this.listBoxLogin.Name = "listBoxLogin";
             this.listBoxLogin.Size = new System.Drawing.Size(270, 450);

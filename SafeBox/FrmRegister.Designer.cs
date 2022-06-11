@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnPasswordStrength = new System.Windows.Forms.Button();
             this.lblPasswordStrength = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtUserNameRegister = new SafeBox.Forms.User.RJTextBox();
             this.txtCreatePassword = new SafeBox.Forms.User.RJTextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,30 +94,31 @@
             this.btnPassword.Size = new System.Drawing.Size(39, 30);
             this.btnPassword.TabIndex = 27;
             this.btnPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.btnPassword, "Alternar Visibilidade");
             this.btnPassword.UseVisualStyleBackColor = false;
             this.btnPassword.Click += new System.EventHandler(this.btnPassword_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(364, 165);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 18);
+            this.label2.Size = new System.Drawing.Size(55, 18);
             this.label2.TabIndex = 34;
             this.label2.Text = "Senha ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.Location = new System.Drawing.Point(336, 97);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 18);
+            this.label3.Size = new System.Drawing.Size(130, 18);
             this.label3.TabIndex = 36;
             this.label3.Text = "Nome de Usuário";
             // 
@@ -227,5 +230,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

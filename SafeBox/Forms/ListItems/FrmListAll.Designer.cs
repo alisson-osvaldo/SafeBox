@@ -37,12 +37,12 @@
             this.listBoxAll.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBoxAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listBoxAll.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxAll.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxAll.ForeColor = System.Drawing.Color.Gainsboro;
+            this.listBoxAll.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxAll.ForeColor = System.Drawing.SystemColors.Window;
             this.listBoxAll.FormattingEnabled = true;
             this.listBoxAll.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.listBoxAll.IntegralHeight = false;
-            this.listBoxAll.ItemHeight = 23;
+            this.listBoxAll.ItemHeight = 20;
             this.listBoxAll.Location = new System.Drawing.Point(0, 0);
             this.listBoxAll.Name = "listBoxAll";
             this.listBoxAll.RightToLeft = System.Windows.Forms.RightToLeft.No;

@@ -13,7 +13,7 @@ namespace SafeBox.Forms
 {
     public partial class FrmAddItem : Form
     {
-        public string windows = "AddItem";
+        public string windows = "AddItem";       
 
         //Variaveis interação Layout
         private Form currentChildForm;
@@ -47,21 +47,6 @@ namespace SafeBox.Forms
 
         //------------------------------------------------------------------------------
 
-        private void panelAddItem_SizeChanged(object sender, EventArgs e)
-        { 
-          
-        }
-
-        private void FrmAddItem_SizeChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void panelAddType_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int selectedIndex = comboBoxItems.SelectedIndex;
@@ -69,8 +54,10 @@ namespace SafeBox.Forms
             if (selectedIndex == 0)
             {
                 OpenChildFormPanelAddItem(new FrmAddItemLogin());
+                lblType.Text = "Login";
             } else if (selectedIndex == 1)
             {
+                lblType.Text = "Nota Segura";
                 OpenChildFormPanelAddItem(new FrmAddItemNote());
             }
 
@@ -82,9 +69,5 @@ namespace SafeBox.Forms
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

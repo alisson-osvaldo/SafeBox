@@ -64,26 +64,28 @@
             // 
             // txtNote
             // 
-            txtNote.Location = new System.Drawing.Point(4, 90);
+            txtNote.BackColor = System.Drawing.Color.Gainsboro;
+            txtNote.Location = new System.Drawing.Point(7, 90);
             txtNote.Multiline = true;
             txtNote.Name = "txtNote";
             txtNote.ReadOnly = true;
-            txtNote.Size = new System.Drawing.Size(390, 185);
+            txtNote.Size = new System.Drawing.Size(390, 199);
             txtNote.TabIndex = 9;
             // 
             // lblNote
             // 
             this.lblNote.AutoSize = true;
-            this.lblNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNote.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblNote.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNote.ForeColor = System.Drawing.SystemColors.Window;
             this.lblNote.Location = new System.Drawing.Point(4, 71);
             this.lblNote.Name = "lblNote";
-            this.lblNote.Size = new System.Drawing.Size(36, 16);
+            this.lblNote.Size = new System.Drawing.Size(42, 18);
             this.lblNote.TabIndex = 8;
             this.lblNote.Text = "Note";
             // 
             // txtName
             // 
+            txtName.BackColor = System.Drawing.Color.Gainsboro;
             txtName.Location = new System.Drawing.Point(7, 38);
             txtName.Name = "txtName";
             txtName.ReadOnly = true;
@@ -93,22 +95,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label2.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
             this.label2.Location = new System.Drawing.Point(4, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.Size = new System.Drawing.Size(49, 18);
             this.label2.TabIndex = 0;
             this.label2.Text = "Name";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(7, 9);
+            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(277, 25);
+            this.label1.Size = new System.Drawing.Size(280, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Informações sobre o item";
             // 
@@ -134,9 +136,9 @@
         private System.Windows.Forms.Panel panelItemNote;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private static System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.Label lblNote;
-        private static System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
+        private static System.Windows.Forms.TextBox txtNote;
+        private static System.Windows.Forms.TextBox txtName;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUnlock = new System.Windows.Forms.Button();
             this.btnFrmRegister = new System.Windows.Forms.Button();
@@ -36,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnPassword = new FontAwesome.Sharp.IconButton();
             this.txtPasswordLogin = new SafeBox.Forms.User.RJTextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -77,7 +79,7 @@
             this.comboBoxLoginUserName.BackColor = System.Drawing.SystemColors.Window;
             this.comboBoxLoginUserName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxLoginUserName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxLoginUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxLoginUserName.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxLoginUserName.FormattingEnabled = true;
             this.comboBoxLoginUserName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.comboBoxLoginUserName.Location = new System.Drawing.Point(121, 154);
@@ -89,24 +91,24 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Window;
             this.label3.Location = new System.Drawing.Point(161, 133);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 18);
+            this.label3.Size = new System.Drawing.Size(130, 18);
             this.label3.TabIndex = 37;
             this.label3.Text = "Nome de Usuário";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(192, 191);
+            this.label2.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
+            this.label2.Location = new System.Drawing.Point(199, 191);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 18);
+            this.label2.Size = new System.Drawing.Size(55, 18);
             this.label2.TabIndex = 38;
             this.label2.Text = "Senha ";
             // 
@@ -131,6 +133,7 @@
             this.btnPassword.Size = new System.Drawing.Size(39, 30);
             this.btnPassword.TabIndex = 40;
             this.btnPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.btnPassword, "Alternar Visibilidade");
             this.btnPassword.UseVisualStyleBackColor = false;
             this.btnPassword.Click += new System.EventHandler(this.btnPassword_Click);
             // 
@@ -150,7 +153,7 @@
             this.txtPasswordLogin.Name = "txtPasswordLogin";
             this.txtPasswordLogin.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtPasswordLogin.PasswordChar = true;
-            this.txtPasswordLogin.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtPasswordLogin.PlaceholderColor = System.Drawing.Color.Black;
             this.txtPasswordLogin.PlaceholderText = "";
             this.txtPasswordLogin.Size = new System.Drawing.Size(205, 31);
             this.txtPasswordLogin.TabIndex = 39;
@@ -191,6 +194,7 @@
         private System.Windows.Forms.Label label2;
         private Forms.User.RJTextBox txtPasswordLogin;
         private FontAwesome.Sharp.IconButton btnPassword;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
