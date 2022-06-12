@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.btnUnlock = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnFrmRegister = new System.Windows.Forms.Button();
             this.comboBoxLoginUserName = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPassword = new FontAwesome.Sharp.IconButton();
-            this.txtPasswordLogin = new SafeBox.Forms.User.RJTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.txtPasswordLogin = new SafeBox.Forms.User.RJTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -54,24 +56,46 @@
             // 
             // btnUnlock
             // 
-            this.btnUnlock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUnlock.Location = new System.Drawing.Point(90, 285);
+            this.btnUnlock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnUnlock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUnlock.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnUnlock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUnlock.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUnlock.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnUnlock.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnUnlock.ImageKey = "lock-icon_31851.png";
+            this.btnUnlock.ImageList = this.imageList1;
+            this.btnUnlock.Location = new System.Drawing.Point(149, 284);
             this.btnUnlock.Name = "btnUnlock";
-            this.btnUnlock.Size = new System.Drawing.Size(283, 37);
+            this.btnUnlock.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnUnlock.Size = new System.Drawing.Size(151, 41);
             this.btnUnlock.TabIndex = 2;
             this.btnUnlock.Text = "Desbloquear";
+            this.btnUnlock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUnlock.UseVisualStyleBackColor = true;
             this.btnUnlock.Click += new System.EventHandler(this.btnUnlock_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "keys_security_private_lock_1739.png");
+            this.imageList1.Images.SetKeyName(1, "lock-icon_31851.png");
+            // 
             // btnFrmRegister
             // 
-            this.btnFrmRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFrmRegister.Location = new System.Drawing.Point(149, 430);
+            this.btnFrmRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnFrmRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFrmRegister.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFrmRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFrmRegister.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFrmRegister.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnFrmRegister.Location = new System.Drawing.Point(174, 430);
             this.btnFrmRegister.Name = "btnFrmRegister";
-            this.btnFrmRegister.Size = new System.Drawing.Size(137, 33);
+            this.btnFrmRegister.Size = new System.Drawing.Size(105, 33);
             this.btnFrmRegister.TabIndex = 3;
             this.btnFrmRegister.Text = "cadastrar-se";
-            this.btnFrmRegister.UseVisualStyleBackColor = true;
+            this.btnFrmRegister.UseVisualStyleBackColor = false;
             this.btnFrmRegister.Click += new System.EventHandler(this.btnFrmRegister_Click);
             // 
             // comboBoxLoginUserName
@@ -174,10 +198,13 @@
             this.Controls.Add(this.btnFrmRegister);
             this.Controls.Add(this.btnUnlock);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "SafeBox";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,6 +222,7 @@
         private Forms.User.RJTextBox txtPasswordLogin;
         private FontAwesome.Sharp.IconButton btnPassword;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 

@@ -154,6 +154,35 @@ namespace SafeBox.Forms.User
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string password = txtNewPassword.Texts;
+
+            Controller.CheckPasswordStrength.ValidationCaracters(password);
+            Controller.CheckPasswordStrength.ValidationNumberOfCaracter(password);
+
+            string passwordStrength = Controller.CheckPasswordStrength.GetPasswordStrength(password);
+
+            if (passwordStrength == "Inaceitável")
+            {
+                lblPasswordStrength.ForeColor = Color.Red;
+            }
+            else if (passwordStrength == "Fraca")
+            {
+                lblPasswordStrength.ForeColor = Color.Orange;
+            }
+            else if (passwordStrength == "Aceitável")
+            {
+                lblPasswordStrength.ForeColor = Color.Yellow;
+            }
+            else
+            {
+                lblPasswordStrength.ForeColor = Color.Green;
+            }
+
+            lblPasswordStrength.Text = passwordStrength;
+        }
     }
 }
 

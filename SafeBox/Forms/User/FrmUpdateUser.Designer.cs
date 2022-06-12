@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUpdateUser));
             this.panelUpdateUser = new System.Windows.Forms.Panel();
-            this.lblPasswordStrength = new System.Windows.Forms.Label();
             this.btnPasswordStrength = new System.Windows.Forms.Button();
+            this.lblPasswordStrength = new System.Windows.Forms.Label();
+            this.txtNewPassword = new SafeBox.Forms.User.RJTextBox();
             this.btnDelete = new FontAwesome.Sharp.IconButton();
+            this.txtNameUser = new SafeBox.Forms.User.RJTextBox();
             this.btnPassword = new FontAwesome.Sharp.IconButton();
+            this.txtPassword = new SafeBox.Forms.User.RJTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
@@ -42,9 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.txtNewPassword = new SafeBox.Forms.User.RJTextBox();
-            this.txtNameUser = new SafeBox.Forms.User.RJTextBox();
-            this.txtPassword = new SafeBox.Forms.User.RJTextBox();
             this.panelUpdateUser.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -52,8 +53,8 @@
             // panelUpdateUser
             // 
             this.panelUpdateUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.panelUpdateUser.Controls.Add(this.lblPasswordStrength);
             this.panelUpdateUser.Controls.Add(this.btnPasswordStrength);
+            this.panelUpdateUser.Controls.Add(this.lblPasswordStrength);
             this.panelUpdateUser.Controls.Add(this.txtNewPassword);
             this.panelUpdateUser.Controls.Add(this.btnDelete);
             this.panelUpdateUser.Controls.Add(this.txtNameUser);
@@ -71,25 +72,55 @@
             this.panelUpdateUser.Size = new System.Drawing.Size(474, 446);
             this.panelUpdateUser.TabIndex = 0;
             // 
+            // btnPasswordStrength
+            // 
+            this.btnPasswordStrength.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnPasswordStrength.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPasswordStrength.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnPasswordStrength.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPasswordStrength.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPasswordStrength.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnPasswordStrength.Location = new System.Drawing.Point(74, 244);
+            this.btnPasswordStrength.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPasswordStrength.Name = "btnPasswordStrength";
+            this.btnPasswordStrength.Size = new System.Drawing.Size(199, 34);
+            this.btnPasswordStrength.TabIndex = 26;
+            this.btnPasswordStrength.Text = "Verificar Força da Senha";
+            this.btnPasswordStrength.UseVisualStyleBackColor = false;
+            this.btnPasswordStrength.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // lblPasswordStrength
             // 
             this.lblPasswordStrength.AutoSize = true;
-            this.lblPasswordStrength.Font = new System.Drawing.Font("Century", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordStrength.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Italic);
             this.lblPasswordStrength.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblPasswordStrength.Location = new System.Drawing.Point(266, 251);
+            this.lblPasswordStrength.Location = new System.Drawing.Point(280, 251);
             this.lblPasswordStrength.Name = "lblPasswordStrength";
             this.lblPasswordStrength.Size = new System.Drawing.Size(0, 20);
             this.lblPasswordStrength.TabIndex = 25;
             // 
-            // btnPasswordStrength
+            // txtNewPassword
             // 
-            this.btnPasswordStrength.Location = new System.Drawing.Point(74, 248);
-            this.btnPasswordStrength.Name = "btnPasswordStrength";
-            this.btnPasswordStrength.Size = new System.Drawing.Size(186, 28);
-            this.btnPasswordStrength.TabIndex = 24;
-            this.btnPasswordStrength.Text = "Verificar Força da Senha";
-            this.btnPasswordStrength.UseVisualStyleBackColor = true;
-            this.btnPasswordStrength.Click += new System.EventHandler(this.button1_Click);
+            this.txtNewPassword.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtNewPassword.BorderColor = System.Drawing.Color.LawnGreen;
+            this.txtNewPassword.BorderFocusColor = System.Drawing.SystemColors.Window;
+            this.txtNewPassword.BorderRadius = 10;
+            this.txtNewPassword.BorderSize = 2;
+            this.txtNewPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNewPassword.Location = new System.Drawing.Point(74, 192);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(5);
+            this.txtNewPassword.Multiline = false;
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
+            this.txtNewPassword.PasswordChar = true;
+            this.txtNewPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtNewPassword.PlaceholderText = "Digite sua nova senha";
+            this.txtNewPassword.Size = new System.Drawing.Size(333, 35);
+            this.txtNewPassword.TabIndex = 23;
+            this.txtNewPassword.Texts = "";
+            this.txtNewPassword.UnderlinedStyle = false;
             // 
             // btnDelete
             // 
@@ -112,6 +143,30 @@
             this.toolTip1.SetToolTip(this.btnDelete, "Deletar");
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // txtNameUser
+            // 
+            this.txtNameUser.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtNameUser.BorderColor = System.Drawing.Color.LawnGreen;
+            this.txtNameUser.BorderFocusColor = System.Drawing.SystemColors.Window;
+            this.txtNameUser.BorderRadius = 10;
+            this.txtNameUser.BorderSize = 2;
+            this.txtNameUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNameUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameUser.ForeColor = System.Drawing.Color.Black;
+            this.txtNameUser.Location = new System.Drawing.Point(74, 79);
+            this.txtNameUser.Margin = new System.Windows.Forms.Padding(5);
+            this.txtNameUser.Multiline = false;
+            this.txtNameUser.Name = "txtNameUser";
+            this.txtNameUser.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
+            this.txtNameUser.PasswordChar = false;
+            this.txtNameUser.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtNameUser.PlaceholderText = "";
+            this.txtNameUser.Size = new System.Drawing.Size(333, 35);
+            this.txtNameUser.TabIndex = 22;
+            this.txtNameUser.Texts = "";
+            this.txtNameUser.UnderlinedStyle = false;
+            this.txtNameUser._TextChanged += new System.EventHandler(this.txtNameUser__TextChanged);
             // 
             // btnPassword
             // 
@@ -138,6 +193,29 @@
             this.btnPassword.UseVisualStyleBackColor = false;
             this.btnPassword.Click += new System.EventHandler(this.btnPassword_Click);
             // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtPassword.BorderColor = System.Drawing.Color.LawnGreen;
+            this.txtPassword.BorderFocusColor = System.Drawing.SystemColors.Window;
+            this.txtPassword.BorderRadius = 10;
+            this.txtPassword.BorderSize = 2;
+            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPassword.Location = new System.Drawing.Point(74, 134);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(5);
+            this.txtPassword.Multiline = false;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
+            this.txtPassword.PasswordChar = false;
+            this.txtPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtPassword.PlaceholderText = "Digite sua senha atual";
+            this.txtPassword.Size = new System.Drawing.Size(333, 35);
+            this.txtPassword.TabIndex = 20;
+            this.txtPassword.Texts = "";
+            this.txtPassword.UnderlinedStyle = false;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -163,15 +241,20 @@
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(182, 317);
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSave.Location = new System.Drawing.Point(180, 310);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 28);
+            this.btnSave.Size = new System.Drawing.Size(118, 40);
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Salvar";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.toolTip1.SetToolTip(this.btnSave, "Salvar todas as alterações");
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label3
@@ -219,76 +302,6 @@
             this.panel1.Size = new System.Drawing.Size(474, 40);
             this.panel1.TabIndex = 22;
             // 
-            // txtNewPassword
-            // 
-            this.txtNewPassword.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtNewPassword.BorderColor = System.Drawing.Color.LawnGreen;
-            this.txtNewPassword.BorderFocusColor = System.Drawing.SystemColors.Window;
-            this.txtNewPassword.BorderRadius = 10;
-            this.txtNewPassword.BorderSize = 2;
-            this.txtNewPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNewPassword.Location = new System.Drawing.Point(74, 192);
-            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(5);
-            this.txtNewPassword.Multiline = false;
-            this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
-            this.txtNewPassword.PasswordChar = true;
-            this.txtNewPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtNewPassword.PlaceholderText = "";
-            this.txtNewPassword.Size = new System.Drawing.Size(333, 35);
-            this.txtNewPassword.TabIndex = 23;
-            this.txtNewPassword.Texts = "";
-            this.txtNewPassword.UnderlinedStyle = false;
-            // 
-            // txtNameUser
-            // 
-            this.txtNameUser.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtNameUser.BorderColor = System.Drawing.Color.LawnGreen;
-            this.txtNameUser.BorderFocusColor = System.Drawing.SystemColors.Window;
-            this.txtNameUser.BorderRadius = 10;
-            this.txtNameUser.BorderSize = 2;
-            this.txtNameUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNameUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameUser.ForeColor = System.Drawing.Color.Black;
-            this.txtNameUser.Location = new System.Drawing.Point(74, 79);
-            this.txtNameUser.Margin = new System.Windows.Forms.Padding(5);
-            this.txtNameUser.Multiline = false;
-            this.txtNameUser.Name = "txtNameUser";
-            this.txtNameUser.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
-            this.txtNameUser.PasswordChar = false;
-            this.txtNameUser.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtNameUser.PlaceholderText = "";
-            this.txtNameUser.Size = new System.Drawing.Size(333, 35);
-            this.txtNameUser.TabIndex = 22;
-            this.txtNameUser.Texts = "";
-            this.txtNameUser.UnderlinedStyle = false;
-            this.txtNameUser._TextChanged += new System.EventHandler(this.txtNameUser__TextChanged);
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtPassword.BorderColor = System.Drawing.Color.LawnGreen;
-            this.txtPassword.BorderFocusColor = System.Drawing.SystemColors.Window;
-            this.txtPassword.BorderRadius = 10;
-            this.txtPassword.BorderSize = 2;
-            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPassword.Location = new System.Drawing.Point(74, 134);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(5);
-            this.txtPassword.Multiline = false;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
-            this.txtPassword.PasswordChar = false;
-            this.txtPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtPassword.PlaceholderText = "";
-            this.txtPassword.Size = new System.Drawing.Size(333, 35);
-            this.txtPassword.TabIndex = 20;
-            this.txtPassword.Texts = "";
-            this.txtPassword.UnderlinedStyle = false;
-            // 
             // FrmUpdateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -298,11 +311,12 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelUpdateUser);
             this.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FrmUpdateUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmUpdateUser";
+            this.Text = "SafeBox - Atualizar Conta";
             this.Load += new System.EventHandler(this.FrmUpdateUser_Load);
             this.panelUpdateUser.ResumeLayout(false);
             this.panelUpdateUser.PerformLayout();
@@ -328,7 +342,7 @@
         private RJTextBox txtNameUser;
         private RJTextBox txtNewPassword;
         private System.Windows.Forms.Label lblPasswordStrength;
-        private System.Windows.Forms.Button btnPasswordStrength;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnPasswordStrength;
     }
 }
