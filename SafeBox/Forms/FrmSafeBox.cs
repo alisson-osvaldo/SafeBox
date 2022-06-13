@@ -29,5 +29,12 @@ namespace SafeBox.Forms
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string search = textBox1.Text;
+
+            Controller.Item.SearchItemByNameAll(search);
+        }
     }
 }

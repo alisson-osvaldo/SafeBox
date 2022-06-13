@@ -65,6 +65,24 @@ namespace Database
             return result;
         }
 
+        public DataTable All()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                string queryString = "SELECT * FROM items";
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                return table;
+            }
+        }
+
         public DataTable Todos(int idUser)
         {
             using (SqlConnection connection = new SqlConnection(connectionstring))

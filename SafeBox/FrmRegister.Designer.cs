@@ -174,7 +174,7 @@
             this.txtUserNameRegister.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
             this.txtUserNameRegister.PasswordChar = false;
             this.txtUserNameRegister.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtUserNameRegister.PlaceholderText = "";
+            this.txtUserNameRegister.PlaceholderText = "Digite um nome de usuário";
             this.txtUserNameRegister.Size = new System.Drawing.Size(417, 35);
             this.txtUserNameRegister.TabIndex = 35;
             this.txtUserNameRegister.Texts = "";
@@ -197,7 +197,7 @@
             this.txtCreatePassword.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
             this.txtCreatePassword.PasswordChar = true;
             this.txtCreatePassword.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtCreatePassword.PlaceholderText = "";
+            this.txtCreatePassword.PlaceholderText = "Digite uma senha";
             this.txtCreatePassword.Size = new System.Drawing.Size(417, 35);
             this.txtCreatePassword.TabIndex = 32;
             this.txtCreatePassword.Texts = "";

@@ -177,8 +177,8 @@
             this.txtPasswordLogin.Name = "txtPasswordLogin";
             this.txtPasswordLogin.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtPasswordLogin.PasswordChar = true;
-            this.txtPasswordLogin.PlaceholderColor = System.Drawing.Color.Black;
-            this.txtPasswordLogin.PlaceholderText = "";
+            this.txtPasswordLogin.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtPasswordLogin.PlaceholderText = "Senha Mestra";
             this.txtPasswordLogin.Size = new System.Drawing.Size(205, 31);
             this.txtPasswordLogin.TabIndex = 39;
             this.txtPasswordLogin.Texts = "";

@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Controller
 {
@@ -115,6 +116,42 @@ namespace Controller
                 }
             }
             return list;
+        }
+
+        public static List<Item> ListAll()
+        {
+            var list = new List<Item>();
+            var tabela = new Database.Item().All();
+            if (tabela.Rows.Count > 0)
+            {
+                foreach (DataRow row in tabela.Rows)
+                {
+                    list.Add(new Item()
+                    {
+                        Id = int.Parse(row["Id"].ToString()),
+                        Name = row["name"].ToString(),
+                        UserName = row["username"].ToString(),
+                        Password = row["password"].ToString(),
+                        URL = row["url"].ToString(),
+                        Note = row["note"].ToString()
+                    });
+                }
+            }
+            return list;
+        }
+
+        public static void SearchItemByNameAll(string name)
+        {
+
+            //Console.WriteLine("\nFind: Part where name contains \"seat\": {0}",
+            //parts.Find(x => x.PartName.Contains("seat")));
+
+            Console.WriteLine("\nFind: Parte onde o nome contém " + name + ": {0}",
+             ListAll().Find(search =>  search.Name.Contains(name))); //quando buscar esse nome retornar id 
+
+            var All = ListAll();
+            Console.WriteLine(All);
+            Console.WriteLine();
         }
 
 

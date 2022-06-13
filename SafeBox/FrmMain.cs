@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Controller;
 using FontAwesome.Sharp;
 using SafeBox.Forms;
 using SafeBox.Forms.AddItems;
@@ -232,19 +225,9 @@ namespace SafeBox
 
         //--------------------------------------------------------------
 
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void sairDoSaleBoxToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -252,15 +235,6 @@ namespace SafeBox
             lblUserName.Text = "Bem vindo " + Form1.User_Name;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void BtnAll_Click(object sender, EventArgs e)
         {
@@ -294,11 +268,6 @@ namespace SafeBox
             Reset();
         }
 
-        private void lblTitleChildForm_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -326,55 +295,11 @@ namespace SafeBox
             WindowState = FormWindowState.Minimized;
         }
 
-        private void panelDesktop_Paint(object sender, PaintEventArgs e)
-        {
-           
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             OpenChildFormPanelDesktop(new FrmAddItem());
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanelMain_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void panelDesktop_SizeChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void panelList_SizeChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        public static void panelDesktop_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelBottomDesktop_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnSaveItem_Click(object sender, EventArgs e)
         {
@@ -394,11 +319,6 @@ namespace SafeBox
             {
                 FrmAddItemNote.BtnSaveAddItemLogin();
             }
-        }
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-            
         }
        
         public void btnDelete_Click(object sender, EventArgs e)

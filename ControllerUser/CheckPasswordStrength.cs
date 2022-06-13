@@ -68,7 +68,7 @@ namespace Controller
 
         private static int GetPointsPerRepetition(string password)
         {
-            System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"(\w)*.*\1");
+            Regex regex = new Regex(@"(\w)*.*\1");
             bool repeat = regex.IsMatch(password);
             if (repeat)
             {
