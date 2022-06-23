@@ -15,7 +15,7 @@ namespace SafeBox
 {
     public partial class FrmRegister : Form
     {
-        Thread t1;
+        //Thread t1;
 
         public FrmRegister()
         {

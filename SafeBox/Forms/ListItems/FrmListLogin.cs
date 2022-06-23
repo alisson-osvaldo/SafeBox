@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controller;
 using SafeBox.Forms.SelectedItems;
@@ -52,7 +44,15 @@ namespace SafeBox.Forms.ListItems
         public void loadAll()
         {
             int idUser = Form1.User_ID;
-            listBoxLogin.DataSource = Item.SearchItemLoginType(type, idUser);                 
+            
+            if (FrmMain.SearchValidation.Equals(true))
+            {
+                listBoxLogin.DataSource = Item.SearchList(FrmMain.Search, FrmMain.CurrentType, idUser);
+            }
+            else
+            {
+                listBoxLogin.DataSource = Item.SearchItemLoginType(type, idUser);
+            }
         }
 
         public void OpenFrmItemLogin()

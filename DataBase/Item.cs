@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Database
@@ -136,7 +132,44 @@ namespace Database
                 return table;
             }
         }
+        // Search---------------------------------------------------------------------------------------------------------
+        public DataTable SearchList(string name, string type, int idUser)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {               
+                string queryString = "SELECT * FROM items WHERE iduser = '" + idUser + "' AND type = '" + type +"' AND name LIKE '%"+ name +"%' "; 
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
 
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                return table;
+            }
+        }
+
+        public DataTable SearchListAll(string name, int idUser)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                string queryString = "SELECT * FROM items WHERE iduser = '" + idUser + "' AND name LIKE '%" + name + "%' ";
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                return table;
+            }
+        }
+
+        //-----------------------------------------------------------------------------------------------------------------
         public static void UpdateItem(int Id, string Name, string UserName, string Password, string URL, string Note)
         {
             try

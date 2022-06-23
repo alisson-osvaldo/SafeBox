@@ -30,7 +30,7 @@ namespace Controller
             return idReturn;
         }
 
-        
+        //Lista todos 
         public static List<Item> Todos(int idUser)
         {
             var list = new List<Item>();
@@ -118,12 +118,17 @@ namespace Controller
             return list;
         }
 
+
+        
+
+        //Essa cara vai ser usado apenas pelo Searche ???
         public static List<Item> ListAll()
         {
             var list = new List<Item>();
             var tabela = new Database.Item().All();
             if (tabela.Rows.Count > 0)
             {
+                //Foreach para add
                 foreach (DataRow row in tabela.Rows)
                 {
                     list.Add(new Item()
@@ -136,23 +141,93 @@ namespace Controller
                         Note = row["note"].ToString()
                     });
                 }
+
+                //Foreach para filtrar por name (Modelo 1)
+                /*var All = ListAll();
+
+                foreach (var item in All)
+                {
+                    if (item.Name.Contains())
+                    {
+                        var idItem = item.Id;
+                        SearchItemById(item.Id);
+                        Console.WriteLine(item.Id);
+                    }
+
+                }*/
+
             }
             return list;
         }
 
-        public static void SearchItemByNameAll(string name)
+        // Search---------------------------------------------------------------------------------
+
+        public static List<Item> SearchList(string name, string type, int idUser)
         {
+            var list = new List<Item>();
+            var tabela = new Database.Item().SearchList(name, type, idUser);
+            if (tabela.Rows.Count > 0)
+                foreach (DataRow row in tabela.Rows)
+                {
+                    list.Add(new Item()
+                    {
+                        Id = int.Parse(row["Id"].ToString()),
+                        Name = row["name"].ToString(),
+                        UserName = row["username"].ToString(),
+                        Password = row["password"].ToString(),
+                        URL = row["url"].ToString(),
+                        Note = row["note"].ToString()
+                    });
+                }
+            return list;
+        }
 
-            //Console.WriteLine("\nFind: Part where name contains \"seat\": {0}",
-            //parts.Find(x => x.PartName.Contains("seat")));
+        public static List<Item> SearchListAll(string name, int idUser)
+        {
+            var list = new List<Item>();
+            var tabela = new Database.Item().SearchListAll(name, idUser);
+            if (tabela.Rows.Count > 0)
+                foreach (DataRow row in tabela.Rows)
+                {
+                    list.Add(new Item()
+                    {
+                        Id = int.Parse(row["Id"].ToString()),
+                        Name = row["name"].ToString(),
+                        UserName = row["username"].ToString(),
+                        Password = row["password"].ToString(),
+                        URL = row["url"].ToString(),
+                        Note = row["note"].ToString()
+                    });
+                }
+            return list;
+        }
 
+        //-----------------------------------------------------------------------------------------
+
+
+        //Modelo de busca apartir de uma LIST aqui (Modelo 1)
+        /*public static void SearchItemByNameAll(string name)
+        {
             Console.WriteLine("\nFind: Parte onde o nome contém " + name + ": {0}",
-             ListAll().Find(search =>  search.Name.Contains(name))); //quando buscar esse nome retornar id 
+            ListAll().Find(search => search.Name.Contains(name))); //quando buscar esse nome retornar id 
+            //int t = ListAll().Find);
+
 
             var All = ListAll();
-            Console.WriteLine(All);
-            Console.WriteLine();
-        }
+
+            foreach (var item in All)
+            {
+                if (item.Name.Contains(name))
+                {
+                    var idItem = item.Id;
+                    SearchItemById(item.Id);
+                    Console.WriteLine(item.Id);
+                }
+        
+            }
+
+         }*/
+
 
 
     }

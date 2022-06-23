@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controller;
 using SafeBox.Forms.SelectedItems;
@@ -51,7 +44,15 @@ namespace SafeBox.Forms.ListItems
         public void loadAll()
         {
             int idUser = Form1.User_ID;
-            listBoxAll.DataSource = Item.Todos(idUser);
+
+            if (FrmMain.SearchValidation.Equals(true))
+            {
+                listBoxAll.DataSource = Item.SearchListAll(FrmMain.Search, idUser);
+            }
+            else
+            {
+                listBoxAll.DataSource = Item.Todos(idUser);
+            }          
         }
 
         public void OpenFrmItemLogin()

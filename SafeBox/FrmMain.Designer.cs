@@ -38,6 +38,7 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            txtSearch = new System.Windows.Forms.TextBox();
             this.lblUserName = new System.Windows.Forms.Label();
             lblTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
@@ -190,6 +191,7 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(64)))));
+            this.panelTitleBar.Controls.Add(txtSearch);
             this.panelTitleBar.Controls.Add(this.lblUserName);
             this.panelTitleBar.Controls.Add(lblTitleChildForm);
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
@@ -199,6 +201,18 @@
             this.panelTitleBar.Size = new System.Drawing.Size(753, 75);
             this.panelTitleBar.TabIndex = 3;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            // 
+            // txtSearch
+            // 
+            txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            txtSearch.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            txtSearch.ForeColor = System.Drawing.SystemColors.Window;
+            txtSearch.Location = new System.Drawing.Point(263, 49);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new System.Drawing.Size(478, 22);
+            txtSearch.TabIndex = 6;
+            this.toolTip1.SetToolTip(txtSearch, "Pesquisar");
+            txtSearch.TextChanged += new System.EventHandler(txtSearch_TextChanged);
             // 
             // lblUserName
             // 
@@ -582,22 +596,7 @@
         public static System.Windows.Forms.Label lblTitleChildForm;
         public static System.Windows.Forms.Panel panelList;
         public static System.Windows.Forms.Panel panelDesktop;
+        private static System.Windows.Forms.TextBox txtSearch;
     }
 }
 
-/*
-
-
-
-
-
-
-
-        private static FontAwesome.Sharp.IconButton btnSave;
-        private static FontAwesome.Sharp.IconButton btnEdit;
-        private static FontAwesome.Sharp.IconButton btnDelete;
-        private static System.Windows.Forms.Button btnCancel;
-        public static System.Windows.Forms.Label lblTitleChildForm;
-        public static System.Windows.Forms.Panel panelList;
-        public static System.Windows.Forms.Panel panelDesktop;
- */

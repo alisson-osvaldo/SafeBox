@@ -14,6 +14,9 @@ namespace SafeBox
     public partial class FrmMain : Form
     {
         private static string typeForm { get; set; }
+        public static string CurrentType { get; set; }
+        public static bool SearchValidation { get; set; }
+        public static string Search { get; set; }
 
         //Variaveis interação Layout
         private IconButton currentBtn;
@@ -31,6 +34,7 @@ namespace SafeBox
             panelMenu.Controls.Add(leftBorderBtn);
 
             //OpenListBox All
+            CurrentType = "All";
             typeForm = "All";
             OpenFormPanelList(typeForm);
 
@@ -90,7 +94,7 @@ namespace SafeBox
             }
         }
 
-        private static void OpenChildFormPanelList(Form childForm)
+        public static void OpenChildFormPanelList(Form childForm)
         {
             if (currentChildFormPanelList != null)
             {
@@ -238,6 +242,7 @@ namespace SafeBox
 
         private void BtnAll_Click(object sender, EventArgs e)
         {
+            CurrentType = "All";
             lblTitleChildForm.Text = "Todos os Items";
             ActivateButton(sender, RGBColors.color3);
             OpenChildFormPanelList(new FrmListAll());
@@ -245,13 +250,15 @@ namespace SafeBox
 
         private void iconNota_Click(object sender, EventArgs e)
         {
+            CurrentType = "Note";
             lblTitleChildForm.Text = "Nota";
             ActivateButton(sender, RGBColors.color2);
             OpenChildFormPanelList(new FrmListNote()); 
         }
 
         private void btnLogin_Click_1(object sender, EventArgs e)
-        {      
+        {
+            CurrentType = "Login";
             lblTitleChildForm.Text = "Login";
             ActivateButton(sender, RGBColors.color1);
             OpenChildFormPanelList(new FrmListLogin());
@@ -394,6 +401,32 @@ namespace SafeBox
         private void informaçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FrmInfo().Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            SearchValidation = true;
+            Search = txtSearch.Text;
+
+            if (FrmMain.CurrentType.Equals("Login"))
+            {
+                FrmMain.OpenChildFormPanelList(new FrmListLogin());
+            }
+            else if (FrmMain.CurrentType.Equals("Note"))
+            {
+                FrmMain.OpenChildFormPanelList(new FrmListNote());
+            }
+            else
+            {
+                FrmMain.OpenChildFormPanelList(new FrmListAll());
+            }
+
+            SearchValidation = false;
         }
     }
 }
