@@ -36,6 +36,7 @@
             txbItemURL = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panelAddTypeLogin = new System.Windows.Forms.Panel();
+            this.btnPassword = new FontAwesome.Sharp.IconButton();
             txbItemPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             txbItemUserName = new System.Windows.Forms.TextBox();
@@ -103,11 +104,11 @@
             // 
             // txbItemURL
             // 
-           txbItemURL.BackColor = System.Drawing.Color.Gainsboro;
-           txbItemURL.Location = new System.Drawing.Point(6, 33);
-           txbItemURL.Name = "txbItemURL";
-           txbItemURL.Size = new System.Drawing.Size(377, 20);
-           txbItemURL.TabIndex = 2;
+            txbItemURL.BackColor = System.Drawing.Color.Gainsboro;
+            txbItemURL.Location = new System.Drawing.Point(6, 33);
+            txbItemURL.Name = "txbItemURL";
+            txbItemURL.Size = new System.Drawing.Size(377, 20);
+            txbItemURL.TabIndex = 2;
             // 
             // label4
             // 
@@ -123,6 +124,7 @@
             // panelAddTypeLogin
             // 
             this.panelAddTypeLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.panelAddTypeLogin.Controls.Add(this.btnPassword);
             this.panelAddTypeLogin.Controls.Add(txbItemPassword);
             this.panelAddTypeLogin.Controls.Add(this.label3);
             this.panelAddTypeLogin.Controls.Add(txbItemUserName);
@@ -134,13 +136,38 @@
             this.panelAddTypeLogin.Size = new System.Drawing.Size(395, 196);
             this.panelAddTypeLogin.TabIndex = 2;
             // 
+            // btnPassword
+            // 
+            this.btnPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPassword.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnPassword.FlatAppearance.BorderSize = 0;
+            this.btnPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPassword.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+            this.btnPassword.IconColor = System.Drawing.Color.Red;
+            this.btnPassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPassword.IconSize = 30;
+            this.btnPassword.Location = new System.Drawing.Point(361, 140);
+            this.btnPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPassword.Name = "btnPassword";
+            this.btnPassword.Size = new System.Drawing.Size(30, 20);
+            this.btnPassword.TabIndex = 44;
+            this.btnPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPassword.UseVisualStyleBackColor = false;
+            this.btnPassword.Click += new System.EventHandler(this.btnPassword_Click);
+            // 
             // txbItemPassword
             // 
             txbItemPassword.BackColor = System.Drawing.Color.Gainsboro;
             txbItemPassword.Location = new System.Drawing.Point(6, 140);
             txbItemPassword.Name = "txbItemPassword";
-            txbItemPassword.Size = new System.Drawing.Size(377, 20);
+            txbItemPassword.Size = new System.Drawing.Size(352, 20);
             txbItemPassword.TabIndex = 5;
+            txbItemPassword.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -228,5 +255,6 @@
         private static System.Windows.Forms.TextBox txbItemPassword;
         private static System.Windows.Forms.TextBox txbItemUserName;
         private static System.Windows.Forms.TextBox txtItemNote;
+        private FontAwesome.Sharp.IconButton btnPassword;
     }
 }

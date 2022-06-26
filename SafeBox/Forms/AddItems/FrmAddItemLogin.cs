@@ -56,6 +56,24 @@ namespace SafeBox.Forms.AddItems
             
         }
 
-        
+        private void btnPassword_Click(object sender, EventArgs e)
+        {
+            int op;
+
+            if (txbItemPassword.UseSystemPasswordChar.Equals(false)) { op = 1; }
+            else { op = 0; }
+
+            switch (op)
+            {
+                case 0:
+                    txbItemPassword.UseSystemPasswordChar = false;
+                    btnPassword.IconChar = FontAwesome.Sharp.IconChar.Eye;
+                    break;
+                case 1:
+                    txbItemPassword.UseSystemPasswordChar = true;
+                    btnPassword.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+                    break;
+            }
+        }
     }
 }
