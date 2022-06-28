@@ -196,7 +196,8 @@ namespace Controller
                         UserName = row["username"].ToString(),
                         Password = row["password"].ToString(),
                         URL = row["url"].ToString(),
-                        Note = row["note"].ToString()
+                        Note = row["note"].ToString(),
+                        Type = row["type"].ToString()
                     });
                 }
             return list;
