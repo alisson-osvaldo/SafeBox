@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SafeBox.Forms.User
@@ -20,9 +13,7 @@ namespace SafeBox.Forms.User
             string UserName = Form1.ReturnUserName();
             txtNameUser.Texts = UserName;
         }
-
-        //--------------------------------------------------------------------------------------------
-
+       
         private void btnSave_Click(object sender, EventArgs e)
         {
             int Id = Form1.ReturnId();
@@ -40,10 +31,12 @@ namespace SafeBox.Forms.User
             {
                 MessageBox.Show("Senha Atual Incorreta!!!\nTente novamente.");
                 txtPassword.Texts = "";
+                txtPassword.Focus();
             }
             else if (validationCaracters != true || passwordStrength == "Inaceitável" || QtdCaracters != true)
             {
                 MessageBox.Show("Senha Inaceitável");
+                txtNewPassword.Focus();
             }
             else
             {
@@ -77,11 +70,13 @@ namespace SafeBox.Forms.User
                 if (txtPassword.Texts == "")
                 {
                     MessageBox.Show("Por favor, antes confirme sua senha no campo 'Senha Atual'!");
+                    txtPassword.Focus();
                 }
                 else if (validation != true)
                 {
                     MessageBox.Show("Senha incorreta!, Tente novamente.");
                     txtPassword.Texts = "";
+                    txtPassword.Focus();
                 }
 
                 if (confirm.ToString().ToUpper() == "YES" && validation != false)
@@ -93,12 +88,6 @@ namespace SafeBox.Forms.User
                 break;
             }
                       
-        }
-
-
-        private void txtNameUser__TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnPassword_Click(object sender, EventArgs e)

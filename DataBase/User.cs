@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 
@@ -15,21 +9,13 @@ namespace Database
 {
     public class User
     {
-        private static  string connectionstring;
-        private const string connectionString = "Data Source= D:\\Save Projects\\Estudo CSharp POO\\SafeBox\\SafeBox\\bin\\Debug\\SQLite\\bd_SafeBox.db";
-        //private static string connectionstringStatic;
-
-        public User()
-        {
-            connectionstring = ConfigurationManager.AppSettings["SqlConnection"];
-        }
-
+        private const string connectionstring = "Data Source= D:\\Save Projects\\Estudo CSharp POO\\SafeBox\\SafeBox\\bin\\Debug\\SQLite\\bd_SafeBox.db";       
         
         public void Gravar(string username, string password)
         {        
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
                 {
                     string queryString = "INSERT INTO tb_users(username, password) VALUES('" + username + "', '" + password + "')";
                     SQLiteCommand command = new SQLiteCommand(queryString, connection);
@@ -48,9 +34,8 @@ namespace Database
 
         //Validação Login
         public bool Login(string username,string password)
-        {
-           
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+        {         
+            using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
             {
                 string queryString = "SELECT * FROM tb_users WHERE username = '" + username + "' AND password = '" + password + "' ";
 
@@ -73,18 +58,14 @@ namespace Database
                     return false;
                 }
 
-            }
-         
-            
+            }           
         }
-
-        //Testei até aqui obs:senha atual pegou do SQLserver
 
         public static void UpdateUser(int Id, string newUserName, string newPassword)
         {
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
                 using (SQLiteCommand command = connection.CreateCommand())
                 {
                     command.CommandText = "UPDATE tb_users SET username = @username, password = @newPassword WHERE id = @id ";
@@ -108,7 +89,7 @@ namespace Database
         //Validar senha atual
         public static bool validationPassword( int id, string password )
         {
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
             {
                 string queryString = "SELECT * FROM tb_users WHERE id = '" + id + "' AND password = '" + password + "' ";
 
@@ -129,7 +110,7 @@ namespace Database
                 
         }
         
-        //Validar Criação de senha
+        //Validar nova senha
         public bool validationNewPassword()
         {
             return true;
@@ -137,39 +118,55 @@ namespace Database
 
         public static void DeleteUser(int Id)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
-            using (SQLiteCommand command = connection.CreateCommand())
+            try
             {
-                command.CommandText = "DELETE FROM tb_users WHERE id = @id";
+                using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
+                using (SQLiteCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "DELETE FROM tb_users WHERE id = @id";
 
-                command.Parameters.AddWithValue("@id", Id);
+                    command.Parameters.AddWithValue("@id", Id);
 
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
 
-                MessageBox.Show("Conta Deletada com sucesso");
+                    MessageBox.Show("Conta Deletada com sucesso");
+                }
+                Item.DeleteItemIdRegister(Id);
             }
-            Item.DeleteItemIdRegister(Id);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }         
         }
 
         public DataTable Todos()
         {
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            try
             {
-                string queryString = "SELECT * FROM tb_users";
-                SQLiteCommand command = new SQLiteCommand(queryString, connection);
-                command.Connection.Open();
+                using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
+                {
+                    string queryString = "SELECT * FROM tb_users";
+                    SQLiteCommand command = new SQLiteCommand(queryString, connection);
+                    command.Connection.Open();
 
-                SQLiteDataAdapter adapter = new SQLiteDataAdapter(); //Esse cara vai pegar nossa requisição(registro) no bd
-                adapter.SelectCommand = command;
+                    SQLiteDataAdapter adapter = new SQLiteDataAdapter(); //Esse cara vai pegar nossa requisição(registro) no bd
+                    adapter.SelectCommand = command;
 
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                connection.Close();
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    connection.Close();
 
-                return table;
+                    return table;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
+            
         }
 
         

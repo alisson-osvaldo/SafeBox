@@ -166,7 +166,6 @@
             this.txtNameUser.TabIndex = 22;
             this.txtNameUser.Texts = "";
             this.txtNameUser.UnderlinedStyle = false;
-            this.txtNameUser._TextChanged += new System.EventHandler(this.txtNameUser__TextChanged);
             // 
             // btnPassword
             // 
