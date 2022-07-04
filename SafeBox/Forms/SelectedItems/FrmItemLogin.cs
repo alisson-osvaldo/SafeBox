@@ -26,32 +26,39 @@ namespace SafeBox.Forms.SelectedItems
 
             //GetItem SqlServer
             Id = int.Parse(idItem.ToString());
-            var t = Item.SearchItemById(Id); 
-            
-            Id = t[0].Id;
-            string name = t[0].Name;
-            string username = t[0].UserName;
-            string password = t[0].Password;
-            string url = t[0].URL;
-            string note = t[0].Note;
+            var t = Item.SearchItemById(Id);
 
-            txtName.Text = name;
-            txtUserName.Text = username;
-            txtPassword.Text = password;
-            if (url == "")
+            try
             {
-                lblURL.Visible = false;
-                txtURL.Visible = false;
+                Id = t[0].Id;
+                string name = t[0].Name;
+                string username = t[0].UserName;
+                string password = t[0].Password;
+                string url = t[0].URL;
+                string note = t[0].Note;
+
+                txtName.Text = name;
+                txtUserName.Text = username;
+                txtPassword.Text = password;
+                if (url == "")
+                {
+                    lblURL.Visible = false;
+                    txtURL.Visible = false;
+                }
+                if (note == "")
+                {
+                    lblNote.Visible = false;
+                    txtNote.Visible = false;
+                }
+                else
+                {
+                    txtURL.Text = url;
+                    txtNote.Text = note;
+                }
             }
-            if (note == "")
+            catch (Exception ex)
             {
-                lblNote.Visible = false;
-                txtNote.Visible = false;
-            }
-            else
-            {
-                txtURL.Text = url;
-                txtNote.Text = note;
+                MessageBox.Show("Erro: " + ex);
             }
         }
 
