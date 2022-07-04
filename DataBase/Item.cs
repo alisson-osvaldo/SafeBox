@@ -8,22 +8,13 @@ namespace Database
 {
     public class Item
     {
-        private string connectionstring;
-        private static string connectionstringStatic;
-
-        private const string ConnectionString = "Data Source= D:\\Save Projects\\Estudo CSharp POO\\SafeBox\\SafeBox\\bin\\Debug\\SQLite\\bd_SafeBox.db";
-
-        public Item()
-        {
-            connectionstring = ConfigurationManager.AppSettings["SqlConnection"];
-            connectionstringStatic = ConfigurationManager.AppSettings["SqlConnection"];
-        }
+        private const string connectionstring = "Data Source= D:\\Save Projects\\Estudo CSharp POO\\SafeBox\\SafeBox\\bin\\Debug\\SQLite\\bd_SafeBox.db";
 
         public int Gravar(int idUser, string name, string username, string password, string url, string note, string type)
         {
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+                using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
                 {
                     string queryString = "INSERT INTO tb_items(iduser, name, username, password, url, note, type) " +
                         "VALUES('" + idUser + "', '" + name + "', '" + username + "', '" + password + "', '" + url + "', '" + note + "', '" + type + "') ";
@@ -47,7 +38,7 @@ namespace Database
 
         public static int returnMaxId(int result)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString)) //Aqui era static
+            using (SQLiteConnection connection = new SQLiteConnection(connectionstring)) //Aqui era static
             {
                 string queryString = "SELECT MAX(id) FROM tb_items;";
 
@@ -67,7 +58,7 @@ namespace Database
 
         public DataTable All()
         {
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
             {
                 string queryString = "SELECT * FROM tb_items";
                 SQLiteCommand command = new SQLiteCommand(queryString, connection);
@@ -87,7 +78,7 @@ namespace Database
 
         public DataTable Todos(int idUser)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
             {
                 string queryString = "SELECT * FROM tb_items WHERE iduser = '"+ idUser +"' ";
                 SQLiteCommand command = new SQLiteCommand(queryString, connection);
@@ -107,7 +98,7 @@ namespace Database
 
         public DataTable SearchItemType(string type, int idUser)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
             {
                 string queryString = "SELECT * FROM tb_items WHERE type = '" + type + "' AND  iduser = '" + idUser + "' ";
                 SQLiteCommand command = new SQLiteCommand(queryString, connection);
@@ -127,7 +118,7 @@ namespace Database
 
         public DataTable SearchItemById(int id)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
             {
                 string queryString = "SELECT * FROM tb_items WHERE id ='" + id + "' ";
                 SQLiteCommand command = new SQLiteCommand(queryString, connection);
@@ -147,7 +138,7 @@ namespace Database
         // Search---------------------------------------------------------------------------------------------------------
         public DataTable SearchList(string name, string type, int idUser)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
             {               
                 string queryString = "SELECT * FROM tb_items WHERE iduser = '" + idUser + "' AND type = '" + type +"' AND name LIKE '%"+ name +"%' ";
                 SQLiteCommand command = new SQLiteCommand(queryString, connection);
@@ -167,7 +158,7 @@ namespace Database
 
         public DataTable SearchListAll(string name, int idUser)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
             {
                 string queryString = "SELECT * FROM tb_items WHERE iduser = '" + idUser + "' AND name LIKE '%" + name + "%' ";
                 SQLiteCommand command = new SQLiteCommand(queryString, connection);
@@ -190,7 +181,7 @@ namespace Database
         {
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+                using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
                 using (SQLiteCommand command = connection.CreateCommand())
                 {
                     command.CommandText = "UPDATE tb_items SET name = @name, username = @username, password = @password, url = @url, note = @note WHERE id = @id";
@@ -217,7 +208,7 @@ namespace Database
 
         public static void DeleteItem(int Id)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
             using (SQLiteCommand command = connection.CreateCommand())
             {
                 command.CommandText = "DELETE FROM tb_items WHERE id = @id";
@@ -234,7 +225,7 @@ namespace Database
 
         public static void DeleteItemIdRegister(int IdUser)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
             using (SQLiteCommand command = connection.CreateCommand())
             {
                 command.CommandText = "DELETE FROM tb_items WHERE iduser = @iduser";
